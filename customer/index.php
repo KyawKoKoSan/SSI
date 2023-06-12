@@ -1,5 +1,5 @@
 <?php
-include "template/header.php";?>
+include "template/header.php"; ?>
 
 <!--start welcome img-->
 <section id="home" class="container-fluid wow animate__fadeInLeft">
@@ -30,7 +30,7 @@ include "template/header.php";?>
                                 About Us
                             </h1>
                             <h3 class="fw-bold">
-                                Best Sneaker Shop In <br /><span class="text-primary">Myanmar</span>
+                                Best Insurance Service Company <br /><span class="text-primary">Myanmar</span>
                             </h3>
                             <p class="col-12 col-lg-9">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -156,4 +156,4 @@ include "template/header.php";?>
 </section>
 <!--end best offers-->
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
