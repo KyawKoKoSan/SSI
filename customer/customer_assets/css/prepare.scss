@@ -1,0 +1,47 @@
+$primary: #0d21a1;
+
+@import "../../../assets/vendor/morph/variables";
+@import "../../../assets/vendor/bootstrap/scss/bootstrap";
+@import "../../../assets/vendor/morph/bootswatch";
+
+.header {
+  background: rgba(211, 218, 229, 0.78);
+  backdrop-filter: blur(15px) contrast(100%);
+  z-index: 2000;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-item {
+  margin-right: 15px !important;
+  .nav-link {
+    font-weight: bolder;
+    transition: 0.5s;
+    color: #4d63f1 !important;
+    //color: $primary !important;
+  }
+  .nav-link:hover {
+    transition: 0.5s;
+    color: #0d21a1 !important;
+  }
+  .nav-link.active {
+    transition: 0.5s;
+    color: #0d21a1 !important;
+  }
+}
+
+.logo-container img:hover {
+  animation: rotation 2s;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
