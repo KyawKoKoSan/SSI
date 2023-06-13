@@ -12738,4 +12738,30 @@ textarea.form-control-lg {
   to {
     transform: rotate(359deg);
   }
+}
+.product-card {
+  border-radius: 20px;
+  transition: 1s;
+}
+
+.product-card:hover {
+  transform: scale(0.99) !important;
+  transition: 1s;
+}
+
+.card-product-img {
+  border-radius: 20px 20px 0px 0px;
+}
+
+.original-price-text {
+  color: #212529;
+}
+
+.final-price-text {
+  color: red;
+}
+
+.btn_custom_interaction:hover {
+  transform: scale(0.95) !important;
+  transition: 1s;
 }/*# sourceMappingURL=prepare.css.map */
