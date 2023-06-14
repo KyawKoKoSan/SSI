@@ -56,8 +56,8 @@ include "template/header.php"; ?>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 mt-3">
-                    <div class="col-12 col-lg-10 text-center wow animate__bounceInRight">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488799.4874372742!2d95.9013768351299!3d16.838952489086928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1949e223e196b%3A0x56fbd271f8080bb4!2sYangon%2C%20Myanmar%20(Burma)!5e0!3m2!1sen!2ssg!4v1645607641218!5m2!1sen!2ssg" width="400" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="col-12 text-center wow animate__bounceInRight">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488799.4874372742!2d95.9013768351299!3d16.838952489086928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1949e223e196b%3A0x56fbd271f8080bb4!2sYangon%2C%20Myanmar%20(Burma)!5e0!3m2!1sen!2ssg!4v1645607641218!5m2!1sen!2ssg" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
