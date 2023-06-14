@@ -1,0 +1,29 @@
+.card{
+    border: none;
+}
+.status-card{
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+.status-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.status-card:active{
+    transform: scale(1.03);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+
+
+@media screen and (max-width: 820px) {
+    .sidebar {
+        position: fixed;
+        width: 300px;
+        z-index: 2001;
+        display: block !important;
+        margin-left: -100%;
+    }
+}
