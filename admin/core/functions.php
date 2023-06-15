@@ -2,6 +2,16 @@
 
 //common functions start here
 
+function alert($data,$color="danger"){
+    $data = strtoupper($data);
+    return "    
+    <div class='alert alert-dismissible alert-$color'>
+      <button type='button' class='btn-close' data-bs-dismiss='alert'></button>
+      <p class='alert-heading mb-0'>$data</p>
+    </div>
+";
+}
+
 function redirect($location){
     header("location:$location");
 }
@@ -88,5 +98,4 @@ function imageFilterRegistration($files,$original_image=""){
 }
 
 //common functions start here
-
 
