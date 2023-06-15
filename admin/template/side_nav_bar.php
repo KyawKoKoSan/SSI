@@ -27,7 +27,7 @@
                 <span>User Management</span>
             </li>
             <li class="menu-item my-2">
-                <a href="" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="admin_register.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-user-plus"></i>
                         <small class="fw-bold ms-2 text-uppercase">Create New Account</small>

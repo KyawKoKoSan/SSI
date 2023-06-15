@@ -118,13 +118,13 @@ function admin_register(){
         $role = $_POST['role'];
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirmPassword'];
-        $image = imageFilterRegister($_FILES['image']);
-        if($password == confirmPassword){
+        $image = imageFilterRegistration($_FILES['image']);
+        if($password == $confirmPassword){
             $sql = "INSERT INTO admins (name,email,phone,password,role,photo) VALUES (?,?,?,?,?,?)";
             $sq = con() -> prepare($sql);
             $securePass = password_hash($password,PASSWORD_DEFAULT);
             if($sq->execute(array($name,$email,$phone,$securePass,$role,$image))){
-                linkTo("register.php?result=success");
+                linkTo("admin_register.php?result=success");
             }
         }
         else{
