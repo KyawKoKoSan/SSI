@@ -1,3 +1,7 @@
+<?php
+require_once "core/base.php";
+require_once "core/functions.php";
+?>
 <!doctype html>
 <html lang="en">
 
