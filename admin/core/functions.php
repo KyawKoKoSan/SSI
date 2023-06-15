@@ -134,6 +134,16 @@ function admin_register(){
 
 }
 
+function fetch_admin($id){
+    $sql = con() -> prepare("SELECT * FROM admins where id = $id");
+    return fetch($sql);
+}
+
+function fetch_admins(){
+    $sql = con() -> prepare("SELECT * FROM admins");
+    return fetchAll($sql);
+}
+
 //admin accounts management end here
 
 //admin side functions end here
