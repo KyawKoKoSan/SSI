@@ -15,7 +15,7 @@
         <ul>
             <li class="menu-spacer"></li>
             <li class="menu-item">
-                <a href="" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="index.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-home"></i>
                         <small class="fw-bold ms-2 text-uppercase">Dashboard</small>

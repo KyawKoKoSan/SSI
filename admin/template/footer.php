@@ -9,4 +9,18 @@
 <!--  End  Linking JS files and libraries-->
 
 </body>
+<script>
+    // start coding for minimize maximize button
+    $(".full-screen-btn").click(function (){
+        $current = $(".full-screen-btn").closest(".card");
+        $current.toggleClass("full-screen-card");
+        if($current.hasClass('full-screen-card')){
+            $(this).html(`<i class="feather-minimize-2"></i>`);
+        }
+        else{
+            $(this).html(` <i class="feather-maximize-2"></i>`);
+        }
+    });
+    // end coding for minimize maximize button
+</script>
 </html>

@@ -111,7 +111,7 @@ function admin_register(){
     $no = $sq->rowCount();
     echo $no;
     if($no>=1){
-        linkTo("register.php?already_exist=user");
+        linkTo("admin_register.php?already_exist=user");
     }else{
         $name = $_POST['name'];
         $phone = $_POST['phone'];

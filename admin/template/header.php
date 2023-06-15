@@ -19,7 +19,17 @@ require_once "core/functions.php";
     <link rel="stylesheet" href="admin_assets/css/admin.css">
     <link rel="stylesheet" href="admin_assets/css/admin_style.css">
     <!--  End  Linking CSS Files, bootstrap, animate.style,feather icon and font awesome-->
-
+    <style>
+        .full-screen-card{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 30000;
+            height: 100vh;
+            overflow: scroll;
+        }
+    </style>
 </head>
 
 <body>

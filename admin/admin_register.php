@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-6 mt-2">
                         <label for="phone" class="form-label">
-                            <i class=" me-2 fas fa-key text-primary"></i>Phone
+                            <i class=" me-2 feather-phone text-primary"></i>Phone
                         </label>
                         <input type="number" name="phone" min="8" class="form-control" id="phone" required>
                     </div>
