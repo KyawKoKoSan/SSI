@@ -35,10 +35,10 @@
                 </a>
             </li>
             <li class="menu-item my-2">
-                <a href="" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="admin_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-menu"></i>
-                        <small class="fw-bold ms-2 text-uppercase">Admins List</small>
+                        <small class="fw-bold ms-2 text-uppercase">Admins Lists</small>
                     </span>
                     <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
                     </span>
