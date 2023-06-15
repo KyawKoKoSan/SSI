@@ -99,3 +99,41 @@ function imageFilterRegistration($files,$original_image=""){
 
 //common functions start here
 
+//admin side functions start here
+
+//admin accounts management start here
+
+function admin_register(){
+    $email = $_POST['email'];
+    $sql = "SELECT * FROM admins WHERE email=?";
+    $sq = con() -> prepare($sql);
+    $sq->execute([$email]);
+    $no = $sq->rowCount();
+    echo $no;
+    if($no>=1){
+        linkTo("register.php?already_exist=user");
+    }else{
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $role = $_POST['role'];
+        $password = $_POST['password'];
+        $confirmPassword = $_POST['confirmPassword'];
+        $image = imageFilterRegister($_FILES['image']);
+        if($password == confirmPassword){
+            $sql = "INSERT INTO admins (name,email,phone,password,role,photo) VALUES (?,?,?,?,?,?)";
+            $sq = con() -> prepare($sql);
+            $securePass = password_hash($password,PASSWORD_DEFAULT);
+            if($sq->execute(array($name,$email,$phone,$securePass,$role,$image))){
+                linkTo("register.php?result=success");
+            }
+        }
+        else{
+            return alert("Password do not match!!!");
+        }
+    }
+
+}
+
+//admin accounts management end here
+
+//admin side functions end here
