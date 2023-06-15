@@ -2,6 +2,14 @@
 
 //common functions start here
 
+function redirect($location){
+    header("location:$location");
+}
+
+function linkTo($location){
+    echo "<script>location.href='$location'</script>";
+}
+
 function fetch($sql){
     $sql -> execute();
     $row=$sql->fetch(PDO::FETCH_ASSOC);
@@ -80,3 +88,5 @@ function imageFilterRegistration($files,$original_image=""){
 }
 
 //common functions start here
+
+
