@@ -180,6 +180,23 @@ function fetchCustomers(){
     return fetchAll($sql);
 }
 
+function customerUpdate(){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $phone = $_POST['phone'];
+    $city = $_POST['city'];
+    $password = $_POST['password'];
+    $original_image=$_POST['original_image'];
+    $original_password=$_POST['original_password'];
+    $securePass = checkPassword($password,$original_password);
+    $image = imageFilter($_FILES['image'],$original_image);
+    $sql = con() -> prepare("UPDATE customers SET name=?,email=?,password=?,address=?,phone=?,city=?,photo=? WHERE id=?");
+    $sql->execute(array($name,$email,$securePass,$address,$phone,$city,$image,$id));
+    return $sql;
+}
+
 //customer management end here
 
 

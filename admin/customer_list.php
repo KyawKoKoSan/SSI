@@ -53,7 +53,7 @@ include "template/header.php";
                                             <td><?php echo $i['phone'] ;?></td>
                                             <td><?php echo $i['city'] ;?></td>
                                             <td>
-                                                <img src="/images/<?php echo $i['photo'];?>" width="100px" alt="">
+                                                <img src="images/<?php echo $i['photo'];?>" width="100px" alt="">
                                             </td>
                                             <td  class="text-nowrap">
                                                 <a onclick="return confirm('Are you sure to delete?')" href="customer_delete.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-danger">
