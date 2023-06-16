@@ -37,8 +37,8 @@ function fetchAll($sql){
 
 function checkPassword($password,$original_password=""){
     if($password!=""){
-        $sPass=password_hash($password,PASSWORD_DEFAULT);
-        return $sPass;
+        $securePass=password_hash($password,PASSWORD_DEFAULT);
+        return $securePass;
     }
     else{
         return $original_password;
@@ -142,6 +142,22 @@ function fetch_admin($id){
 function fetch_admins(){
     $sql = con() -> prepare("SELECT * FROM admins");
     return fetchAll($sql);
+}
+
+function adminUpdate(){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'] ;
+    $phone = $_POST['phone'] ;
+    $role = $_POST['role'];
+    $password = $_POST['password'];
+    $original_image=$_POST['original_image'];
+    $original_password=$_POST['original_password'];
+    $securePass = checkPassword($password,$original_password);
+    $image = imageFilter($_FILES['image'],$original_image);
+    $sql = con() -> prepare("UPDATE admins SET name=?,email=?,phone=?,password=?,role=?,photo=? WHERE id=?");
+    $sql->execute(array($name,$email,$phone,$securePass,$role,$image,$id));
+    return $sql;
 }
 
 function adminDelete($id){
