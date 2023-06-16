@@ -13,7 +13,7 @@
                     earum exercitationem explicabo facilis ipsa minus mollitia
                     nemo neque qui quia temporibus velit! Dolorum, magnam.
                   </p>
-                  <a href="" class="btn btn-outline-primary btn_custom_interaction">Contact Us Now</a>
+                  <a href="contact_us.php" class="btn btn-outline-primary btn_custom_interaction">Contact Us Now</a>
                 </div>
               </div>
             </div>
@@ -27,7 +27,7 @@
                     earum exercitationem explicabo facilis ipsa minus mollitia
                     nemo neque qui quia temporibus velit! Dolorum, magnam.
                   </p>
-                  <a href="" class="btn btn-outline-primary btn_custom_interaction">Get Direction</a>
+                  <a href="about_us.php" class="btn btn-outline-primary btn_custom_interaction">Get Direction</a>
                 </div>
               </div>
             </div>

@@ -204,15 +204,13 @@ function customerDelete($id){
 }
 
 //customer management end here
-
-
 //admin side functions end here
 
 
 //customer side functions start here
 
-
 //customer account functions start here
+
 function customerRegister(){
     $email = $_POST['email'];
     $sql = "SELECT * FROM customers WHERE email=?";

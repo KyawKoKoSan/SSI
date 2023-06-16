@@ -39,7 +39,7 @@ include "template/header.php"; ?>
                                 voluptate. Blanditiis inventore placeat quos?
                             </p>
                             <div class="wow animate__bounceIn delay-5s">
-                                <a href="" class="btn btn-outline-primary mb-3 mb-lg-0 btn_custom_interaction">Read
+                                <a href="about_us.php" class="btn btn-outline-primary mb-3 mb-lg-0 btn_custom_interaction">Read
                                     More</a>
                             </div>
                         </div>
