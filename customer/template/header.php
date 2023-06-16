@@ -64,7 +64,7 @@ require_once "core/base.php";
             <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Action</a>
             <div class="dropdown-menu">
               <a class="dropdown-item text-black" href="">Profile</a>
-              <a class="dropdown-item text-black" href="">Register Another Account</a>
+              <a class="dropdown-item text-black" href="customer_register.php">Register Another Account</a>
               <a class="dropdown-item text-black" href="">Logout</a>
             </div>
           </li>

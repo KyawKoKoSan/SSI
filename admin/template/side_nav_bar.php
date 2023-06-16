@@ -49,23 +49,11 @@
             <li class="menu-title my-2">
                 <span>Customers Management</span>
             </li>
-
             <li class="menu-item my-2">
-                <a href="" class="d-flex justify-content-between menu-item-link text-decoration-none">
-                    <span>
-                        <i class="feather-layers"></i>
-                        <small class="fw-bold ms-2 text-uppercase">Orders</small>
-                    </span>
-                    <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
-
-                    </span>
-                </a>
-            </li>
-            <li class="menu-item my-2">
-                <a href="" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="customer_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-menu"></i>
-                        <small class="fw-bold ms-2 text-uppercase">Customers List</small>
+                        <small class="fw-bold ms-2 text-uppercase">Customers Lists</small>
                     </span>
                     <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
 

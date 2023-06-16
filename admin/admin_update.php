@@ -34,7 +34,7 @@ if (!$current){
                         Update Account
                     </h4>
                     <div class="">
-                        <a href="admins_list.php" class="btn btn-outline-secondary me-2"><i class="feather-menu"></i></a>
+                        <a href="admin_list.php" class="btn btn-outline-secondary me-2"><i class="feather-menu"></i></a>
                         <a href="#" class="btn btn-outline-secondary full-screen-btn"><i class="feather-maximize-2"></i></a>
                     </div>
                 </div>
