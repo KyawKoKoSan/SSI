@@ -144,6 +144,12 @@ function fetch_admins(){
     return fetchAll($sql);
 }
 
+function adminDelete($id){
+    $sql = con()->prepare("DELETE FROM admins WHERE id = ?");
+    $sql -> execute([$id]);
+    return $sql;
+}
+
 //admin accounts management end here
 
 //admin side functions end here
