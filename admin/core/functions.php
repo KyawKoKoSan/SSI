@@ -184,3 +184,42 @@ function fetchCustomers(){
 
 
 //admin side functions end here
+
+
+//customer side functions start here
+
+
+//customer account functions start here
+function customerRegister(){
+    $email = $_POST['email'];
+    $sql = "SELECT * FROM customers WHERE email=?";
+    $sq = con() -> prepare($sql);
+    $sq->execute([$email]);
+    $no = $sq->rowCount();
+    echo $no;
+    if ($no>=1){
+        linkTo("register.php?already_exist=user");
+    }
+    else{
+        $name = $_POST['name'] ;
+        $address = $_POST['address'] ;
+        $phone = $_POST['phone'] ;
+        $city = $_POST['city'] ;
+        $password =$_POST['password'];
+        $confirmPassword =$_POST['cPassword'];
+        $image = imageFilterRegistration($_FILES['image']);
+        $securePass = password_hash($password,PASSWORD_DEFAULT);
+        if($password == $confirmPassword){
+            $sql = "INSERT INTO customers (name,email,address,phone,city,photo,password) VALUES (?,?,?,?,?,?,?)";
+            $sq = con() -> prepare($sql);
+            if($sq->execute(array($name,$email,$address,$phone,$city,$image,$securePass))){
+                linkTo("register.php?result=success");}
+        }
+        else{
+            return alert("Password do not match!!!");}
+    }
+}
+
+//customer account functions end here
+
+//customer side functions end here
