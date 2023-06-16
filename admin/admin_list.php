@@ -55,10 +55,10 @@ include "template/header.php";
                                                 <img src="images/<?php echo $i['photo'];?>" width="100px" alt="">
                                             </td>
                                             <td  class="text-nowrap">
-                                                <a onclick="return confirm('Are you sure to delete?')" href="delete_admin.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-danger">
+                                                <a onclick="return confirm('Are you sure to delete?')" href="admin_delete.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-danger">
                                                     <i class="feather-trash-2"></i>
                                                 </a>
-                                                <a href="update_admin.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
+                                                <a href="admin_update.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
                                                     <i class="feather-edit-2"></i>
                                                 </a>
                                             </td>
