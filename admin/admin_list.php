@@ -43,7 +43,7 @@ include "template/header.php";
                                     </thead>
                                     <tbody>
                                     <?php $no=1;
-                                    foreach (fetch_admins() as $i){
+                                    foreach (fetchAdmins() as $i){
                                         ?>
                                         <tr>
                                             <td><?php echo $no;$no++ ;?></td>

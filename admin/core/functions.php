@@ -134,12 +134,12 @@ function admin_register(){
 
 }
 
-function fetch_admin($id){
+function fetchAdmin($id){
     $sql = con() -> prepare("SELECT * FROM admins where id = $id");
     return fetch($sql);
 }
 
-function fetch_admins(){
+function fetchAdmins(){
     $sql = con() -> prepare("SELECT * FROM admins");
     return fetchAll($sql);
 }
@@ -167,5 +167,20 @@ function adminDelete($id){
 }
 
 //admin accounts management end here
+
+//customer management start here
+
+function fetchCustomer($id){
+    $sql = con() -> prepare("SELECT * FROM customers where id = $id");
+    return fetch($sql);
+}
+
+function fetchCustomers(){
+    $sql = con() -> prepare("SELECT * FROM customers");
+    return fetchAll($sql);
+}
+
+//customer management end here
+
 
 //admin side functions end here

@@ -2,7 +2,7 @@
 include "template/header.php";
 if (isset($_GET['id'])){
     $id = $_GET['id'];
-    $current = fetch_admin($id);
+    $current = fetchAdmin($id);
 }else{
     linkTo('admin_list.php');
 }
@@ -17,7 +17,7 @@ if (!$current){
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb text-uppercase">
                 <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none ">Home</a></li>
-                <li class="breadcrumb-item"><a href="admins_list.php" class="text-decoration-none ">Admins Lists</a></li>
+                <li class="breadcrumb-item"><a href="admin_list.php" class="text-decoration-none ">Admin Lists</a></li>
                 <li class="breadcrumb-item active fw-bold user-select-none" aria-current="page">Update Account</li>
             </ol>
         </nav>
@@ -42,7 +42,7 @@ if (!$current){
                 <hr>
                 <?php
                 $id = $_GET['id'];
-                $current = fetch_admin($id);
+                $current = fetchAdmin($id);
 
                 if(isset($_POST['updateAdmin'])){
                     if (adminUpdate()){
