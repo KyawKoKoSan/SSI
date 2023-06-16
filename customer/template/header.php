@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "core/base.php";
+require_once "../admin/core/functions.php";
 ?>
 
 <!DOCTYPE html>

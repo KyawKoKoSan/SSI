@@ -213,7 +213,7 @@ function customerRegister(){
             $sql = "INSERT INTO customers (name,email,address,phone,city,photo,password) VALUES (?,?,?,?,?,?,?)";
             $sq = con() -> prepare($sql);
             if($sq->execute(array($name,$email,$address,$phone,$city,$image,$securePass))){
-                linkTo("register.php?result=success");}
+                linkTo("customer_register.php?result=success");}
         }
         else{
             return alert("Password do not match!!!");}
