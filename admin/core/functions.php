@@ -197,6 +197,12 @@ function customerUpdate(){
     return $sql;
 }
 
+function customerDelete($id){
+    $sql = con()->prepare("DELETE FROM customers WHERE id = ?");
+    $sql -> execute([$id]);
+    return $sql;
+}
+
 //customer management end here
 
 
