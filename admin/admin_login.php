@@ -1,9 +1,12 @@
 <?php
-if(!$_SESSION['admin_acc']){
+session_start();
+if($_SESSION){
     header("location:index.php");
 }
-require_once "core/base.php";
-require_once "core/functions.php";
+else{
+    require_once "core/base.php";
+    require_once "core/functions.php";
+}
 ?>
 <!doctype html>
 <html lang="en">

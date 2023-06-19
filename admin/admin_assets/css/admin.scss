@@ -20,6 +20,12 @@ $light: #e7f3ff;
   padding: 10px;
   transition: 0.5s;
 }
+
+.menu-item-link:hover{
+  color: $primary;
+  font-size: 1.1rem;
+}
+
 .menu-item-link.active {
   background-color: $primary;
   border-radius: 0.25rem;

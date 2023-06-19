@@ -12538,6 +12538,11 @@ textarea.form-control-lg {
   transition: 0.5s;
 }
 
+.menu-item-link:hover {
+  color: #0d21a1;
+  font-size: 1.1rem;
+}
+
 .menu-item-link.active {
   background-color: #0d21a1;
   border-radius: 0.25rem;

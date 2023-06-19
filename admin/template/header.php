@@ -52,13 +52,14 @@ require_once "core/functions.php";
                             </button>
                             <div class="dropdown">
                                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="" style="width: 30px; height: 30px; border-radius: 50%" alt="profile picture">
+                                    <img class="me-3" src="images/<?php echo $_SESSION['admin_acc']['photo']?>" style="width: 30px; height: 30px; border-radius: 50%" alt="profile picture">
+                                    <span class="text-dark"><?php echo $_SESSION['admin_acc']['name'];?></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="">See Customers List</a></li>
                                     <li><a class="dropdown-item" href="">See Complains</a></li>
                                     <div class="dropdown-divider"></div>
-                                    <li><a class="dropdown-item" href="">Logout</a></li>
+                                    <li><a class="dropdown-item text-danger" href="admin_logout.php">Logout</a></li>
                                 </ul>
                             </div>
                         </div>
