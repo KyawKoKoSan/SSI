@@ -74,6 +74,30 @@
                 </a>
             </li>
 
+
+            <li class="menu-spacer"></li>
+            <li class="menu-title my-2">
+                <span>Service Management</span>
+            </li>
+            <li class="menu-item my-2">
+                <a href="service_add.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                    <span>
+                        <i class="feather-plus-square"></i>
+                        <small class="fw-bold ms-2 text-uppercase">Add new service</small>
+                    </span>
+                </a>
+            </li>
+            <li class="menu-item my-2">
+                <a href="service_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                    <span>
+                        <i class="feather-list"></i>
+                        <small class="fw-bold ms-2 text-uppercase">Services lists</small>
+                    </span>
+                    <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
+                    </span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </div>
