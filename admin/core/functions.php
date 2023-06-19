@@ -134,6 +134,28 @@ function admin_register(){
 
 }
 
+function admin_login(){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM admins WHERE email=?";
+    $sq = con() -> prepare($sql);
+    $sq->execute([$email]);
+    $row = $sq->fetch(PDO::FETCH_ASSOC);
+    if(!$row) {
+        return alert("Invalid Login");
+    }
+    else{
+        if(!password_verify($password,$row['password'])){
+            return alert("Invalid Login");
+        }
+        else{
+            session_start();
+            $_SESSION['user']=$row;
+            redirect("index.php");
+        }
+    }
+}
+
 function fetchAdmin($id){
     $sql = con() -> prepare("SELECT * FROM admins where id = $id");
     return fetch($sql);
