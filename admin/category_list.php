@@ -9,16 +9,16 @@
     </tr>
     </thead>
     <tbody>
-    <?php $no=1; foreach (fetch_categories() as $c){ ?>
+    <?php $no=1; foreach (fetchCategories() as $c){ ?>
         <tr>
             <td><?php echo $no;$no++;?></td>
             <td class="text-nowrap"><?php echo $c['title'];?></td>
-            <td class="text-nowrap"><?php echo admin_acc($c['admin_id'])['name'];?></td>
+            <td class="text-nowrap"><?php echo fetchAdmin($c['admin_id'])['name'];?></td>
             <td class="text-nowrap">
                 <a onclick="return confirm('Are you sure to delete?')" href="category_delete.php?id=<?php echo $c['id']; ?>" class="btn btn-outline-danger btn-sm">
                     <i class="feather-trash-2 fa-fw"></i>
                 </a>
-                <a href="edit_category.php?id=<?php echo $c['id']; ?>" class="btn btn-outline-warning btn-sm">
+                <a href="category_update.php?id=<?php echo $c['id']; ?>" class="btn btn-outline-warning btn-sm">
                     <i class="feather-edit-2 fa-fw"></i>
                 </a>
             </td>

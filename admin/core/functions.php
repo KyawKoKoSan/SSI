@@ -103,7 +103,7 @@ function imageFilterRegistration($files,$original_image=""){
 
 //admin accounts management start here
 
-function admin_register(){
+function adminRegister(){
     $email = $_POST['email'];
     $sql = "SELECT * FROM admins WHERE email=?";
     $sq = con() -> prepare($sql);
@@ -134,7 +134,7 @@ function admin_register(){
 
 }
 
-function admin_login(){
+function adminLogin(){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $sql = "SELECT * FROM admins WHERE email=?";
@@ -229,14 +229,32 @@ function customerDelete($id){
 
 //category management start here
 
-function fetch_category($id){
+function categoryAdd(){
+    $title = $_POST['title'];
+    $admin_id = $_SESSION['admin_acc']['id'];
+    $sql = "INSERT INTO categories (title,admin_id) VALUES (?,?)";
+    $sq = con() -> prepare($sql);
+    if($sq->execute(array($title,$admin_id))){
+        linkTo("category_management.php?result=success");
+    }
+}
+
+function fetchCategory($id){
     $sql = con() -> prepare("SELECT * FROM categories WHERE id = $id");
     return fetch($sql);
 }
 
-function fetch_categories(){
+function fetchCategories(){
     $sql = con()->prepare("SELECT * FROM categories");
     return fetchAll($sql);
+}
+
+function categoryUpdate(){
+    $title = $_POST['title'];
+    $id = $_POST['id'];
+    $sql = con()->prepare("UPDATE categories SET title=? WHERE id = ?");
+    $sql -> execute(array($title,$id));
+    return $sql;
 }
 
 //category management end here

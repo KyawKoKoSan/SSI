@@ -40,7 +40,7 @@ else{
                     <hr>
                     <?php
                     if (isset($_POST['login-btn'])){
-                        echo admin_login();
+                        echo adminLogin();
                     }
                     ?>
                     <form method="post" class="row mt-3" enctype="multipart/form-data">

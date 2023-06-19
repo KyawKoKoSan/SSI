@@ -31,7 +31,7 @@ include_once "template/header.php";?>
                 <hr>
                 <?php
                 if (isset($_POST['reg-btn'])){
-                    echo admin_register();
+                    echo adminRegister();
                 }
                 if (isset($_GET['result'])){
                     echo alert("Successfully Created New Account!!","success");
