@@ -277,7 +277,21 @@ function categoryDelete($id){
 
 //service management start here
 
-
+function serviceAdd(){
+    $name = $_POST['name'];
+    $category_id = $_POST['category_id'];
+    $original_price = $_POST['price'];
+    $description = $_POST['description'];
+    $duration = $_POST['duration'];
+    $policy = $_POST['policy'];
+    $admin_id = $_SESSION['admin_acc']['id'];
+    $image = imageFilter($_FILES['image']);
+    $sql = "INSERT INTO items (name,description,original_price,photo,duration,policy,admin_id,category_id) VALUES (?,?,?,?,?,?,?,?)";
+    $sq = con() -> prepare($sql);
+    if($sq->execute(array($name,$description,$original_price,$image,$duration,$policy,$admin_id,$category_id))){
+        linkTo("service_add.php?result=success");
+    }
+}
 
 function fetchService($id){
     $sql = con() -> prepare("SELECT * FROM service WHERE id = $id");
