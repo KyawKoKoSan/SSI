@@ -265,6 +265,20 @@ function categoryDelete($id){
 
 //category management end here
 
+//service management start here
+
+function fetchService($id){
+    $sql = con() -> prepare("SELECT * FROM service WHERE id = $id");
+    return fetch($sql);
+}
+
+function fetchServices(){
+    $sql = con()->prepare("SELECT * FROM services");
+    return fetchAll($sql);
+}
+
+//service management end here
+
 //admin side functions end here
 
 
