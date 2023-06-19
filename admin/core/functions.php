@@ -257,6 +257,12 @@ function categoryUpdate(){
     return $sql;
 }
 
+function categoryDelete($id){
+    $sql = con()->prepare("DELETE FROM categories WHERE id = ?");
+    $sql -> execute([$id]);
+    return $sql;
+}
+
 //category management end here
 
 //admin side functions end here
