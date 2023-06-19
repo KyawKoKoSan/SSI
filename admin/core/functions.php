@@ -226,6 +226,21 @@ function customerDelete($id){
 }
 
 //customer management end here
+
+//category management start here
+
+function fetch_category($id){
+    $sql = con() -> prepare("SELECT * FROM categories WHERE id = $id");
+    return fetch($sql);
+}
+
+function fetch_categories(){
+    $sql = con()->prepare("SELECT * FROM categories");
+    return fetchAll($sql);
+}
+
+//category management end here
+
 //admin side functions end here
 
 

@@ -60,6 +60,20 @@
                     </span>
                 </a>
             </li>
+
+            <li class="menu-spacer"></li>
+            <li class="menu-title my-2">
+                <span>Category Management</span>
+            </li>
+            <li class="menu-item my-2">
+                <a href="category_management.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                    <span>
+                        <i class="feather-command"></i>
+                        <small class="fw-bold ms-2 text-uppercase">Category Manager</small>
+                    </span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </div>
