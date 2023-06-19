@@ -294,13 +294,34 @@ function serviceAdd(){
 }
 
 function fetchService($id){
-    $sql = con() -> prepare("SELECT * FROM service WHERE id = $id");
+    $sql = con() -> prepare("SELECT * FROM services WHERE id = $id");
     return fetch($sql);
 }
 
 function fetchServices(){
     $sql = con()->prepare("SELECT * FROM services");
     return fetchAll($sql);
+}
+
+function serviceUpdate(){
+    $name = $_POST['name'];
+    $category_id = $_POST['category_id'];
+    $original_price = $_POST['original_price'];
+    $description = $_POST['description'];
+    $duration = $_POST['duration'];
+    $policy = $_POST['policy'];
+    $id = $_POST['id'];
+    $original_image=$_POST['original_image'];
+    $image = imageFilter($_FILES['image'],$original_image);
+    $sql = con()->prepare("UPDATE services SET name=?,description=?,original_price=?,photo=?,duration=?,policy=?,category_id=? WHERE id = ?");
+    $sql -> execute(array($name,$description,$original_price,$image,$duration,$policy,$category_id,$id));
+    return $sql;
+}
+
+function serviceDelete($id){
+    $sql = con()->prepare("DELETE FROM services WHERE id = ?");
+    $sql -> execute([$id]);
+    return $sql;
 }
 
 //service management end here

@@ -30,6 +30,9 @@ include "template/header.php";
                 if(isset($_POST['addItem'])){
                     serviceAdd();
                 }
+                if (isset($_GET['result'])){
+                    echo alert("Successfully Added New Service!!","success");
+                }
                 ?>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="row">
