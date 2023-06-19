@@ -1,4 +1,6 @@
-<?php include "template/header.php"; ?>
+<?php
+require_once "core/admin_auth.php";
+include_once "template/header.php"; ?>
 
     <div class="row mt-3">
         <div class="col-12 col-md-6 col-xl-3">

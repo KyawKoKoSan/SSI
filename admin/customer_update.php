@@ -1,4 +1,6 @@
-<?php include "template/header.php";
+<?php
+require_once "core/admin_auth.php";
+include_once "template/header.php";
 if (isset($_GET['id'])){
     $id = $_GET['id'];
     $current = fetchCustomer($id);

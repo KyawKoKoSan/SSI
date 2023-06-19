@@ -1,4 +1,5 @@
 <?php
+require_once "core/admin_auth.php";
 include "template/header.php";
 ?>
 

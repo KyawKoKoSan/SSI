@@ -1,4 +1,7 @@
 <?php
+if(!$_SESSION['admin_acc']){
+    header("location:index.php");
+}
 require_once "core/base.php";
 require_once "core/functions.php";
 ?>

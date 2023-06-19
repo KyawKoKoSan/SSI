@@ -1,5 +1,6 @@
 <?php
-include "template/header.php";
+require_once "core/admin_auth.php";
+include_once "template/header.php";
 ?>
 
 <div class="row">

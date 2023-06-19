@@ -150,7 +150,7 @@ function admin_login(){
         }
         else{
             session_start();
-            $_SESSION['user']=$row;
+            $_SESSION['admin_acc']=$row;
             redirect("index.php");
         }
     }
