@@ -97,6 +97,16 @@ function imageFilterRegistration($files,$original_image=""){
     }
 }
 
+function timestampFormatter($timestamp,$format="d-m-y"){
+    return date($format,strtotime($timestamp));
+}
+
+function durationCalculator($duration, $format="d-m-Y"){
+    $current_time = date_create(date($format));
+    date_add($current_time, date_interval_create_from_date_string($duration));
+    return date_format($current_time,$format);
+}
+
 //common functions start here
 
 //admin side functions start here
@@ -266,6 +276,8 @@ function categoryDelete($id){
 //category management end here
 
 //service management start here
+
+
 
 function fetchService($id){
     $sql = con() -> prepare("SELECT * FROM service WHERE id = $id");
