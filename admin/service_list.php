@@ -68,9 +68,9 @@ include_once "template/header.php";
                                                 </a>
                                                 <a href="
                                                 <?php if (fetchCategory($i['category_id'])['title'] == 'Promotion'){
-                                                    echo "/promotion_update.php?id=".$i['id'];
+                                                    echo "promotion_update.php?id=".$i['id'];
                                                 } else{
-                                                    echo "/service_update.php?id=".$i['id'];
+                                                    echo "service_update.php?id=".$i['id'];
                                                 }?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
                                                     <i class="feather-edit-2"></i>
                                                 </a>

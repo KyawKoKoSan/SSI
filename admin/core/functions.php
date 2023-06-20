@@ -324,6 +324,11 @@ function serviceDelete($id){
     return $sql;
 }
 
+function fetchDuration(){
+    $sql = con()->prepare("SELECT distinct duration FROM services");
+    return fetchAll($sql);
+}
+
 //service management end here
 
 //admin side functions end here
