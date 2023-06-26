@@ -36,7 +36,7 @@ include "template/header.php";
                                         <th class="text-nowrap">Name</th>
                                         <th class="text-nowrap">Description</th>
                                         <th class="text-nowrap">Original Price</th>
-                                        <th class="text-nowrap">Final Price</th>
+                                        <th class="text-nowrap">Sale Price</th>
                                         <th class="text-nowrap">Photo</th>
                                         <th class="text-nowrap">Duration</th>
                                         <th class="text-nowrap">Policy</th>

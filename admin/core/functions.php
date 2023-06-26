@@ -371,6 +371,23 @@ function fetchPromotions(){
     return fetchAll($sql);
 }
 
+function promotionUpdate(){
+    $name = $_POST['name'];
+    $original_price = $_POST['original_price'];
+    $sale_price = $_POST['sale_price'];
+    $description = $_POST['description'];
+    $policy = $_POST['policy'];
+    $duration = $_POST['duration'];
+    $id = $_POST['id'];
+    $original_image=$_POST['original_image'];
+    $start_date=$_POST['start_date'];
+    $end_date=$_POST['end_date'];
+    $image = imageFilter($_FILES['image'],$original_image);
+    $sql = con()->prepare("UPDATE services SET name=?,description=?,original_price=?,sale_price=?,photo=?,duration=?,policy=?,start_date=?,end_date=? WHERE id = ?");
+    $sql -> execute(array($name,$description,$original_price,$sale_price,$image,$duration,$policy,$start_date,$end_date,$id));
+    return $sql;
+}
+
 //promotion management end here
 
 //admin side functions end here
