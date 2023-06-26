@@ -66,87 +66,30 @@ include "template/header.php"; ?>
                             <h1 class="text-center text-primary py-3">Best Offers</h1>
                         </div>
                         <div class="slickTestIndex row wow animate__zoomIn delay-5s">
+                        <?php foreach (fetchPromotions() as $i){?>
                             <div class="col-12 col-md-4">
                                 <div class="card product-card">
-                                    <img src="customer_assets/img/life_insurance.jpg"
-                                        class="card-img-top card-product-img img-fluid" alt="life_insurance photo" />
+                                    <img src="../admin/images/<?php echo $i['photo'];?>"
+                                        class="card-img-top card-product-img img-fluid" alt="insurance service photo" />
                                     <div class="card-body">
-                                        <h5>Life Insurance</h5>
+                                        <h5><?php echo $i['name'] ;?></h5>
                                         <p style="text-align: justify">
-                                            At [Insurance Company Name], we understand the
-                                            importance of protecting what matters most to you—your
-                                            loved ones and their future. That's why we offer
-                                            comprehensive and reliable life insurance solutions
-                                            designed to provide financial security and peace of
-                                            mind.
+                                            <?php echo $i['description'] ;?>
                                         </p>
                                         <h6>
                                             <span
-                                                class="text-decoration-line-through me-2 original-price-text">1000$</span><span
-                                                class="final-price-text">$</span>
+                                                class="text-decoration-line-through me-2 original-price-text"><?php echo $i['original_price'] ;?>$</span><span
+                                                class="final-price-text"><?php echo $i['sale_price'] ;?>$</span>
                                         </h6>
                                         <div class="row">
                                             <div class="col-12 d-flex justify-content-center">
-                                                <a href="" class="btn btn-outline-primary col-12 col-md-6">Details</a>
+                                                <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12 col-md-6">Details</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4">
-                                <div class="card product-card">
-                                    <img src="customer_assets/img/life_insurance.jpg"
-                                        class="card-img-top card-product-img img-fluid" alt="life_insurance photo" />
-                                    <div class="card-body">
-                                        <h5>Life Insurance</h5>
-                                        <p style="text-align: justify">
-                                            At [Insurance Company Name], we understand the
-                                            importance of protecting what matters most to you—your
-                                            loved ones and their future. That's why we offer
-                                            comprehensive and reliable life insurance solutions
-                                            designed to provide financial security and peace of
-                                            mind.
-                                        </p>
-                                        <h6>
-                                            <span
-                                                class="text-decoration-line-through me-2 original-price-text">1000$</span><span
-                                                class="final-price-text">$</span>
-                                        </h6>
-                                        <div class="row">
-                                            <div class="col-12 d-flex justify-content-center">
-                                                <a href="" class="btn btn-outline-primary col-12 col-md-6">Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <div class="card product-card">
-                                    <img src="customer_assets/img/life_insurance.jpg"
-                                        class="card-img-top card-product-img img-fluid" alt="life_insurance photo" />
-                                    <div class="card-body">
-                                        <h5>Life Insurance</h5>
-                                        <p style="text-align: justify">
-                                            At [Insurance Company Name], we understand the
-                                            importance of protecting what matters most to you—your
-                                            loved ones and their future. That's why we offer
-                                            comprehensive and reliable life insurance solutions
-                                            designed to provide financial security and peace of
-                                            mind.
-                                        </p>
-                                        <h6>
-                                            <span
-                                                class="text-decoration-line-through me-2 original-price-text">1000$</span><span
-                                                class="final-price-text">$</span>
-                                        </h6>
-                                        <div class="row">
-                                            <div class="col-12 d-flex justify-content-center">
-                                                <a href="" class="btn btn-outline-primary col-12 col-md-6">Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <?php }?>
                         </div>
                     </div>
                 </div>
