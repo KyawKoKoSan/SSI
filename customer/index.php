@@ -56,40 +56,36 @@ include "template/header.php"; ?>
 <!--end about us-->
 
 <!--start best offers-->
-<section id="carousel" class="container-fluid">
+<section id="carousel" class="container-fluid ">
     <div class="row">
         <div class="col-12">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col">
-                        <div class="row justify-content-center align-items-center wow animate__zoomIn delay-5s">
-                            <h1 class="text-center text-primary py-3">Best Offers</h1>
+                        <div class="row justify-content-center align-items-center wow animate__zoomIn  delay-5s">
+                            <h1 class="text-center text-primary py-3">Get Promotion Now</h1>
                         </div>
                         <div class="slickTestIndex row wow animate__zoomIn delay-5s">
-                        <?php foreach (fetchPromotions() as $i){?>
-                            <div class="col-12 col-md-4">
-                                <div class="card product-card">
-                                    <img src="../admin/images/<?php echo $i['photo'];?>"
-                                        class="card-img-top card-product-img img-fluid" alt="insurance service photo" />
-                                    <div class="card-body">
-                                        <h5><?php echo $i['name'] ;?></h5>
-                                        <p style="text-align: justify">
-                                            <?php echo $i['description'] ;?>
-                                        </p>
-                                        <h6>
-                                            <span
-                                                class="text-decoration-line-through me-2 original-price-text"><?php echo $i['original_price'] ;?>$</span><span
-                                                class="final-price-text"><?php echo $i['sale_price'] ;?>$</span>
-                                        </h6>
-                                        <div class="row">
-                                            <div class="col-12 d-flex justify-content-center">
-                                                <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12 col-md-6">Details</a>
+                            <?php foreach (fetchPromotions() as $i){?>
+                                <div class="col-12 col-md-4 mx-2">
+                                    <div class="card product-card">
+                                        <img src="../admin/images/<?php echo $i['photo'];?>" class="card-img-top card-product-img img-fluid" alt="...">
+                                        <div class="card-body">
+                                            <h5><?php echo $i['name'] ;?></h5>
+                                            <p style="text-align: justify">
+                                                <?php echo $i['description'] ;?>
+                                            </p>
+                                            <h6><span class="text-decoration-line-through me-2  original-price-text"><?php echo $i['original_price'] ;?>$</span><span class="final-price-text"><?php echo $i['sale_price'] ;?>$</span></h6>
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12 col-md-6">Details</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php }?>
+                            <?php }?>
+
                         </div>
                     </div>
                 </div>
@@ -97,6 +93,48 @@ include "template/header.php"; ?>
         </div>
     </div>
 </section>
-<!--end best offers-->
 
-<?php include "template/footer.php"; ?>
+<!--end best offer-->
+
+<?php include "template/footer.php";?>
+
+<script>
+    $('.slickTestIndex').slick({
+        dots: true,
+        arrows: false,
+        speed: 300,
+        infinite: true,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        pauseOnDotsHover: false,
+        autoplay: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite : true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+</script>
+

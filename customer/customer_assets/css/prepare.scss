@@ -46,6 +46,9 @@ $primary: #0d21a1;
   }
 }
 
+
+
+
 .product-card {
   border-radius: 20px;
   transition: 1s;
@@ -60,12 +63,38 @@ $primary: #0d21a1;
   border-radius: 20px 20px 0px 0px;
 }
 
+.slick-card{
+  border-radius: 20px;
+}
+.slick-dots{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.slick-dots li{
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent;
+  border: 2px solid $primary;
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active{
+  width: 15px !important;
+  height: 15px !important;
+  background-color: $primary !important;
+}
+
 .original-price-text {
   color: #212529;
 }
 
 .final-price-text {
   color: red;
+}
+
+.footer-icons:hover{
+  transform: scale(1.1);
 }
 
 .btn_custom_interaction:hover {

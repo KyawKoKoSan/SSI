@@ -109,9 +109,51 @@
     <!-- start footer section -->
   </body>
 
-  <!--  Start  Linking required JS files, libraries and libraries-->
-  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!--  End  Linking required JS files, libraries and libraries-->
+    <!--  Start  Linking required JS files, libraries and libraries-->
+    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/slick/slick.min.js"></script>
+    <!--  End  Linking required JS files, libraries and libraries-->
+    <script>
+
+        $('.slickTest').slick({
+            dots: true,
+            arrows: false,
+            speed: 300,
+            infinite: true,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            pauseOnDotsHover: false,
+            autoplay: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite : true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+    </script>
 
 </html>

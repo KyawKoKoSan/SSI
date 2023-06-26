@@ -16,6 +16,8 @@ require_once "../admin/core/functions.php";
   <link rel="stylesheet" href="customer_assets/css/prepare.css" />
   <link rel="stylesheet" href="../assets/vendor/feather-icons-web/feather.css" />
   <link rel="stylesheet" href="../assets/vendor/fontawesome-free-5.15.4-web/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
 </head>
 
 <body>
