@@ -427,6 +427,28 @@ function customerRegister(){
     }
 }
 
+function customerLogin(){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM customers WHERE email=?";
+    $sq = con() -> prepare($sql);
+    $sq->execute([$email]);
+    $row = $sq->fetch(PDO::FETCH_ASSOC);
+    if(!$row) {
+        return alert("Invalid Login");
+    }
+    else{
+        if(!password_verify($password,$row['password'])){
+            return alert("Invalid Login");
+        }
+        else{
+            $_SESSION['customer']=$row;
+            linkTo("customer_profile.php");
+        }
+    }
+}
+
 //customer account functions end here
 
 //customer side functions end here

@@ -67,11 +67,17 @@ require_once "../admin/core/functions.php";
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Action</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item text-black" href="">Profile</a>
-              <a class="dropdown-item text-black" href="customer_register.php">Register Another Account</a>
-              <a class="dropdown-item text-black" href="">Logout</a>
-            </div>
+              <div class="dropdown-menu">
+                  <?php if(isset($_SESSION['customer'])){ ?>
+                      <a class="dropdown-item text-black" href="customer_profile.php">Profile</a>
+                      <a class="dropdown-item text-black" href="customer_orders.php">Your Orders</a>
+                      <a class="dropdown-item text-black" href="customer_register.php">Register Another Account</a>
+                      <a class="dropdown-item text-black" href="customer_logout.php">Logout</a>
+                  <?php } else{?>
+                      <a class="dropdown-item text-black" href="customer_login.php">Login</a>
+                      <a class="dropdown-item text-black" href="customer_register.php">Register</a>
+                  <?php }?>
+              </div>
           </li>
         </ul>
       </div>
