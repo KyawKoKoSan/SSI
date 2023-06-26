@@ -331,6 +331,35 @@ function fetchDuration(){
 
 //service management end here
 
+//promotion management start here
+
+function getPromoId(){
+    $sql = con()->prepare("SELECT id FROM categories WHERE title='promotion'");
+    $res = fetch($sql);
+    return $res['id'];
+}
+function promotionAdd(){
+    $name = $_POST['name'];
+    $original_price = $_POST['original_price'];
+    $sale_price = $_POST['sale_price'];
+    $duration = $_POST['duration'];
+    $policy = $_POST['policy'];
+    $description = $_POST['description'];
+    $start_date=$_POST['start_date'];
+    $end_date=$_POST['end_date'];
+    $admin_id = $_SESSION['admin_acc']['id'];
+    $image = imageFilter($_FILES['image']);
+    $promo_id = getPromoId();
+    $sql = "INSERT INTO services (name,description,original_price,sale_price,photo,duration,policy,admin_id,category_id,start_date,end_date) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    $sq = con() -> prepare($sql);
+    if($sq->execute(array($name,$description,$original_price,$sale_price,$image,$duration,$policy,$admin_id,$promo_id,$start_date,$end_date))){
+        linkTo("promotion_list.php");
+    }
+}
+
+
+//promotion management end here
+
 //admin side functions end here
 
 
