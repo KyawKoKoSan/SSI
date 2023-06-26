@@ -113,6 +113,8 @@
     <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/vendor/slick/slick.min.js"></script>
+    <script src="../assets/vendor/wow/wow.js"></script>
+
     <!--  End  Linking required JS files, libraries and libraries-->
     <script>
 
@@ -153,6 +155,19 @@
                 }
             ]
         });
+
+        // start intializing wow js to use
+        wow = new WOW(
+            {
+                boxClass:     'wow',      // default
+                animateClass: 'animate__animated', // default
+                offset:       0,          // default
+                mobile:       true,       // default
+                live:         true        // default
+            }
+        )
+        wow.init();
+        // start intializing wow js to use
 
     </script>
 

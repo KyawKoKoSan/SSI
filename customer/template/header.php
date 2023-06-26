@@ -18,6 +18,8 @@ require_once "../admin/core/functions.php";
   <link rel="stylesheet" href="../assets/vendor/fontawesome-free-5.15.4-web/css/all.min.css" />
     <link rel="stylesheet" href="../assets/vendor/slick/slick.css">
     <link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+
 </head>
 
 <body>
