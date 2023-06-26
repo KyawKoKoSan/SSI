@@ -338,6 +338,7 @@ function getPromoId(){
     $res = fetch($sql);
     return $res['id'];
 }
+
 function promotionAdd(){
     $name = $_POST['name'];
     $original_price = $_POST['original_price'];
@@ -357,6 +358,18 @@ function promotionAdd(){
     }
 }
 
+function fetchPromotion(){
+    $today=date("Y-m-d");
+    $promo_id = getPromoId();
+    $sql = con()->prepare("SELECT * FROM services WHERE category_id=$promo_id AND( start_date <= '$today' AND  end_date >= '$today')");
+    return fetchAll($sql);
+}
+
+function fetchPromotions(){
+    $promo_id = getPromoId();
+    $sql = con()->prepare("SELECT * FROM services WHERE category_id=$promo_id");
+    return fetchAll($sql);
+}
 
 //promotion management end here
 
