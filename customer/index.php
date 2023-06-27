@@ -99,42 +99,6 @@ include "template/header.php"; ?>
 <?php include "template/footer.php";?>
 
 <script>
-    $('.slickTestIndex').slick({
-        dots: true,
-        arrows: false,
-        speed: 300,
-        infinite: true,
-        pauseOnFocus: false,
-        pauseOnHover: false,
-        pauseOnDotsHover: false,
-        autoplay: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite : true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 900,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
+
 </script>
 

@@ -1,8 +1,7 @@
 <?php
 include "template/header.php";
-$promoId = getPromoId();
 $perpage = 6;
-$stmt = "SELECT COUNT(*) FROM services WHERE category_id!=$promoId";
+$stmt = "SELECT COUNT(*) FROM services";
 $stmt = con() -> prepare($stmt);
 $stmt->execute();
 $entries = $stmt->fetchColumn();
@@ -10,7 +9,7 @@ $totalPages= ceil($entries/$perpage);
 $pageNow=isset($_GET['page'])?$_GET['page']:1;
 $x = ($pageNow-1)*$perpage;
 $y=$perpage;
-$sql = "SELECT * FROM services WHERE category_id!=$promoId ORDER BY id DESC LIMIT $x, $y  ";
+$sql = "SELECT * FROM services ORDER BY id DESC LIMIT $x, $y  ";
 $stmt = con() -> prepare($sql);
 $stmt->execute();
 $services = $stmt->fetchAll();
@@ -32,7 +31,7 @@ $services = $stmt->fetchAll();
                     <?php foreach ($services as $i){?>
                         <div class="col-12 col-lg-4 ">
                             <div class="card mb-5 product-card">
-                                <a href=item_detail.php?id=<?php echo $i['id'] ;?>">
+                                <a href=service_detail.php?id=<?php echo $i['id'] ;?>">
                                     <img src="../admin/images/<?php echo $i['photo'];?>" class="img-fluid card-img-top card-product-img">
                                 </a>
                                 <div class="card-body">
@@ -52,7 +51,7 @@ $services = $stmt->fetchAll();
                                         </a>
                                     </div>
                                     <div class="col-12">
-                                        <a href="item_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12" >
+                                        <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12" >
                                             <i class="feather-info me-2"></i>
                                             <p class=" d-inline">View Details</p>
                                         </a>

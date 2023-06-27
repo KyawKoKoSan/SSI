@@ -458,7 +458,7 @@ function servicesByCategory($category_id,$limit='999999',$id=0){
     if($category_id==$promoId){
         $today=date("Y-m-d");
         $promoId = getPromoId();
-        $sql = con()->prepare("SELECT * FROM services WHERE category_id=$promoId AND( start_date <= '$today' AND  end_date >= '$today')");
+        $sql = con()->prepare("SELECT * FROM services WHERE category_id=$promoId AND( start_date <= '$today' AND  end_date >= '$today' )");
         return fetchAll($sql);
     }
     else{
