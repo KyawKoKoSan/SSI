@@ -451,4 +451,22 @@ function customerLogin(){
 
 //customer account functions end here
 
+//sort by category start
+
+function servicesByCategory($category_id,$limit='999999',$id=0){
+    $promoId = getPromoId();
+    if($category_id==$promoId){
+        $today=date("Y-m-d");
+        $promoId = getPromoId();
+        $sql = con()->prepare("SELECT * FROM services WHERE category_id=$promoId AND( start_date <= '$today' AND  end_date >= '$today')");
+        return fetchAll($sql);
+    }
+    else{
+        $sql = con()->prepare("SELECT * FROM services WHERE category_id=$category_id AND id!=$id ORDER BY id DESC LIMIT $limit");
+        return fetchAll($sql);
+    }
+}
+
+//sort by category end
+
 //customer side functions end here
