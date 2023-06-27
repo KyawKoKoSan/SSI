@@ -43,7 +43,7 @@ include "template/header.php";
                             </div>
                             <div class="form-group">
                                 <label for="item-price" class="my-3">Enter Price</label>
-                                <input type="number" name="original_price" id="item-price" class="form-control">
+                                <input type="number" name="sale_price" id="item-price" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="category_id" class="my-3">Select Category</label>

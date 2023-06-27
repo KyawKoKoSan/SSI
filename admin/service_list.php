@@ -52,7 +52,7 @@ include_once "template/header.php";
                                             <td  class="text-nowrap"><?php echo $no;$no++;?></td>
                                             <td class="text-nowrap"><?php echo $i['name'] ;?></td>
                                             <td  class="text-nowrap"><?php echo $i['description'] ;?></td>
-                                            <td  class="text-nowrap fw-bold"><?php echo $i['original_price'] ;?>$</td>
+                                            <td  class="text-nowrap fw-bold"><?php echo $i['sale_price'] ;?>$</td>
                                             <td  class="text-nowrap">
                                                 <img src="images/<?php echo $i['photo'];?>" width="100px" height="100px" alt="">
                                             </td>

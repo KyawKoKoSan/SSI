@@ -280,15 +280,15 @@ function categoryDelete($id){
 function serviceAdd(){
     $name = $_POST['name'];
     $category_id = $_POST['category_id'];
-    $original_price = $_POST['original_price'];
+    $sale_price = $_POST['sale_price'];
     $description = $_POST['description'];
     $duration = $_POST['duration'];
     $policy = $_POST['policy'];
     $admin_id = $_SESSION['admin_acc']['id'];
     $image = imageFilter($_FILES['image']);
-    $sql = "INSERT INTO services (name,description,original_price,photo,duration,policy,admin_id,category_id) VALUES (?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO services (name,description,sale_price,photo,duration,policy,admin_id,category_id) VALUES (?,?,?,?,?,?,?,?)";
     $sq = con() -> prepare($sql);
-    if($sq->execute(array($name,$description,$original_price,$image,$duration,$policy,$admin_id,$category_id))){
+    if($sq->execute(array($name,$description,$sale_price,$image,$duration,$policy,$admin_id,$category_id))){
         linkTo("service_add.php?result=success");
     }
 }
@@ -306,15 +306,15 @@ function fetchServices(){
 function serviceUpdate(){
     $name = $_POST['name'];
     $category_id = $_POST['category_id'];
-    $original_price = $_POST['original_price'];
+    $sale_price = $_POST['sale_price'];
     $description = $_POST['description'];
     $duration = $_POST['duration'];
     $policy = $_POST['policy'];
     $id = $_POST['id'];
     $original_image=$_POST['original_image'];
     $image = imageFilter($_FILES['image'],$original_image);
-    $sql = con()->prepare("UPDATE services SET name=?,description=?,original_price=?,photo=?,duration=?,policy=?,category_id=? WHERE id = ?");
-    $sql -> execute(array($name,$description,$original_price,$image,$duration,$policy,$category_id,$id));
+    $sql = con()->prepare("UPDATE services SET name=?,description=?,sale_price=?,photo=?,duration=?,policy=?,category_id=? WHERE id = ?");
+    $sql -> execute(array($name,$description,$sale_price,$image,$duration,$policy,$category_id,$id));
     return $sql;
 }
 
