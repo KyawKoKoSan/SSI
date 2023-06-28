@@ -19,7 +19,17 @@ require_once "../admin/core/functions.php";
     <link rel="stylesheet" href="../assets/vendor/slick/slick.css">
     <link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
-
+    <style>
+        .full-screen-card{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 30000;
+            height: 100vh;
+            overflow: scroll;
+        }
+    </style>
 </head>
 
 <body>

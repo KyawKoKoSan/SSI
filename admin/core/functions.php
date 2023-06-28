@@ -101,7 +101,7 @@ function timestampFormatter($timestamp,$format="d-m-y"){
     return date($format,strtotime($timestamp));
 }
 
-function durationCalculator($duration, $format="d-m-Y"){
+function durationCalculator($duration, $format="Y-m-d"){
     $current_time = date_create(date($format));
     date_add($current_time, date_interval_create_from_date_string($duration));
     return date_format($current_time,$format);
@@ -536,9 +536,10 @@ function checkOut(){
             $id=$_SESSION['customer']['id'];
             foreach ($_SESSION['myCart'] as $key => $value){
                 $service_id=$_SESSION['myCart'][$key]['id'];
-                $sql = "INSERT INTO orders (customer_id,service_id) VALUES (?,?)";
+                $expired_date = durationCalculator("1 month");
+                $sql = "INSERT INTO orders (customer_id,service_id,expired_date) VALUES (?,?,?)";
                 $sq = con() -> prepare($sql);
-                $sq->execute(array($id,$service_id));
+                $sq->execute(array($id,$service_id,$expired_date));
             }
         }
         unset($_SESSION['myCart']);
@@ -549,6 +550,13 @@ function checkOut(){
     }
 }
 //cart management end here
+//fetch customer Order start here
+function customerOrders(){
+    $id=$_SESSION['customer']['id'];
+    $sql = con() -> prepare("SELECT * FROM orders where customer_id = $id");
+    return fetchAll($sql);
+}
+//fetch customer Order end here
 
 
 //customer side functions end here
