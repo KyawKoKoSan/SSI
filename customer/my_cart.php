@@ -47,7 +47,7 @@ include "template/header.php";
                                                     <img src="../admin/images/<?php echo $value['photo'];?>" width="100px" height="100px" alt="">
                                                 </td>
                                                 <td  class="text-nowrap">
-                                                    <a onclick="return confirm('Are you sure to delete?')" href="remove_from_cart.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-danger">
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="cart_remove.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-danger">
                                                         <i class="feather-trash-2"></i>
                                                     </a>
                                                     <a href="cart_update.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">

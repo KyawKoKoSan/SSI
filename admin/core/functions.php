@@ -517,6 +517,19 @@ function updateCart()
     }
 }
 
+function removeFromCart($id)
+{
+    foreach ($_SESSION['myCart'] as $key => $value)
+    {
+        if ($value['id']==$id)
+        {
+            unset($_SESSION['myCart'][$key]);
+            $_SESSION['myCart']=array_values($_SESSION['myCart']);
+            header("Location:my_cart.php");
+        }
+    }
+}
+
 function checkOut(){
     if(isset($_SESSION['customer'])){
         if (isset($_SESSION['myCart'])){
