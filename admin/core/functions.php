@@ -516,6 +516,25 @@ function updateCart()
         }
     }
 }
+
+function checkOut(){
+    if(isset($_SESSION['customer'])){
+        if (isset($_SESSION['myCart'])){
+            $id=$_SESSION['customer']['id'];
+            foreach ($_SESSION['myCart'] as $key => $value){
+                $service_id=$_SESSION['myCart'][$key]['id'];
+                $sql = "INSERT INTO orders (customer_id,service_id) VALUES (?,?)";
+                $sq = con() -> prepare($sql);
+                $sq->execute(array($id,$service_id));
+            }
+        }
+        unset($_SESSION['myCart']);
+        linkTo("customer_orders.php");
+    }
+    else{
+        linkTo('customer_login.php');
+    }
+}
 //cart management end here
 
 
