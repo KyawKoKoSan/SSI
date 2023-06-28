@@ -504,6 +504,18 @@ function addToCart(){
         linkTo("my_cart.php");
     }
 }
+
+function updateCart()
+{
+    if (isset($_SESSION['myCart'])) {
+        foreach ($_SESSION['myCart'] as $key => $value) {
+            if ($value['id']==$_POST['id']){
+                $_SESSION['myCart'][$key]['quantity']=$_POST['quantity'];
+                linkTo("my_cart.php");
+            }
+        }
+    }
+}
 //cart management end here
 
 

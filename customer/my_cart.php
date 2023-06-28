@@ -50,7 +50,7 @@ include "template/header.php";
                                                     <a onclick="return confirm('Are you sure to delete?')" href="remove_from_cart.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-danger">
                                                         <i class="feather-trash-2"></i>
                                                     </a>
-                                                    <a href="update_cart.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
+                                                    <a href="cart_update.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
                                                         <i class="feather-edit-2"></i>
                                                     </a>
                                                 </td>
