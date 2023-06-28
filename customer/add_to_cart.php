@@ -35,11 +35,17 @@ include "template/header.php";
                                 <p class="d-block text-primary opacity-75" style="text-align: justify; line-height: 2">
                                     <i class="feather-layers me-2"></i><?php echo fetchCategory($current['category_id'])['title'];?>
                                 </p>
-                                <p class="d-block mb-5 text-primary opacity-75" style="text-align: justify; line-height: 2">
+                                <p class="d-block  text-primary opacity-75" style="text-align: justify;">
                                     <?php echo $current['description'];?>
                                 </p>
+                                <p class="d-block  text-primary opacity-75" style="text-align: justify; ">
+                                    Duration : <?php echo $current['duration'];?>
+                                </p>
 
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <p class="d-block  text-primary opacity-75" style="text-align: justify;">
+                                    Policy <br><?php echo $current['policy'];?>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
                                     <p class="fw-bold mb-3 user-select-none h3">Price :
                                         <?php if (fetchCategory($current['category_id'])['title'] == 'Promotion'){?>
                                             <span class="text-danger text-decoration-line-through me-3"><?php echo $current['original_price']."$";?></span>
@@ -48,8 +54,10 @@ include "template/header.php";
                                 </div>
                                 <form action="" method="post">
                                     <input type="hidden" name="name" value="<?php echo $current['name']; ?>">
-                                    <input type="hidden" name="price" value="<?php echo $current['sale_price']; ?>">
+                                    <input type="hidden" name="sale_price" value="<?php echo $current['sale_price']; ?>">
                                     <input type="hidden" name="photo" value="<?php echo $current['photo']; ?>">
+                                    <input type="hidden" name="duration" value="<?php echo $current['duration']; ?>">
+                                    <input type="hidden" name="policy" value="<?php echo $current['policy']; ?>">
                                     <input type="hidden" name="id" value="<?php echo $current['id']; ?>">
                                     <input type="hidden" name="category" value="<?php echo fetchCategory($current['category_id'])['title']; ?>">
                                     <input type="hidden" name="description" value="<?php echo $current['description']; ?>">
@@ -64,7 +72,6 @@ include "template/header.php";
                                         </button>
                                     </div>
                                 </form>
-
                             </div>
                             <div class="col-1"></div>
                         </div>
@@ -75,11 +82,11 @@ include "template/header.php";
         </div>
     </div>
 
-    <div class="row wow animate__slideInUp">
+    <div class="row wow animate__slideInUp slickTestIndex">
         <?php foreach (servicesByCategory($currentCat,3,$current['id']) as $i){?>
             <div class="col-12 col-md-4">
                 <div class="col-12">
-                    <div class="card mb-5 product-card">
+                    <div class="card mb-5 product-card mx-3">
                         <a href="service_detail.php?id=<?php echo $i['id'] ;?>">
                             <img src="../admin/images/<?php echo $i['photo'];?>" class="img-fluid card-img-top card-product-img">
                         </a>

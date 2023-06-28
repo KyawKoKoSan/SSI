@@ -490,7 +490,7 @@ function addToCart(){
             $id=$_POST['id'];
             $count = count($_SESSION['myCart']);
             $_SESSION['myCart'][$count]= array(
-                'name'=>$_POST['name'],'sale_price'=>$_POST['sale_price'],'description'=>$_POST['description'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'quantity'=>$_POST['quantity'],'id'=>$id
+                'name'=>$_POST['name'],'sale_price'=>$_POST['sale_price'],'description'=>$_POST['description'],'duration'=>$_POST['duration'],'policy'=>$_POST['policy'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'quantity'=>$_POST['quantity'],'id'=>$id
             );
             linkTo("my_cart.php");
         }
@@ -498,7 +498,8 @@ function addToCart(){
     else {
         $id=$_POST['id'];
         $_SESSION['myCart'][0]= array(
-            'name'=>$_POST['name'],'price'=>$_POST['price'],'description'=>$_POST['description'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'quantity'=>$_POST['quantity'],'id'=>$id
+            'name'=>$_POST['name'],'sale_price'=>$_POST['sale_price'],'description'=>$_POST['description'],'duration'=>$_POST['duration'],'policy'=>$_POST['policy'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'quantity'=>$_POST['quantity'],'id'=>$id
+
         );
         linkTo("my_cart.php");
     }
