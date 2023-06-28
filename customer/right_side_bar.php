@@ -1,5 +1,5 @@
 <div class="col-12 col-lg-3 wow animate__bounceInRight delay-5s">
-    <div class="sticky-for-promo">
+    <div class="sticky-cards">
         <div class="col-12">
             <form class="d-flex" action="search_service.php" method="post">
                 <input name="searchKey" class="form-control me-sm-2" type="text" placeholder="Search">

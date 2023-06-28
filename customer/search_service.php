@@ -3,6 +3,7 @@ include "template/header.php";
 $searchKey=$_POST['searchKey'];
 if (isset($searchKey)){
 
+
     ?>
 
 
@@ -63,6 +64,7 @@ if (isset($searchKey)){
                             </div>
                         <?php }?>
                     </div>
+
                 </div>
                 <?php require_once "right_side_bar.php" ?>
             </div>
