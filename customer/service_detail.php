@@ -40,18 +40,24 @@ $currentCat = $current['category_id'];
                                 <p class="d-block text-primary opacity-75" style="text-align: justify; line-height: 2">
                                     <i class="feather-layers me-2"></i><?php echo fetchCategory($current['category_id'])['title'];?>
                                 </p>
-                                <p class="d-block mb-5 text-primary opacity-75" style="text-align: justify; line-height: 2">
-                                    <?php echo $current['description'];?>
+                                <p class="d-block text-primary opacity-75" >
+                                    <span class="fw-bolder">Description : </span><?php echo $current['description'];?>
+                                </p>
+                                <p class="d-block text-primary opacity-75" >
+                                    <span class="fw-bolder">Policy : </span><?php echo $current['policy'];?>
+                                </p>
+                                <p class="d-block text-primary opacity-75" >
+                                    <span class="fw-bolder">Duration : </span><?php echo $current['duration'];?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <p class="fw-bold mb-3 user-select-none h3">Price :
+                                    <p class="fw-bold mb-3 user-select-none">Price :
                                         <?php if (fetchCategory($current['category_id'])['title'] == 'Promotion'){?>
                                             <span class="text-danger text-decoration-line-through me-3"><?php echo $current['original_price']."$";?></span>
                                         <?php } ?>
                                         <span class="text-success"><?php echo $current['sale_price']."$";?></span></p>
                                 </div>
                                 <div class="col-12 mb-5">
-                                    <a href="add_to_cart.php?id=<?php echo $current['id'] ;?>" class="btn btn-outline-primary col-12">
+                                    <a href="cart_add.php?id=<?php echo $current['id'] ;?>" class="btn btn-outline-primary col-12">
                                         <i class="feather-shopping-cart me-2"></i>
                                         <p class= "d-inline">Add To Cart</p>
                                     </a>
@@ -82,7 +88,7 @@ $currentCat = $current['category_id'];
                                 <p class="fw-bold mb-0 user-select-none"><?php echo $i['sale_price'];?>$</p>
                             </div>
                             <div class="col-12 mb-3">
-                                <a href="add_to_cart.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
+                                <a href="cart_add.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
                                     <i class="feather-shopping-cart me-2"></i>
                                     <p class= "d-inline">
                                         Add To Cart

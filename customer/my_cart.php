@@ -20,7 +20,6 @@ include "template/header.php";
                                         <th class="text-nowrap">Name</th>
                                         <th class="text-nowrap">Description</th>
                                         <th class="text-nowrap">Price</th>
-                                        <th class="text-nowrap">Quantity</th>
                                         <th class="text-nowrap">Category</th>
                                         <th class="text-nowrap">Photo</th>
                                         <th class="text-nowrap">Options</th>
@@ -34,24 +33,20 @@ include "template/header.php";
 
                                         if (isset($_SESSION['myCart'][0])) {
                                         foreach ($_SESSION['myCart'] as $key => $value) {
-                                            $total=$total+((int)$value['sale_price']*(int)$value['quantity']);
+                                            $total=$total+((int)$value['sale_price']);
                                             $key=$key+1; ?>
                                             <tr>
                                                 <td  class="text-nowrap"><?php echo $key;?></td>
                                                 <td class="text-nowrap"><?php echo $value['name'] ;?></td>
                                                 <td  class=""><?php echo $value['description'] ;?></td>
                                                 <td  class="text-nowrap fw-bold"><?php echo $value['sale_price'] ;?>$</td>
-                                                <td  class="text-nowrap fw-bold"><?php echo $value['quantity'] ;?></td>
                                                 <td  class="text-nowrap"><?php echo $value['category'];?></td>
                                                 <td  class="text-nowrap">
                                                     <img src="../admin/images/<?php echo $value['photo'];?>" width="100px" height="100px" alt="">
                                                 </td>
                                                 <td  class="text-nowrap">
-                                                    <a onclick="return confirm('Are you sure to delete?')" href="cart_remove.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-danger">
-                                                        <i class="feather-trash-2"></i>
-                                                    </a>
-                                                    <a href="cart_update.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
-                                                        <i class="feather-edit-2"></i>
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="cart_remove.php?id=<?php echo $value['id'] ;?>" class="btn btn-sm btn-outline-danger p-3">
+                                                        DELETE<i class="feather-trash-2 ms-2"></i>
                                                     </a>
                                                 </td>
                                             </tr>

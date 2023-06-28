@@ -36,17 +36,16 @@ include "template/header.php";
                                     <i class="feather-layers me-2"></i><?php echo fetchCategory($current['category_id'])['title'];?>
                                 </p>
                                 <p class="d-block  text-primary opacity-75" style="text-align: justify;">
-                                    <?php echo $current['description'];?>
+                                    <span class="fw-bolder">Description : </span><?php echo $current['description'];?>
+                                </p>
+                                <p class="d-block  text-primary opacity-75" style="text-align: justify;">
+                                    <span class="fw-bolder">Policy : </span><?php echo $current['policy'];?>
                                 </p>
                                 <p class="d-block  text-primary opacity-75" style="text-align: justify; ">
-                                    Duration : <?php echo $current['duration'];?>
-                                </p>
-
-                                <p class="d-block  text-primary opacity-75" style="text-align: justify;">
-                                    Policy <br><?php echo $current['policy'];?>
+                                    <span class="fw-bolder">Duration : </span><?php echo $current['duration'];?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="fw-bold mb-3 user-select-none h3">Price :
+                                    <p class=" mb-3 user-select-none fw-bolder">  Price :
                                         <?php if (fetchCategory($current['category_id'])['title'] == 'Promotion'){?>
                                             <span class="text-danger text-decoration-line-through me-3"><?php echo $current['original_price']."$";?></span>
                                         <?php } ?>
@@ -61,10 +60,6 @@ include "template/header.php";
                                     <input type="hidden" name="id" value="<?php echo $current['id']; ?>">
                                     <input type="hidden" name="category" value="<?php echo fetchCategory($current['category_id'])['title']; ?>">
                                     <input type="hidden" name="description" value="<?php echo $current['description']; ?>">
-                                    <div class="mb-3 col-12">
-                                        <label for="quantity" class="form-label">Choose Quantity</label>
-                                        <input type="number" class="form-control" id="quantity" min='1' max='10' value='1' name="quantity">
-                                    </div>
                                     <div class="col-12 mb-5">
                                         <button name="addToCart" class="btn btn-outline-primary col-12 col-lg-6">
                                             <i class="feather-shopping-cart me-2"></i>
@@ -99,7 +94,7 @@ include "template/header.php";
                                 <p class="fw-bold mb-0 user-select-none"><?php echo $i['sale_price'];?>$</p>
                             </div>
                             <div class="col-12 mb-3">
-                                <a href="add_to_cart.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
+                                <a href="cart_add.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
                                     <i class="feather-shopping-cart me-2"></i>
                                     <p class= "d-inline">
                                         Add To Cart

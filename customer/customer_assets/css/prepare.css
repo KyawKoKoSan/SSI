@@ -12620,4 +12620,8 @@ textarea.form-control-lg {
   transition: 1s;
 }
 
+table tr td {
+  vertical-align: middle !important;
+}
+
 /*# sourceMappingURL=prepare.css.map */

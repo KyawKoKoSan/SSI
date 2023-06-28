@@ -61,7 +61,7 @@ require_once "../admin/core/functions.php";
             <a class="nav-link" href="our_services.php">Our Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="my_purchases.php">
+            <a class="nav-link" href="my_cart.php">
               My Purchases<i class="feather-shopping-cart ms-2"></i>
             </a>
           </li>

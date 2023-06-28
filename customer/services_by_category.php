@@ -58,7 +58,7 @@ if (!$current){
                                         <p class="fw-bold mb-0 user-select-none"><?php echo $i['sale_price'];?>$</p>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <a href="add_to_cart.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
+                                        <a href="cart_add.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
                                             <i class="feather-shopping-cart me-2"></i>
                                             <p class= "d-inline">
                                                 Add To Cart

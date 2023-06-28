@@ -472,7 +472,7 @@ function servicesByCategory($category_id,$limit='999999',$id=0){
 //search feature start here
 function search($searchKey){
     $searchKey=$searchKey;
-    $sql = con()->prepare("SELECT * FROM services WHERE name LIKE '%$searchKey%' OR description LIKE '%$searchKey%' ORDER BY id DESC ");
+    $sql = con()->prepare("SELECT * FROM services WHERE name LIKE '%$searchKey%' OR duration LIKE '%$searchKey' OR description LIKE '%$searchKey%' ORDER BY id DESC ");
     return fetchAll($sql);
 }
 
@@ -490,7 +490,7 @@ function addToCart(){
             $id=$_POST['id'];
             $count = count($_SESSION['myCart']);
             $_SESSION['myCart'][$count]= array(
-                'name'=>$_POST['name'],'description'=>$_POST['description'],'sale_price'=>$_POST['sale_price'],'duration'=>$_POST['duration'],'policy'=>$_POST['policy'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'quantity'=>$_POST['quantity'],'id'=>$id
+                'name'=>$_POST['name'],'description'=>$_POST['description'],'sale_price'=>$_POST['sale_price'],'duration'=>$_POST['duration'],'policy'=>$_POST['policy'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'id'=>$id
             );
             linkTo("my_cart.php");
         }
@@ -498,7 +498,7 @@ function addToCart(){
     else {
         $id=$_POST['id'];
         $_SESSION['myCart'][0]= array(
-            'name'=>$_POST['name'],'description'=>$_POST['description'],'sale_price'=>$_POST['sale_price'],'duration'=>$_POST['duration'],'policy'=>$_POST['policy'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'quantity'=>$_POST['quantity'],'id'=>$id
+            'name'=>$_POST['name'],'description'=>$_POST['description'],'sale_price'=>$_POST['sale_price'],'duration'=>$_POST['duration'],'policy'=>$_POST['policy'],'category'=>$_POST['category'],'photo'=>$_POST['photo'],'id'=>$id
 
         );
         linkTo("my_cart.php");
