@@ -469,4 +469,13 @@ function servicesByCategory($category_id,$limit='999999',$id=0){
 
 //sort by category end
 
+//search feature start here
+function search($searchKey){
+    $searchKey=$searchKey;
+    $sql = con()->prepare("SELECT * FROM services WHERE name LIKE '%$searchKey%' OR description LIKE '%$searchKey%' ORDER BY id DESC");
+    return fetchAll($sql);
+}
+
+//search feature end here
+
 //customer side functions end here
