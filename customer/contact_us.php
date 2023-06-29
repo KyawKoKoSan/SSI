@@ -13,6 +13,11 @@ include "template/header.php"; ?>
         </div>
     </div>
 </section>
+<?php
+if (isset($_POST['send'])){
+    echo sendComplain();
+}
+?>
 <section class="container-fluid" id="about">
     <div class="container">
         <div class="row pt-5">
@@ -20,7 +25,7 @@ include "template/header.php"; ?>
                 <h3 class="text-primary text-center">Contact Us</h3>
             </div>
             <div class="d-lg-flex justify-content-center align-items-center">
-                <div class="col-12 col-lg-6 wow animate__bounceInLeft">
+                <div class="col-12 col-lg-7 wow animate__bounceInLeft">
                     <div class="card">
                         <div class="card-body">
                             <form method="post" class="row">
@@ -28,28 +33,33 @@ include "template/header.php"; ?>
                                     <label for="inputName" class="form-label">
                                         <i class="feather-user me-2 text-primary"></i>Name
                                     </label>
-                                    <input name="name" type="text" class="form-control" id="inputName" placeholder="Eg:John" required>
+                                    <input name="name" type="text" class="form-control" id="inputName"
+                                           placeholder="Eg:John" required>
                                 </div>
                                 <div class="col-12 mt-2">
                                     <label for="inputEmail4" class="form-label">
                                         <i class="feather-mail me-2 text-primary"></i>Email
                                     </label>
-                                    <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="example@gmail.com" required>
+                                    <input type="email" name="email" class="form-control" id="inputEmail4"
+                                           placeholder="example@gmail.com" required>
                                 </div>
                                 <div class="col-12 mt-2">
                                     <label for="inputPhone" class="form-label">
                                         <i class="feather-phone me-2 text-primary"></i>Phone Number
                                     </label>
-                                    <input type="number" name="phone" class="form-control" id="inputPhone" placeholder="+95912345678" required>
+                                    <input type="number" name="phone" class="form-control" id="inputPhone"
+                                           placeholder="+95912345678" required>
                                 </div>
                                 <div class="col-12 mt-2">
                                     <div>
                                         <label for="longDes" class="form-label my-3">Message</label>
-                                        <textarea name="description" class="form-control" style="resize: none;" id="longDes" rows="5"></textarea>
+                                        <textarea name="description" class="form-control" style="resize: none;"
+                                                  id="longDes" rows="5"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 mt-2">
-                                    <button type="submit" name="send" class="btn btn-outline-primary col-12 col-lg-3">Send</button>
+                                    <button type="submit" name="send"
+                                            class="btn btn-outline-primary col-12 col-lg-3">Send</button>
                                 </div>
                             </form>
                         </div>

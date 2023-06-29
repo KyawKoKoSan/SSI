@@ -555,4 +555,24 @@ function insertViewRecord($userId,$postId,$device){
 }
 //viewer management end here
 
+//send complain function start here
+function sendComplain(){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $description = $_POST['description'];
+    if(isset($_SESSION['customer'])){
+        $customer_id=$_SESSION['customer']['id'];
+    }else{
+        $customer_id=0;
+    }
+    $sql = "INSERT INTO complains (name,email,phone,message,customer_id) VALUES (?,?,?,?,?)";
+    $sq = con() -> prepare($sql);
+    if($sq->execute(array($name,$email,$phone,$description,$customer_id))){
+        linkTo("contact_us.php#about");
+    }
+}
+//send complain function start here
+
+
 //customer side functions end here

@@ -238,10 +238,12 @@
             document.body.classList.add('dark-mode');
             document.getElementById('mode-icon').classList.toggle('feather-sun');
             localStorage.setItem('darkMode', 'true');
+            checkDarkMode = true;
         }
         function disableDarkMode() {
             document.body.classList.remove('dark-mode');
             localStorage.setItem('darkMode', 'false');
+            checkDarkMode = false;
         }
         function toggleDarkMode() {
             if (checkDarkMode) {
