@@ -12520,6 +12520,29 @@ textarea.form-control-lg {
   background-color: transparent;
 }
 
+*::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+*::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid #e7f3ff; /* should match background, can't be transparent */
+  background-color: #0d21a1;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #e7f3ff;
+  border-radius: 8px;
+}
+
 .header {
   background: rgba(211, 218, 229, 0.78);
   backdrop-filter: blur(15px) contrast(100%);
@@ -12653,6 +12676,12 @@ table tr td {
 
 .accordion-button:not(.collapsed) {
   background: #d9e3f1 !important;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin: 13px 2px;
+  white-space: nowrap;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=prepare.css.map */

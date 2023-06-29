@@ -119,6 +119,9 @@
     <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/vendor/slick/slick.min.js"></script>
     <script src="../assets/vendor/waypoints/lib/noframework.waypoints.min.js"></script>
+    <script src="../assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/vendor/datatables.net-dt/bootstrap.min.js"></script>
+
     <script src="../assets/vendor/wow/wow.js"></script>
     <script src="customer_assets/js/go_to_top.js"></script>
 
@@ -258,7 +261,11 @@
         }
 
 
-
+        $(window).on("load",function (){
+            $('.loader-container').fadeOut(500,function (){
+                $(this).remove();
+            });
+        })
 
     </script>
     </body>

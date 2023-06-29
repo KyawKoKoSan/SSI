@@ -3,6 +3,9 @@ body.dark-mode {
   transition: 0.5s;
   background: #3d3d42;
 }
+body.dark-mode .loader-container {
+  background: black;
+}
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6, body.dark-mode a {
   color: #fff;
 }

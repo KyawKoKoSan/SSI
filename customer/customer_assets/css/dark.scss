@@ -2,6 +2,9 @@ $primary: #0d21a1;
 $light: #fff;
 
 body.dark-mode{
+  .loader-container{
+    background: black;
+  }
   color: white !important;
   transition: 0.5s;
   //$primary : #5b62f4;
