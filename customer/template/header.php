@@ -12,7 +12,7 @@ require_once "../admin/core/functions.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" href="customer_assets/img/logo.png">
-    <title>Secure Shield Insurance</title>
+    <title>Sure Shield Insurance</title>
     <style>
         .full-screen-card {
             position: fixed;
@@ -131,7 +131,7 @@ require_once "../admin/core/functions.php";
             <div class="d-flex align-items-end logo-container">
                 <img src="customer_assets/img/logo.png" class="me-1 logo-img" style="width: 50px; height: 50px"
                      alt="Logo"/>
-                <span class="fw-bold text-primary logo-text">ecure Shield Insurance</span>
+                <span class="fw-bold text-primary logo-text">ure Shield Insurance</span>
             </div>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
@@ -156,7 +156,7 @@ require_once "../admin/core/functions.php";
                     <a class="navbar-brand pe-0 me-0" href="">
                         <div class="d-flex align-items-center logo-container">
                             <img src="customer_assets/img/logo.png" style="width: 50px; height: 50px" alt="Logo"/>
-                            <span class="fw-bold text-primary me-5 logo-text">ecure Shield Insurance</span>
+                            <span class="fw-bold text-primary me-5 logo-text">ure Shield Insurance</span>
                         </div>
                     </a>
                 </li>

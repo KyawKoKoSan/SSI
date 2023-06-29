@@ -1,4 +1,5 @@
 <?php
+require_once "../admin/core/customer_auth.php";
 include "template/header.php";
 ?>
 <section class="container mt-5 wow animate__slideInDown" id="home">

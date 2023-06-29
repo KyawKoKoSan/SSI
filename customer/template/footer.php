@@ -47,9 +47,9 @@
                 <h4 class="fw-bold my-3 user-select-none text-primary">
                   Best Insurance Service Company
                 </h4>
-                <h5 class="fw-bold text-primary mb-3">"Secure Shield Insurance"</h5>
+                <h5 class="fw-bold text-primary mb-3">"Sure Shield Insurance"</h5>
                 <p><i class="far fa-copyright"></i> 2020 All rights reserve.</p>
-                <p>Secure Shield Insurance<i class="ms-1 fas fa-trademark"></i></p>
+                <p>Sure Shield Insurance<i class="ms-1 fas fa-trademark"></i></p>
               </div>
               <div class="col-6 col-lg-3">
                 <div class="mb-0">
