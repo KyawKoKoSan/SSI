@@ -135,3 +135,8 @@ table tr td{
   right: 10px;
 }
 
+.accordion-button:not(.collapsed){
+  background: #d9e3f1 !important;
+}
+
+

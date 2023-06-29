@@ -63,12 +63,16 @@ body.dark-mode{
     border-radius: 50% !important;
   }
   .form-control,.form-select,.list-group,.breadcrumb  {
-    background-color: #4f4f4f !important;
+    background-color: #000 !important;
     box-shadow: none;
     color: $light;
   }
   .list-group-item.active,.breadcrumb-item.active{
-    color: black;
+    color: white !important;
+  }
+  .nav-link:hover {
+    transition: 0.5s;
+    color: #000 !important;
   }
   .text-primary{
     color: $light !important;
@@ -80,5 +84,6 @@ body.dark-mode{
       }
     }
   }
+
 }
 

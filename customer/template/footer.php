@@ -107,7 +107,7 @@
       </div>
     </section>
     <!-- end footer section -->
-    <button class="mode-change position-fixed" onclick="changeMode()">
+    <button class="mode-change position-fixed" onclick="toggleDarkMode()">
         <i class="feather-moon" id="mode-icon"></i>
     </button>
     <a href="#home" class="animate__animated position-fixed scroll-to-top text-center text-decoration-none" style="display: none;">
@@ -228,10 +228,36 @@
         });
         // end coding for minimize maximize button
 
-        function changeMode(){
-            document.body.classList.toggle("dark-mode");
-            document.getElementById('mode-icon').classList.toggle('feather-sun')
+        // function changeMode(){
+        //     document.body.classList.toggle("dark-mode");
+        //     document.getElementById('mode-icon').classList.toggle('feather-sun')
+        // }
+
+        let checkDarkMode = localStorage.getItem('darkMode') === 'true';
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            document.getElementById('mode-icon').classList.toggle('feather-sun');
+            localStorage.setItem('darkMode', 'true');
         }
+        function disableDarkMode() {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'false');
+        }
+        function toggleDarkMode() {
+            if (checkDarkMode) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        }
+
+        if (checkDarkMode) {
+            enableDarkMode();
+        }
+
+
+
+
     </script>
     </body>
 

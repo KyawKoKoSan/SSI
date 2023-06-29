@@ -58,12 +58,16 @@ body.dark-mode .fa-facebook {
   border-radius: 50% !important;
 }
 body.dark-mode .form-control, body.dark-mode .form-select, body.dark-mode .list-group, body.dark-mode .breadcrumb {
-  background-color: #4f4f4f !important;
+  background-color: #000 !important;
   box-shadow: none;
   color: #fff;
 }
 body.dark-mode .list-group-item.active, body.dark-mode .breadcrumb-item.active {
-  color: black;
+  color: white !important;
+}
+body.dark-mode .nav-link:hover {
+  transition: 0.5s;
+  color: #000 !important;
 }
 body.dark-mode .text-primary {
   color: #fff !important;
