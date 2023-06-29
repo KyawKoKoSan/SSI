@@ -406,6 +406,19 @@ function fetchOrders(){
 }
 //show order end here
 
+//complain management start here
+function fetchComplains(){
+    $sql = con() -> prepare("SELECT * FROM complains");
+    return fetchAll($sql);
+}
+function deleteComplain($id){
+    $sql = con()->prepare("DELETE FROM complains WHERE id = ?");
+    $sql -> execute([$id]);
+    return $sql;
+}
+//complain management start here
+
+
 
 
 
