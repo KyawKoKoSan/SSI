@@ -25,11 +25,11 @@ $primary: #0d21a1;
   }
   .nav-link:hover {
     transition: 0.5s;
-    color: #0d21a1 !important;
+    color: $primary !important;
   }
   .nav-link.active {
     transition: 0.5s;
-    color: #0d21a1 !important;
+    color: $primary !important;
   }
 }
 
@@ -108,3 +108,30 @@ $primary: #0d21a1;
 table tr td{
   vertical-align: middle !important;
 }
+
+.scroll-to-top{
+  width: 50px;
+  height: 50px;
+  border-radius:10px;
+  border: none;
+  background: $primary;
+  color: #fffff5;
+  bottom: 50px;
+  right: 70px;
+  transition: 0.5s;
+}
+.scroll-to-top:hover{
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.mode-change{
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #0b0114;
+  color: #d9e3f1;
+  bottom: 50px;
+  right: 10px;
+}
+

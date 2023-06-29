@@ -1,0 +1,75 @@
+body.dark-mode {
+  color: white !important;
+  transition: 0.5s;
+  background: #3d3d42;
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6, body.dark-mode a {
+  color: #fff;
+}
+body.dark-mode .pagination {
+  box-shadow: none;
+  background-color: #333232;
+}
+body.dark-mode .pagination .page-link {
+  background-color: transparent;
+  color: #fff;
+}
+body.dark-mode .navbar {
+  background: #303030;
+}
+body.dark-mode .navbar.cus-shadow {
+  box-shadow: 0 0 10px black !important;
+}
+body.dark-mode .nav-link {
+  color: #fff !important;
+}
+body.dark-mode .logo-text {
+  color: #fff !important;
+}
+body.dark-mode .btn-outline-primary {
+  background: #e5e5e5;
+  color: black;
+  box-shadow: none;
+}
+body.dark-mode .btn-outline-primary:active {
+  background: #4f4f4f;
+  color: #fff;
+  box-shadow: none;
+}
+body.dark-mode .mode-change {
+  background-color: #303030;
+  color: #fff;
+  box-shadow: 0 0 10px #101010;
+}
+body.dark-mode .card {
+  background-color: #656363 !important;
+  border: none;
+  box-shadow: none;
+}
+body.dark-mode .original-price-text {
+  color: #808080;
+}
+body.dark-mode .final-price-text {
+  color: #fff;
+}
+body.dark-mode .fa-facebook {
+  color: #fff !important;
+  background: #0076ff !important;
+  border-radius: 50% !important;
+}
+body.dark-mode .form-control, body.dark-mode .form-select, body.dark-mode .list-group, body.dark-mode .breadcrumb {
+  background-color: #4f4f4f !important;
+  box-shadow: none;
+  color: #fff;
+}
+body.dark-mode .list-group-item.active, body.dark-mode .breadcrumb-item.active {
+  color: black;
+}
+body.dark-mode .text-primary {
+  color: #fff !important;
+}
+body.dark-mode table tr th, body.dark-mode table tr td {
+  background: #3d3d42;
+}
+
+/*# sourceMappingURL=dark.css.map */

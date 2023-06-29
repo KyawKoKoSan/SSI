@@ -106,14 +106,22 @@
         </div>
       </div>
     </section>
-    <!-- start footer section -->
-  </body>
+    <!-- end footer section -->
+    <button class="mode-change position-fixed" onclick="changeMode()">
+        <i class="feather-moon" id="mode-icon"></i>
+    </button>
+    <a href="#home" class="animate__animated position-fixed scroll-to-top text-center text-decoration-none" style="display: none;">
+        <i class="feather-arrow-up" style="line-height: 3;"></i>
+    </a>
 
     <!--  Start  Linking required JS files, libraries and libraries-->
     <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/vendor/slick/slick.min.js"></script>
+    <script src="../assets/vendor/waypoints/lib/noframework.waypoints.min.js"></script>
     <script src="../assets/vendor/wow/wow.js"></script>
+    <script src="customer_assets/js/go_to_top.js"></script>
+
 
     <!--  End  Linking required JS files, libraries and libraries-->
     <script>
@@ -219,6 +227,12 @@
             }
         });
         // end coding for minimize maximize button
+
+        function changeMode(){
+            document.body.classList.toggle("dark-mode");
+            document.getElementById('mode-icon').classList.toggle('feather-sun')
+        }
     </script>
+    </body>
 
 </html>

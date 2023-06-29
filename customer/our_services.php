@@ -13,7 +13,9 @@ $sql = "SELECT * FROM services ORDER BY id DESC LIMIT $x, $y  ";
 $stmt = con() -> prepare($sql);
 $stmt->execute();
 $services = $stmt->fetchAll();
-
+if (isset($_POST['addToCart'])){
+    echo addToCart();
+}
 ?>
 
 <section class="container" id="home">
@@ -42,14 +44,22 @@ $services = $stmt->fetchAll();
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <p class="fw-bold mb-0 user-select-none"><?php echo $i['original_price'];?>$</p>
                                     </div>
-                                    <div class="col-12 mb-3">
-                                        <a href="cart_add.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
-                                            <i class="feather-shopping-cart me-2"></i>
-                                            <p class= "d-inline">
-                                                Add To Cart
-                                            </p>
-                                        </a>
-                                    </div>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="name" value="<?php echo $i['name']; ?>">
+                                        <input type="hidden" name="sale_price" value="<?php echo $i['sale_price']; ?>">
+                                        <input type="hidden" name="photo" value="<?php echo $i['photo']; ?>">
+                                        <input type="hidden" name="duration" value="<?php echo $i['duration']; ?>">
+                                        <input type="hidden" name="policy" value="<?php echo $i['policy']; ?>">
+                                        <input type="hidden" name="id" value="<?php echo $i['id']; ?>">
+                                        <input type="hidden" name="category" value="<?php echo fetchCategory($i['category_id'])['title']; ?>">
+                                        <input type="hidden" name="description" value="<?php echo $i['description']; ?>">
+                                        <div class="col-12 mb-2">
+                                            <button name="addToCart" class="btn btn-outline-primary col-12">
+                                                <i class="feather-shopping-cart me-2"></i>
+                                                <p class= "d-inline">Add To Cart</p>
+                                            </button>
+                                        </div>
+                                    </form>
                                     <div class="col-12">
                                         <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12" >
                                             <i class="feather-info me-2"></i>

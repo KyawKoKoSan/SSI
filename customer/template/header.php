@@ -13,12 +13,6 @@ require_once "../admin/core/functions.php";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="customer_assets/img/logo.png">
   <title>Secure Shield Insurance</title>
-  <link rel="stylesheet" href="customer_assets/css/prepare.css" />
-  <link rel="stylesheet" href="../assets/vendor/feather-icons-web/feather.css" />
-  <link rel="stylesheet" href="../assets/vendor/fontawesome-free-5.15.4-web/css/all.min.css" />
-    <link rel="stylesheet" href="../assets/vendor/slick/slick.css">
-    <link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
-    <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
     <style>
         .full-screen-card{
             position: fixed;
@@ -30,6 +24,15 @@ require_once "../admin/core/functions.php";
             overflow: scroll;
         }
     </style>
+  <link rel="stylesheet" href="customer_assets/css/prepare.css" />
+    <link rel="stylesheet" href="customer_assets/css/dark.css">
+
+    <link rel="stylesheet" href="../assets/vendor/feather-icons-web/feather.css" />
+  <link rel="stylesheet" href="../assets/vendor/fontawesome-free-5.15.4-web/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+
 </head>
 
 <body>
@@ -39,7 +42,7 @@ require_once "../admin/core/functions.php";
       <a class="navbar-brand d-block d-lg-none" href="">
         <div class="d-flex align-items-end logo-container">
           <img src="customer_assets/img/logo.png" class="me-1 logo-img" style="width: 50px; height: 50px" alt="Logo" />
-          <span class="fw-bold text-primary">ecure Shield Insurance</span>
+          <span class="fw-bold text-primary logo-text">ecure Shield Insurance</span>
         </div>
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +66,7 @@ require_once "../admin/core/functions.php";
             <a class="navbar-brand pe-0 me-0" href="">
               <div class="d-flex align-items-center logo-container">
                 <img src="customer_assets/img/logo.png" style="width: 50px; height: 50px" alt="Logo" />
-                <span class="fw-bold text-primary me-5">ecure Shield Insurance</span>
+                <span class="fw-bold text-primary me-5 logo-text">ecure Shield Insurance</span>
               </div>
             </a>
           </li>

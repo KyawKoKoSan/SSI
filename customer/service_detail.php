@@ -110,16 +110,8 @@ insertViewRecord($customer_id,$id,$_SERVER['HTTP_USER_AGENT']);
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <p class="fw-bold mb-0 user-select-none"><?php echo $i['sale_price'];?>$</p>
                             </div>
-                            <div class="col-12 mb-3">
-                                <a href="cart_add.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12">
-                                    <i class="feather-shopping-cart me-2"></i>
-                                    <p class= "d-inline">
-                                        Add To Cart
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="col-12">
-                                <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12" >
+                            <div class="col-12 d-flex justify-content-center align-items-center">
+                                <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12 col-lg-6" >
                                     <i class="feather-info me-2"></i>
                                     <p class=" d-inline">View Details</p>
                                 </a>
