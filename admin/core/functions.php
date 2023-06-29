@@ -98,7 +98,10 @@ function imageFilterRegistration($files,$original_image=""){
 }
 
 function timestampFormatter($timestamp,$format="d-m-y"){
-    return date($format,strtotime($timestamp));
+    if ($timestamp instanceof DateTime) {
+        $timestamp = $timestamp->format('Y-m-d H:i:s');
+    }
+    return date($format, strtotime($timestamp));
 }
 
 function durationCalculator($duration, $format="Y-m-d"){

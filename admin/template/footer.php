@@ -26,5 +26,14 @@
         }
     });
     // end coding for minimize maximize button
+
+
+    let currentPage = location.href;
+    $(".menu-item-link").each(function () {
+        let link = $(this).attr("href");
+        if(currentPage == link){
+            $(this).addClass('active');
+        }
+    });
 </script>
 </html>
