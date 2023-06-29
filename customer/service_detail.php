@@ -12,6 +12,12 @@ if (!$current){
 }
 
 $currentCat = $current['category_id'];
+if (isset($_SESSION['customer']['id'])){
+    $customer_id = $_SESSION['customer']['id'];
+}else{
+    $customer_id = 0;
+}
+insertViewRecord($customer_id,$id,$_SERVER['HTTP_USER_AGENT']);
 
 ?>
 

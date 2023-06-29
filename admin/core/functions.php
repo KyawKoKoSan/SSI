@@ -547,5 +547,12 @@ function customerOrders(){
 }
 //fetch customer Order end here
 
+//viewer management start here
+function insertViewRecord($userId,$postId,$device){
+    $sql = "INSERT INTO viewers (customer_id,service_id,device) VALUES (?,?,?)";
+    $sq = con() -> prepare($sql);
+    $sq->execute(array($userId,$postId,$device));
+}
+//viewer management end here
 
 //customer side functions end here
