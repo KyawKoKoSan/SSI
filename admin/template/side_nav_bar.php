@@ -41,6 +41,7 @@
                         <small class="fw-bold ms-2 text-uppercase">Admins Lists</small>
                     </span>
                     <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
+                        <?php echo countTotal("admins") ?>
                     </span>
                 </a>
             </li>
@@ -56,7 +57,7 @@
                         <small class="fw-bold ms-2 text-uppercase">Customers Lists</small>
                     </span>
                     <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
-
+<?php echo countTotal("customers") ?>
                     </span>
                 </a>
             </li>
@@ -93,7 +94,7 @@
                         <i class="feather-list"></i>
                         <small class="fw-bold ms-2 text-uppercase">Services lists</small>
                     </span>
-                    <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
+                    <span class="badge rounded p-2 text-black-50 shadow-sm bg-white"><?php echo countTotal("services") ?>
                     </span>
                 </a>
             </li>
@@ -120,6 +121,7 @@
                         <small class="fw-bold ms-2 text-uppercase">promotion lists</small>
                     </span>
                     <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
+                        <?php $promoId = getPromoId(); echo countTotal("services","category_id=$promoId") ?>
                     </span>
                 </a>
             </li>

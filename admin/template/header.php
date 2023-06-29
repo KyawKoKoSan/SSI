@@ -16,6 +16,7 @@ require_once "core/functions.php";
     <!--  Start  Linking CSS Files, bootstrap, animate.style,feather icon and font awesome-->
     <link rel="stylesheet" href="../assets/vendor/feather-icons-web/feather.css">
     <link rel="stylesheet" href="../assets/vendor/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-dt/bootstrap.min.css">
     <link rel="stylesheet" href="admin_assets/css/admin.css">
     <link rel="stylesheet" href="admin_assets/css/admin_style.css">
     <!--  End  Linking CSS Files, bootstrap, animate.style,feather icon and font awesome-->

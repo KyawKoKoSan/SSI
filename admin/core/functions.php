@@ -107,6 +107,12 @@ function durationCalculator($duration, $format="Y-m-d"){
     return date_format($current_time,$format);
 }
 
+function countTotal($table,$condition=1){
+    $sql = con() -> prepare("SELECT COUNT(id) FROM $table WHERE $condition");
+    $total = fetch($sql);
+    return $total['COUNT(id)'];
+}
+
 //common functions start here
 
 //admin side functions start here
