@@ -441,6 +441,8 @@ function customerRegister(){
     }
     else{
         $name = $_POST['name'] ;
+        $securityQuestion = $_POST['securityQuestion'] ;
+        $SecAns = $_POST['inputSecAns'] ;
         $address = $_POST['address'] ;
         $phone = $_POST['phone'] ;
         $city = $_POST['city'] ;
@@ -449,9 +451,9 @@ function customerRegister(){
         $image = imageFilterRegistration($_FILES['image']);
         $securePass = password_hash($password,PASSWORD_DEFAULT);
         if($password == $confirmPassword){
-            $sql = "INSERT INTO customers (name,email,address,phone,city,photo,password) VALUES (?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO customers (name,email,address,phone,city,photo,password,security_question,security_answer) VALUES (?,?,?,?,?,?,?,?,?)";
             $sq = con() -> prepare($sql);
-            if($sq->execute(array($name,$email,$address,$phone,$city,$image,$securePass))){
+            if($sq->execute(array($name,$email,$address,$phone,$city,$image,$securePass,$securityQuestion,$SecAns))){
                 linkTo("customer_register.php?result=success");}
         }
         else{
@@ -479,6 +481,45 @@ function customerLogin(){
             linkTo("customer_profile.php");
         }
     }
+}
+
+function customerRecover(){
+    $email = $_POST['email'];
+    $securityQuestion = $_POST['securityQuestion'];
+    $inputSecAns = $_POST['inputSecAns'];
+
+    $sql = "SELECT * FROM customers WHERE email=?";
+    $sq = con() -> prepare($sql);
+    $sq->execute([$email]);
+    $row = $sq->fetch(PDO::FETCH_ASSOC);
+    if(!$row) {
+        return alert("Invalid Login");
+    }
+    else{
+//        if(!password_verify($password,$row['password'])){
+        if(!($securityQuestion == $row['security_question'] && $inputSecAns == $row['security_answer'])){
+            return alert("Invalid Attempt");
+        }
+        else{
+            $_SESSION['password_recovery']=$row;
+            linkTo("customer_pass_reset.php");
+        }
+    }
+}
+
+function customerReset(){
+    $email = $_POST['email'];
+    $password =$_POST['password'];
+    $confirmPassword =$_POST['cPassword'];
+    $securePass = password_hash($password,PASSWORD_DEFAULT);
+    if($password == $confirmPassword) {
+        $sql = con() -> prepare("UPDATE customers SET password=? WHERE email=?");
+        $sql->execute(array($securePass,$email));
+//        return $sql;
+        linkTo("customer_login.php");
+    }
+    else{
+        return alert("Password do not match!!!");}
 }
 
 //customer account functions end here

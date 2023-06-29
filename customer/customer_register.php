@@ -71,7 +71,18 @@ include "template/header.php";
                             </label>
                             <input type="password" name="cPassword" min="8" class="form-control" id="inputCPass" required>
                         </div>
-
+                        <div class="form-group col-md-6 mt-2">
+                            <label for="securityQuestion" class="my-1">Security Question</label>
+                            <select class="form-select" name="securityQuestion" id="duration" aria-label="Default select example">
+                                <option value="Your First Pet Name">Your First Pet Name</option>
+                                <option value="Your Home Town">Your Home Town</option>
+                                <option value="Your Favorite Teacher">Your Favorite Teacher</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mt-2">
+                            <label for="inputSecAns" class="form-label">Security Answer</label>
+                            <input type="text" name="inputSecAns" class="form-control" id="inputSecAns" required>
+                        </div>
 
                         <div class="row justify-content-center col-12 mt-3">
                             <div class="col-8 col-md-6 col-lg-5 ">

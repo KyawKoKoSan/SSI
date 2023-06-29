@@ -1,7 +1,8 @@
 <?php
+session_start();
 
 if(isset($_SESSION['customer'])){
-    header("location:customer_profile.php");
+    header("location:user_profile.php");
 }
 include_once "template/header.php";
 
@@ -21,8 +22,8 @@ include_once "template/header.php";
                     </h4>
                     <hr>
                     <?php
-                    if (isset($_POST['login-btn'])){
-                        echo customerLogin();
+                    if (isset($_POST['recover-btn'])){
+                        echo customerRecover();
                     }
                     ?>
                     <form method="post" class="row mt-3" enctype="multipart/form-data">
@@ -33,20 +34,27 @@ include_once "template/header.php";
                             <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="example@gmail.com" required>
                         </div>
                         <div class="m-2">
-                            <label for="inputPass" class="form-label">
-                                <i class=" me-2 feather-unlock text-primary"></i>Password
-                            </label>
-                            <input type="password" name="password" min="8" class="form-control" id="inputPass" required>
+                            <label for="securityQuestion" class="my-1">Select Security Question</label>
+                            <select class="form-select" name="securityQuestion" id="duration" aria-label="Default select example">
+                                <option value="Your First Pet Name">Your First Pet Name</option>
+                                <option value="Your Home Town">Your Home Town</option>
+                                <option value="Your Favorite Teacher">Your Favorite Teacher</option>
+                            </select>
+                        </div>
+                        <div class="m-2">
+                            <label for="inputSecAns" class="form-label">Security Answer</label>
+                            <input type="text" name="inputSecAns" class="form-control" id="inputSecAns" required>
                         </div>
                         <div class="row col-12 mt-3" id="about">
                             <div class="col-12 d-flex justify-content-center align-items-center">
-                                <button type="submit"  name="login-btn" class="btn btn-outline-primary me-3">
+                                <button type="submit"  name="recover-btn" class="btn btn-outline-primary me-3">
                                     <i class="feather-log-in me-2"></i>Login
                                 </button>
                                 <a href="customer_register.php" class="">Register Now</a>
                             </div>
                         </div>
-                        <a href="customer_forget_password.php" class="m-2">Forget Password</a>
+                        <a href="customer_login.php" class="m-2">Login Now</a>
+
 
                     </form>
                 </div>
