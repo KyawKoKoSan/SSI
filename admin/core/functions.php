@@ -399,6 +399,16 @@ function promotionUpdate(){
 
 //promotion management end here
 
+//show order start here
+function fetchOrders(){
+    $sql = con()->prepare("SELECT * FROM orders");
+    return fetchAll($sql);
+}
+//show order end here
+
+
+
+
 //admin side functions end here
 
 

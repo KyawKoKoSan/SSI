@@ -24,7 +24,7 @@
             </li>
             <li class="menu-spacer"></li>
             <li class="menu-title my-2">
-                <span>Admin Account Management</span>
+                <span>Admin Management</span>
             </li>
             <li class="menu-item my-2">
                 <a href="admin_register.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
@@ -51,13 +51,35 @@
                 <span>Customers Management</span>
             </li>
             <li class="menu-item my-2">
+                <a href="order_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                    <span>
+                        <i class="feather-layers"></i>
+                        <small class="fw-bold ms-2 text-uppercase">Orders</small>
+                    </span>
+                    <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
+                        <?php echo countTotal("orders") ?>
+                    </span>
+                </a>
+            </li>
+            <li class="menu-item my-2">
                 <a href="customer_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-menu"></i>
                         <small class="fw-bold ms-2 text-uppercase">Customers Lists</small>
                     </span>
                     <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
-<?php echo countTotal("customers") ?>
+                        <?php echo countTotal("customers") ?>
+                    </span>
+                </a>
+            </li>
+            <li class="menu-item my-2">
+                <a href="complain_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                    <span>
+                        <i class="feather-menu"></i>
+                        <small class="fw-bold ms-2 text-uppercase">Complain Lists</small>
+                    </span>
+                    <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
+                        <?php echo countTotal("complains") ?>
                     </span>
                 </a>
             </li>

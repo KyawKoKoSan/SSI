@@ -57,8 +57,8 @@ require_once "core/functions.php";
                                     <span class="text-dark"><?php echo $_SESSION['admin_acc']['name'];?></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="">See Customers List</a></li>
-                                    <li><a class="dropdown-item" href="">See Complains</a></li>
+                                    <li><a class="dropdown-item" href="customer_list.php">See Customers List</a></li>
+                                    <li><a class="dropdown-item" href="complain_list.php">See Complains</a></li>
                                     <div class="dropdown-divider"></div>
                                     <li><a class="dropdown-item text-danger" href="admin_logout.php">Logout</a></li>
                                 </ul>

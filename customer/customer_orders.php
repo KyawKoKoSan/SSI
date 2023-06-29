@@ -48,8 +48,8 @@ include "template/header.php";
                                                 </td>
                                                 <td  class="text-nowrap"><?php echo fetchCategory($iCurrent['category_id'])['title'];?></td>
                                                 <td class="text-nowrap"><?php echo $cCurrent['address'] ;?></td>
-                                                <td  class="text-nowrap"><?php echo $i['ordered_at'] ;?></td>
-                                                <td  class="text-nowrap"><?php echo $i['expired_date'] ;?></td>
+                                                <td  class="text-nowrap"><?php echo timestampFormatter($i['ordered_at'],"d-m-Y") ;?></td>
+                                                <td  class="text-nowrap"><?php echo timestampFormatter($i['expired_date'],"d-m-Y") ;?></td>
 
                                             </tr>
                                         <?php } ?>
