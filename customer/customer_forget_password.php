@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['customer'])){
-    header("location:user_profile.php");
+    header("location:customer_profile.php");
 }
 include_once "template/header.php";
 

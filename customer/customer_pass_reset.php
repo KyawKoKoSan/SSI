@@ -3,6 +3,9 @@
 if(isset($_SESSION['customer'])){
     header("location:customer_profile.php");
 }
+if(!isset($_SESSION['password_recovery'])){
+    header("location:customer_login.php");
+}
 include_once "template/header.php";
 
 ?>

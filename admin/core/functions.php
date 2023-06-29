@@ -516,6 +516,7 @@ function customerReset(){
         $sql = con() -> prepare("UPDATE customers SET password=? WHERE email=?");
         $sql->execute(array($securePass,$email));
 //        return $sql;
+        unset($_SESSION['password_recovery']);
         linkTo("customer_login.php");
     }
     else{
