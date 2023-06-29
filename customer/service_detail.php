@@ -28,7 +28,14 @@ $currentCat = $current['category_id'];
         <div class="row flex-column-reverse flex-lg-row wow animate__slideInLeft" id="about">
             <div class="col-12 col-lg-9">
                 <div class="row">
-
+                    <?php
+                    $id = $_GET['id'];
+                    $current = fetchService($id);
+                    $currentCat = $current['category_id'];
+                    if (isset($_POST['addToCart'])){
+                        echo addToCart();
+                    }
+                    ?>
                     <div class="card">
                         <div class="col-12 d-block d-lg-flex">
                             <div class="col-12 col-lg-5 mt-3">
@@ -56,12 +63,22 @@ $currentCat = $current['category_id'];
                                         <?php } ?>
                                         <span class="text-success"><?php echo $current['sale_price']."$";?></span></p>
                                 </div>
-                                <div class="col-12 mb-5">
-                                    <a href="cart_add.php?id=<?php echo $current['id'] ;?>" class="btn btn-outline-primary col-12">
-                                        <i class="feather-shopping-cart me-2"></i>
-                                        <p class= "d-inline">Add To Cart</p>
-                                    </a>
-                                </div>
+                                <form action="" method="post">
+                                    <input type="hidden" name="name" value="<?php echo $current['name']; ?>">
+                                    <input type="hidden" name="sale_price" value="<?php echo $current['sale_price']; ?>">
+                                    <input type="hidden" name="photo" value="<?php echo $current['photo']; ?>">
+                                    <input type="hidden" name="duration" value="<?php echo $current['duration']; ?>">
+                                    <input type="hidden" name="policy" value="<?php echo $current['policy']; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $current['id']; ?>">
+                                    <input type="hidden" name="category" value="<?php echo fetchCategory($current['category_id'])['title']; ?>">
+                                    <input type="hidden" name="description" value="<?php echo $current['description']; ?>">
+                                    <div class="col-12 mb-5">
+                                        <button name="addToCart" class="btn btn-outline-primary col-12 col-lg-6">
+                                            <i class="feather-shopping-cart me-2"></i>
+                                            <p class= "d-inline">Add To Cart</p>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                             <div class="col-1"></div>
                         </div>
