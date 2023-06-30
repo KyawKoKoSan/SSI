@@ -4,6 +4,7 @@ session_start();
 if(isset($_SESSION['customer'])){
     header("location:customer_profile.php");
 }
+
 include_once "template/header.php";
 
 ?>

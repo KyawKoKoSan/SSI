@@ -71,17 +71,17 @@ include "template/header.php";
                                             <tr>
                                                 <td colspan="3" class="text-dark h3">
                                                     <label for="expMonth" class="form-label">Expiration Month</label>
-                                                    <input type="number" name="expMonth" class="form-control"
+                                                    <input type="number" min="1" max="12" name="expMonth" class="form-control"
                                                            id="expMonth" placeholder="MM" required>
                                                 </td>
                                                 <td colspan="3" class="text-dark h3">
                                                     <label for="expYear" class="form-label">Expiration Year</label>
-                                                    <input type="number" name="expYear" class="form-control"
+                                                    <input type="number" min="1950" max="2099" name="expYear" class="form-control"
                                                            id="expYear" placeholder="YY" required>
                                                 </td>
                                                 <td colspan="2">
                                                     <label for="secCode" class="form-label">Security Code</label>
-                                                    <input type="number" name="secCode" class="form-control"
+                                                    <input type="text" name="secCode" class="form-control"
                                                            id="secCode" placeholder="MM" required>
                                                 </td>
                                             </tr>

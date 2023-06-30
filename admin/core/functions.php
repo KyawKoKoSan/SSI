@@ -433,9 +433,23 @@ function fetchComplains(){
     $sql = con() -> prepare("SELECT * FROM complains");
     return fetchAll($sql);
 }
+
+function fetchComplain($id){
+    $sql = con() -> prepare("SELECT * FROM complains where id = $id");
+    return fetch($sql);
+}
+
 function deleteComplain($id){
     $sql = con()->prepare("DELETE FROM complains WHERE id = ?");
     $sql -> execute([$id]);
+    return $sql;
+}
+
+function complainUpdate(){
+    $id = $_POST['id'];
+    $status = $_POST['status'];
+    $sql = con() -> prepare("UPDATE complains SET status=? WHERE id=?");
+    $sql->execute(array($status,$id));
     return $sql;
 }
 //complain management start here

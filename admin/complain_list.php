@@ -42,6 +42,7 @@ include "template/header.php";
                                     <th>Send By</th>
                                     <th>Send At</th>
                                     <th>Options</th>
+                                    <th>Status</th>
                                     </thead>
                                     <tbody>
                                     <?php $no=1;
@@ -66,7 +67,11 @@ include "template/header.php";
                                                 <a onclick="return confirm('Are you sure to delete?')" href="complain_delete.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-danger">
                                                     <i class="feather-trash-2"></i>
                                                 </a>
+                                                <a href="complain_update.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
+                                                    <i class="feather-edit-2"></i>
+                                                </a>
                                             </td>
+                                            <td><?php echo $complainStatus[$i['status']] ;?></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
