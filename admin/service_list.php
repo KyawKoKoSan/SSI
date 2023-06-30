@@ -94,4 +94,8 @@ include_once "template/header.php";
 
 
 <?php include "template/footer.php";?>
-
+<script>
+    $(".table").dataTable({
+        "order":[[0,"desc"]]
+    });
+</script>

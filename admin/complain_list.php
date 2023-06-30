@@ -9,7 +9,7 @@ include "template/header.php";
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb text-uppercase">
                 <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none ">Home</a></li>
-                <li class="breadcrumb-item active fw-bold user-select-none" aria-current="page">Cmplains Lists</li>
+                <li class="breadcrumb-item active fw-bold user-select-none" aria-current="page">Complains Lists</li>
             </ol>
         </nav>
     </div>

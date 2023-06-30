@@ -49,6 +49,13 @@ function short($str,$length="30"){
     return substr($str,0,$length)."...";
 }
 
+function textFilter($text){
+    $text = trim($text);
+    $text = htmlentities($text,ENT_QUOTES);
+    $text = stripcslashes($text);
+    return $text;
+}
+
 function imageFilter($files,$original_image=""){
     if ($files['tmp_name']!="") {
         $file_name = $files['name'];
@@ -127,7 +134,7 @@ function countTotal($table,$condition=1){
 //admin accounts management start here
 
 function adminRegister(){
-    $email = $_POST['email'];
+    $email = textFilter(strip_tags($_POST['email']));
     $sql = "SELECT * FROM admins WHERE email=?";
     $sq = con() -> prepare($sql);
     $sq->execute([$email]);
@@ -136,7 +143,7 @@ function adminRegister(){
     if($no>=1){
         linkTo("admin_register.php?already_exist=user");
     }else{
-        $name = $_POST['name'];
+        $name = textFilter(strip_tags($_POST['name']));
         $phone = $_POST['phone'];
         $role = $_POST['role'];
         $password = $_POST['password'];
@@ -191,8 +198,8 @@ function fetchAdmins(){
 
 function adminUpdate(){
     $id = $_POST['id'];
-    $name = $_POST['name'];
-    $email = $_POST['email'] ;
+    $name = textFilter(strip_tags($_POST['name']));
+    $email = textFilter(strip_tags($_POST['email'])) ;
     $phone = $_POST['phone'] ;
     $role = $_POST['role'];
     $password = $_POST['password'];
@@ -227,11 +234,11 @@ function fetchCustomers(){
 
 function customerUpdate(){
     $id = $_POST['id'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $address = $_POST['address'];
+    $name = textFilter(strip_tags($_POST['name']));
+    $email = textFilter(strip_tags($_POST['email']));
+    $address = textFilter(strip_tags($_POST['address']));
     $phone = $_POST['phone'];
-    $city = $_POST['city'];
+    $city = textFilter(strip_tags($_POST['city']));
     $password = $_POST['password'];
     $original_image=$_POST['original_image'];
     $original_password=$_POST['original_password'];
@@ -252,8 +259,17 @@ function customerDelete($id){
 
 //category management start here
 
+function isCategory($id){
+    if (fetchCategory($id)){
+        return $id;
+    }else{
+        die(alert("Category Id id invalid","danger")) ;
+    }
+}
+
+
 function categoryAdd(){
-    $title = $_POST['title'];
+    $title = textFilter(strip_tags($_POST['title']));
     $admin_id = $_SESSION['admin_acc']['id'];
     $sql = "INSERT INTO categories (title,admin_id) VALUES (?,?)";
     $sq = con() -> prepare($sql);
@@ -273,7 +289,7 @@ function fetchCategories(){
 }
 
 function categoryUpdate(){
-    $title = $_POST['title'];
+    $title = textFilter(strip_tags($_POST['title']));
     $id = $_POST['id'];
     $sql = con()->prepare("UPDATE categories SET title=? WHERE id = ?");
     $sql -> execute(array($title,$id));
@@ -291,12 +307,12 @@ function categoryDelete($id){
 //service management start here
 
 function serviceAdd(){
-    $name = $_POST['name'];
-    $category_id = $_POST['category_id'];
+    $name = textFilter(strip_tags($_POST['name']));
+    $category_id = isCategory($_POST['category_id']);
     $sale_price = $_POST['sale_price'];
-    $description = $_POST['description'];
+    $description = textFilter(strip_tags($_POST['description']));
     $duration = $_POST['duration'];
-    $policy = $_POST['policy'];
+    $policy = textFilter(strip_tags($_POST['policy']));
     $admin_id = $_SESSION['admin_acc']['id'];
     $image = imageFilter($_FILES['image']);
     $sql = "INSERT INTO services (name,description,sale_price,photo,duration,policy,admin_id,category_id) VALUES (?,?,?,?,?,?,?,?)";
@@ -317,12 +333,13 @@ function fetchServices(){
 }
 
 function serviceUpdate(){
+    $name = textFilter(strip_tags($_POST['name']));
     $name = $_POST['name'];
-    $category_id = $_POST['category_id'];
+    $category_id = isCategory($_POST['category_id']);
     $sale_price = $_POST['sale_price'];
-    $description = $_POST['description'];
+    $description = textFilter(strip_tags($_POST['description']));
     $duration = $_POST['duration'];
-    $policy = $_POST['policy'];
+    $policy = textFilter(strip_tags($_POST['policy']));
     $id = $_POST['id'];
     $original_image=$_POST['original_image'];
     $image = imageFilter($_FILES['image'],$original_image);
@@ -353,12 +370,12 @@ function getPromoId(){
 }
 
 function promotionAdd(){
-    $name = $_POST['name'];
+    $name = textFilter(strip_tags($_POST['name']));
     $original_price = $_POST['original_price'];
     $sale_price = $_POST['sale_price'];
     $duration = $_POST['duration'];
-    $policy = $_POST['policy'];
-    $description = $_POST['description'];
+    $description = textFilter(strip_tags($_POST['description']));
+    $policy = textFilter(strip_tags($_POST['policy']));
     $start_date=$_POST['start_date'];
     $end_date=$_POST['end_date'];
     $admin_id = $_SESSION['admin_acc']['id'];
@@ -385,10 +402,11 @@ function fetchPromotions(){
 }
 
 function promotionUpdate(){
-    $name = $_POST['name'];
+    $name = textFilter(strip_tags($_POST['name']));
     $original_price = $_POST['original_price'];
     $sale_price = $_POST['sale_price'];
-    $description = $_POST['description'];
+    $description = textFilter(strip_tags($_POST['description']));
+    $policy = textFilter(strip_tags($_POST['policy']));
     $policy = $_POST['policy'];
     $duration = $_POST['duration'];
     $id = $_POST['id'];
@@ -434,7 +452,7 @@ function deleteComplain($id){
 //customer account functions start here
 
 function customerRegister(){
-    $email = $_POST['email'];
+    $email = textFilter(strip_tags($_POST['email']));
     $sql = "SELECT * FROM customers WHERE email=?";
     $sq = con() -> prepare($sql);
     $sq->execute([$email]);
@@ -444,12 +462,12 @@ function customerRegister(){
         linkTo("register.php?already_exist=user");
     }
     else{
-        $name = $_POST['name'] ;
+        $name = textFilter(strip_tags($_POST['name'])) ;
+        $address = textFilter(strip_tags($_POST['address'])) ;
+        $phone = textFilter(strip_tags($_POST['phone'])) ;
+        $city = textFilter(strip_tags($_POST['city'])) ;
         $securityQuestion = $_POST['securityQuestion'] ;
-        $SecAns = $_POST['inputSecAns'] ;
-        $address = $_POST['address'] ;
-        $phone = $_POST['phone'] ;
-        $city = $_POST['city'] ;
+        $SecAns = textFilter(strip_tags($_POST['inputSecAns'])) ;
         $password =$_POST['password'];
         $confirmPassword =$_POST['cPassword'];
         $image = imageFilterRegistration($_FILES['image']);
@@ -549,7 +567,7 @@ function servicesByCategory($category_id,$limit='999999',$id=0){
 
 //search feature start here
 function search($searchKey){
-    $searchKey=$searchKey;
+    $searchKey=textFilter(strip_tags($searchKey));
     $sql = con()->prepare("SELECT * FROM services WHERE name LIKE '%$searchKey%' OR duration LIKE '%$searchKey%' OR description LIKE '%$searchKey%' ORDER BY id DESC ");
     return fetchAll($sql);
 }
@@ -635,10 +653,10 @@ function insertViewRecord($userId,$postId,$device){
 
 //send complain function start here
 function sendComplain(){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $description = $_POST['description'];
+    $name = textFilter(strip_tags($_POST['name']));
+    $email = textFilter(strip_tags($_POST['email']));
+    $phone = textFilter(strip_tags($_POST['phone']));
+    $description = textFilter(strip_tags($_POST['description']));
     if(isset($_SESSION['customer'])){
         $customer_id=$_SESSION['customer']['id'];
     }else{

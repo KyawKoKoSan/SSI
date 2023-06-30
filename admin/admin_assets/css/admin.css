@@ -12586,4 +12586,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   justify-content: center;
 }
 
+table tr td {
+  vertical-align: middle !important;
+}
+
 /*# sourceMappingURL=admin.css.map */
