@@ -9,7 +9,7 @@ include "template/header.php"; ?>
                 <div class="col-12">
                     <div class="mt-5 pe-0 pt-5 pb-4 pb-xl-5 pt-xl-4">
                         <img src="customer_assets/img/welcome_img.png" class="img-fluid" alt="Sneaker Photo"
-                            style="border-radius: 30px" />
+                             style="border-radius: 30px"/>
                     </div>
                 </div>
             </div>
@@ -30,23 +30,25 @@ include "template/header.php"; ?>
                                 About Us
                             </h1>
                             <h3 class="fw-bold">
-                                Best Insurance Service Company <br /><span class="text-primary">Myanmar</span>
+                                Best Insurance Service Company <br/><span class="text-primary">Myanmar</span>
                             </h3>
-                            <p class="col-12 col-lg-9">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Assumenda autem, commodi deserunt eum exercitationem fugiat
-                                in labore neque non nulla officia tempora tempore ut vel
-                                voluptate. Blanditiis inventore placeat quos?
+                            <p class="col-12 col-lg-9" style="text-align: justify">
+                                "Sure Shield" Insurance Service Company recognizes that life is full of uncertainty, which is why
+                                we are here to supply you with the best insurance solutions adapted to your unique
+                                needs. We are committed to providing comprehensive coverage, outstanding customer
+                                service, and a smooth claims process as one of Myanmar's leading insurance service
+                                providers.
                             </p>
                             <div class="wow animate__bounceIn delay-5s">
-                                <a href="about_us.php" class="btn btn-outline-primary mb-3 mb-lg-0 btn_custom_interaction">Read
+                                <a href="about_us.php"
+                                   class="btn btn-outline-primary mb-3 mb-lg-0 btn_custom_interaction">Read
                                     More</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-5 wow animate__slideInRight">
                         <img src="customer_assets/img/about_us_img.png" class="img-fluid" style="border-radius: 30px"
-                            alt="" />
+                             alt=""/>
                     </div>
                 </div>
             </div>
@@ -66,25 +68,30 @@ include "template/header.php"; ?>
                             <h1 class="text-center text-primary py-3">Get Promotion Now</h1>
                         </div>
                         <div class="slickTestIndex row wow animate__zoomIn delay-5s">
-                            <?php foreach (fetchPromotions() as $i){?>
+                            <?php foreach (fetchPromotions() as $i) { ?>
                                 <div class="col-12 col-md-4 mx-2">
                                     <div class="card product-card">
-                                        <img src="../admin/images/<?php echo $i['photo'];?>" class="card-img-top card-product-img img-fluid" alt="...">
+                                        <img src="../admin/images/<?php echo $i['photo']; ?>"
+                                             class="card-img-top card-product-img img-fluid" alt="...">
                                         <div class="card-body">
-                                            <h5><?php echo $i['name'] ;?></h5>
+                                            <h5><?php echo $i['name']; ?></h5>
                                             <p style="text-align: justify">
-                                                <?php echo $i['description'] ;?>
+                                                <?php echo $i['description']; ?>
                                             </p>
-                                            <h6><span class="text-decoration-line-through me-2  original-price-text"><?php echo $i['original_price'] ;?>$</span><span class="final-price-text"><?php echo $i['sale_price'] ;?>$</span></h6>
+                                            <h6>
+                                                <span class="text-decoration-line-through me-2  original-price-text"><?php echo $i['original_price']; ?>$</span><span
+                                                        class="final-price-text"><?php echo $i['sale_price']; ?>$</span>
+                                            </h6>
                                             <div class="row">
                                                 <div class="col-12 d-flex justify-content-center">
-                                                    <a href="service_detail.php?id=<?php echo $i['id'] ;?>" class="btn btn-outline-primary col-12 col-md-6">Details</a>
+                                                    <a href="service_detail.php?id=<?php echo $i['id']; ?>"
+                                                       class="btn btn-outline-primary col-12 col-md-6">Details</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            <?php }?>
+                            <?php } ?>
 
                         </div>
                     </div>
@@ -96,7 +103,7 @@ include "template/header.php"; ?>
 
 <!--end best offer-->
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
 
 <script>
 

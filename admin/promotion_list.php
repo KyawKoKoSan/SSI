@@ -54,14 +54,14 @@ include "template/header.php";
                                         <tr>
                                             <td  class="text-nowrap"><?php echo $no;$no++ ;?></td>
                                             <td class="text-nowrap"><?php echo $i['name'] ;?></td>
-                                            <td  class="text-nowrap"><?php echo $i['description'] ;?></td>
+                                            <td  class="text-nowrap"><?php echo short($i['description']) ;?></td>
                                             <td  class="text-nowrap fw-bold"><?php echo $i['original_price'] ;?>$</td>
                                             <td  class="text-nowrap fw-bold"><?php echo $i['sale_price'] ;?>$</td>
                                             <td  class="text-nowrap">
                                                 <img src="images/<?php echo $i['photo'];?>" width="100px" height="100px" alt="">
                                             </td>
                                             <td  class="text-nowrap"><?php echo $i['duration'] ;?></td>
-                                            <td  class="text-nowrap"><?php echo $i['policy'] ;?></td>
+                                            <td  class="text-nowrap"><?php echo short($i['policy']) ;?></td>
 
                                             <td  class="text-nowrap"><?php echo fetchAdmin($i['admin_id'])['name'] ;?></td>
                                             <td class="text-nowrap"><?php echo $i['created_at'] ;?></td>

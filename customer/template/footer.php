@@ -8,10 +8,8 @@
                 <div class="text-center">
                   <h1 class="text-primary">Contact Us</h1>
                   <p class="py-3">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Atque beatae, cupiditate debitis delectus dicta distinctio,
-                    earum exercitationem explicabo facilis ipsa minus mollitia
-                    nemo neque qui quia temporibus velit! Dolorum, magnam.
+                    We know that, it is important for the customer to reach us. So we provide different methods for the customer to reach us.
+                      Click below button to see how to reach us. We will waiting for You.
                   </p>
                   <a href="contact_us.php" class="btn btn-outline-primary btn_custom_interaction">Contact Us Now</a>
                 </div>
@@ -22,10 +20,7 @@
                 <div class="text-center">
                   <h1 class="text-primary">Get Direction</h1>
                   <p class="py-3">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Atque beatae, cupiditate debitis delectus dicta distinctio,
-                    earum exercitationem explicabo facilis ipsa minus mollitia
-                    nemo neque qui quia temporibus velit! Dolorum, magnam.
+                      We also provide the google map link of our brances so the customer can easily find and come to us.
                   </p>
                   <a href="about_us.php" class="btn btn-outline-primary btn_custom_interaction">Get Direction</a>
                 </div>

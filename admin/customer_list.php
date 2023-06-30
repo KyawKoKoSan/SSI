@@ -50,7 +50,7 @@ include_once "template/header.php";
                                             <td><?php echo $no;$no++ ;?></td>
                                             <td class="text-nowrap"><?php echo $i['name'] ;?></td>
                                             <td><?php echo $i['email'] ;?></td>
-                                            <td><?php echo $i['address'] ;?></td>
+                                            <td><?php echo short($i['address']) ;?></td>
                                             <td><?php echo $i['phone'] ;?></td>
                                             <td><?php echo $i['city'] ;?></td>
                                             <td>

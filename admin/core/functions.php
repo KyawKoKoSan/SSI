@@ -45,6 +45,10 @@ function checkPassword($password,$original_password=""){
     }
 }
 
+function short($str,$length="30"){
+    return substr($str,0,$length)."...";
+}
+
 function imageFilter($files,$original_image=""){
     if ($files['tmp_name']!="") {
         $file_name = $files['name'];

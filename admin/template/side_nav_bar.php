@@ -22,6 +22,7 @@
                     </span>
                 </a>
             </li>
+            <?php if($_SESSION['admin_acc']['role'] == 0){ ?>
             <li class="menu-spacer"></li>
             <li class="menu-title my-2">
                 <span>Admin Management</span>
@@ -45,11 +46,14 @@
                     </span>
                 </a>
             </li>
+            <?php }?>
+
 
             <li class="menu-spacer"></li>
             <li class="menu-title my-2">
                 <span>Customers Management</span>
             </li>
+            <?php if($_SESSION['admin_acc']['role'] == 0){ ?>
             <li class="menu-item my-2">
                 <a href="order_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
@@ -61,6 +65,8 @@
                     </span>
                 </a>
             </li>
+            <?php }?>
+
             <li class="menu-item my-2">
                 <a href="customer_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
@@ -141,9 +147,6 @@
                     <span>
                         <i class="feather-list"></i>
                         <small class="fw-bold ms-2 text-uppercase">promotion lists</small>
-                    </span>
-                    <span class="badge rounded p-2 text-black-50 shadow-sm bg-white">
-                        <?php $promoId = getPromoId(); echo countTotal("services","category_id=$promoId") ?>
                     </span>
                 </a>
             </li>

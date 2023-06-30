@@ -37,12 +37,12 @@ include "template/header.php";
                     </table>
                     <div class="col-12">
                         <div class="d-flex">
-                            <div class="col-12 col-lg-4 mb-3 me-3">
+                            <div class="col-5 mb-3 me-3">
                                 <a href="our_services.php" class="btn btn-outline-primary mb-2 mb-xl-0 col-12">
                                     <i class="feather-shopping-cart me-3"></i>Shop Now
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-5">
+                            <div class="col-5">
                                 <a href="customer_logout.php" class="btn btn-outline-primary mb-2 mb-xl-0 col-12 col-lg-7">
                                     <i class="feather-log-out me-3"></i>Logout
                                 </a>
