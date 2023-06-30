@@ -4,7 +4,7 @@
             <div class="d-flex align-items-center">
                 <img src="../customer/customer_assets/img/logo.png"
                     style="width: 30px; height: 30px; border-radius: 50%" alt="">
-                <span class="fw-bold text-primary mb-0">ecure Shield Insurance</span>
+                <span class="fw-bold text-primary mb-0">ure Shield Insurance</span>
             </div>
         </a>
         <button class="btn-outline-secondary hide-sidebar d-block d-lg-none">
@@ -15,7 +15,7 @@
         <ul>
             <li class="menu-spacer"></li>
             <li class="menu-item">
-                <a href="index.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/index.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-home"></i>
                         <small class="fw-bold ms-2 text-uppercase">Dashboard</small>
@@ -28,7 +28,7 @@
                 <span>Admin Management</span>
             </li>
             <li class="menu-item my-2">
-                <a href="admin_register.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/admin_register.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-user-plus"></i>
                         <small class="fw-bold ms-2 text-uppercase">Create New Account</small>
@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li class="menu-item my-2">
-                <a href="admin_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/admin_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-menu"></i>
                         <small class="fw-bold ms-2 text-uppercase">Admins Lists</small>
@@ -55,7 +55,7 @@
             </li>
             <?php if($_SESSION['admin_acc']['role'] == 0){ ?>
             <li class="menu-item my-2">
-                <a href="order_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/order_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-layers"></i>
                         <small class="fw-bold ms-2 text-uppercase">Orders</small>
@@ -68,7 +68,7 @@
             <?php }?>
 
             <li class="menu-item my-2">
-                <a href="customer_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/customer_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-menu"></i>
                         <small class="fw-bold ms-2 text-uppercase">Customers Lists</small>
@@ -79,7 +79,7 @@
                 </a>
             </li>
             <li class="menu-item my-2">
-                <a href="complain_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/complain_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-menu"></i>
                         <small class="fw-bold ms-2 text-uppercase">Complain Lists</small>
@@ -95,7 +95,7 @@
                 <span>Category Management</span>
             </li>
             <li class="menu-item my-2">
-                <a href="category_management.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/category_management.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-command"></i>
                         <small class="fw-bold ms-2 text-uppercase">Category Manager</small>
@@ -109,7 +109,7 @@
                 <span>Service Management</span>
             </li>
             <li class="menu-item my-2">
-                <a href="service_add.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/service_add.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-plus-square"></i>
                         <small class="fw-bold ms-2 text-uppercase">Add new service</small>
@@ -117,7 +117,7 @@
                 </a>
             </li>
             <li class="menu-item my-2">
-                <a href="service_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/service_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-list"></i>
                         <small class="fw-bold ms-2 text-uppercase">Services lists</small>
@@ -133,7 +133,7 @@
             </li>
 
             <li class="menu-item my-2">
-                <a href="promotion_add.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/promotion_add.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-dollar-sign"></i>
                         <small class="fw-bold ms-2 text-uppercase">Add new promotion</small>
@@ -143,7 +143,7 @@
 
 
             <li class="menu-item my-2">
-                <a href="promotion_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
+                <a href="<?php echo $url?>/promotion_list.php" class="d-flex justify-content-between menu-item-link text-decoration-none">
                     <span>
                         <i class="feather-list"></i>
                         <small class="fw-bold ms-2 text-uppercase">promotion lists</small>

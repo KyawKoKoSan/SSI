@@ -54,7 +54,7 @@ include "template/header.php";
                                             <td class="text-nowrap"><?php echo $i['name'] ;?></td>
                                             <td><?php echo $i['email'] ;?></td>
                                             <td><?php echo $i['phone'] ;?></td>
-                                            <td><?php echo short($i['message']) ;?></td>
+                                            <td><?php echo $i['message'] ;?></td>
                                             <td><?php if ($i['customer_id']==0){
                                                     echo "Guest";
                                                 }else{
