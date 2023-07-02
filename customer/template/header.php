@@ -1,7 +1,14 @@
 <?php
-session_start();
+error_reporting(0);
+ini_set('display_errors', 0);
+try {
+    session_start();
+} catch (Exception $e) {
+    echo 'Error starting session: ' . $e->getMessage();
+}
 require_once "core/base.php";
 require_once "../admin/core/functions.php";
+
 ?>
 
 <!DOCTYPE html>

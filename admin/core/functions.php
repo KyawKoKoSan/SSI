@@ -635,7 +635,8 @@ function checkOut(){
             $id=$_SESSION['customer']['id'];
             foreach ($_SESSION['myCart'] as $key => $value){
                 $service_id=$_SESSION['myCart'][$key]['id'];
-                $expired_date = durationCalculator("1 month");
+                $duration=$_SESSION['myCart'][$key]['duration'];
+                $expired_date = durationCalculator($duration);
                 $sql = "INSERT INTO orders (customer_id,service_id,expired_date) VALUES (?,?,?)";
                 $sq = con() -> prepare($sql);
                 $sq->execute(array($id,$service_id,$expired_date));
