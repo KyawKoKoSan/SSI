@@ -76,7 +76,7 @@ include "template/header.php";
                                                 </td>
                                                 <td colspan="3" class="text-dark h3">
                                                     <label for="expYear" class="form-label">Expiration Year</label>
-                                                    <input type="number" min="1950" max="2099" name="expYear" class="form-control"
+                                                    <input type="number" min="2023" max="2099" name="expYear" class="form-control"
                                                            id="expYear" placeholder="YY" required>
                                                 </td>
                                                 <td colspan="2">

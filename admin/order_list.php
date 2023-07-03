@@ -95,18 +95,26 @@ include "template/header.php";
                                                 ?></td>
                                             <td  class="text-nowrap"><?php echo $i['reason'];?></td>
                                             <td  class="text-nowrap"><?php echo $i['claim_status'];?></td>
+                                            <?php
+                                            if ($i['claim_status'] == "Requested") {
+                                            ?>
                                             <form method="post" class="row" enctype="multipart/form-data">
                                             <td  class="text-nowrap">
                                                 <input type="hidden" name="order_id" value="<?php echo$i['id'];?>">
 
                                                 <button type="submit"  name="approve_claim" class="btn btn-outline-success">
-                                                    Approved
+                                                    <i class="feather-check"></i>
                                                 </button>
                                                 <button type="submit"  name="reject_claim" class="btn btn-outline-danger">
-                                                    Rejected
+                                                    <i class="feather-x"></i>
                                                 </button>
                                             </td>
                                             </form>
+                                            <?php } else{
+                                            ?>
+                                            <td  class="text-nowrap"></td>
+                                            <?php } ?>
+
                                         </tr>
                                     <?php } ?>
                                     </tbody>
