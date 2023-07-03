@@ -30,9 +30,16 @@ include "template/header.php";
                                         <th class="text-nowrap">Delivery Address</th>
                                         <th class="text-nowrap">Orderd At</th>
                                         <th class="text-nowrap">Expired At</th>
+                                        <th class="text-nowrap">Claim Reason</th>
+                                        <th class="text-nowrap">Option</th>
                                         </thead>
                                         <tbody>
                                         <?php
+                                        if(isset($_POST['claim-btn'])){
+                                            if (insuranceClaim()){
+                                                linkTo('customer_orders.php');
+                                            }
+                                        }
                                         foreach (customerOrders() as $i){
                                             $iid = $i['service_id'];
                                             $cid = $i['customer_id'];
@@ -51,6 +58,19 @@ include "template/header.php";
                                                 <td  class="text-nowrap"><?php echo timestampFormatter($i['ordered_at'],"d-m-Y") ;?></td>
                                                 <td  class="text-nowrap"><?php echo timestampFormatter($i['expired_date'],"d-m-Y") ;?></td>
 
+                                                <form method="post" class="row" enctype="multipart/form-data">
+
+                                                <td  class="text-nowrap">
+                                                    <input type="hidden" name="order_id" value="<?php echo$i['id'];?>">
+                                                    <label for="inputReason" class="form-label">Reason</label>
+                                                    <input type="text" name="reason" class="form-control" id="inputReason" required>
+                                                </td>
+                                                <td  class="text-nowrap">
+                                                    <button type="submit"  name="claim-btn" class="btn btn-outline-primary col-12">
+                                                       Insurance Claim
+                                                    </button>
+                                                </td>
+                                                </form>
                                             </tr>
                                         <?php } ?>
                                         </tbody>

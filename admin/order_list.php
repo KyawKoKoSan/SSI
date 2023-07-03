@@ -45,9 +45,23 @@ include "template/header.php";
                                     <th class="text-nowrap">Orderd By</th>
                                     <th class="text-nowrap">Category</th>
                                     <th class="text-nowrap">Delivery Address</th>
+                                    <th class="text-nowrap">Claim Reason</th>
+                                    <th class="text-nowrap">Claim Status</th>
+                                    <th>Option</th>
                                     </thead>
                                     <tbody>
                                     <?php
+                                    if(isset($_POST['approve_claim'])){
+                                        if (insuranceApproveResponse()){
+                                            linkTo('order_list.php');
+                                        }
+                                    }
+                                    if(isset($_POST['reject_claim'])){
+                                        if (insuranceRejectResponse()){
+                                            linkTo('order_list.php');
+                                        }
+                                    }
+
                                     $no=1;
                                     foreach (fetchOrders() as $i){
                                         $iid = $i['service_id'];
@@ -79,6 +93,20 @@ include "template/header.php";
                                                     echo "Deleted User";
                                                 }
                                                 ?></td>
+                                            <td  class="text-nowrap"><?php echo $i['reason'];?></td>
+                                            <td  class="text-nowrap"><?php echo $i['claim_status'];?></td>
+                                            <form method="post" class="row" enctype="multipart/form-data">
+                                            <td  class="text-nowrap">
+                                                <input type="hidden" name="order_id" value="<?php echo$i['id'];?>">
+
+                                                <button type="submit"  name="approve_claim" class="btn btn-outline-primary">
+                                                    Approved
+                                                </button>
+                                                <button type="submit"  name="reject_claim" class="btn btn-outline-primary">
+                                                    Rejected
+                                                </button>
+                                            </td>
+                                            </form>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

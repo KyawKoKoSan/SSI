@@ -49,7 +49,7 @@ include_once "template/header.php";
                         <div class="row col-12 mt-3" id="about">
                             <div class="col-12 d-flex justify-content-center align-items-center">
                                 <button type="submit"  name="recover-btn" class="btn btn-outline-primary me-3">
-                                    <i class="feather-log-in me-2"></i>Login
+                                    <i class="feather-log-in me-2"></i>Reset
                                 </button>
                                 <a href="customer_register.php" class="">Register Now</a>
                             </div>

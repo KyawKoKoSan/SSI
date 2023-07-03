@@ -666,6 +666,35 @@ function insertViewRecord($userId,$postId,$device){
 }
 //viewer management end here
 
+//Insurance Claim management start here
+function insuranceClaim(){
+    $id = $_POST['order_id'] ;
+    $reason = $_POST['reason'];
+    $claim_status = "Requested";
+    $sql = con() -> prepare("UPDATE orders SET reason=?,claim_status=? WHERE id=?");
+    $sql->execute(array($reason,$claim_status,$id));
+    return $sql;
+}
+
+
+function insuranceApproveResponse(){
+    $id = $_POST['order_id'] ;
+    $claim_status = "Approved";
+    $sql = con() -> prepare("UPDATE orders SET claim_status=? WHERE id=?");
+    $sql->execute(array($claim_status,$id));
+    return $sql;
+}
+
+function insuranceRejectResponse(){
+    $id = $_POST['order_id'] ;
+    $claim_status = "Rejected";
+    $sql = con() -> prepare("UPDATE orders SET claim_status=? WHERE id=?");
+    $sql->execute(array($claim_status,$id));
+    return $sql;
+}
+
+//Insurance Claim management end here
+
 //send complain function start here
 function sendComplain(){
     $name = textFilter(strip_tags($_POST['name']));
