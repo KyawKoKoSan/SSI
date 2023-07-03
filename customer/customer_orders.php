@@ -10,8 +10,8 @@ include "template/header.php";
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="mb-0 text-uppercase"><i class="feather-list text-primary me-2"></i>Order List</h4>
                         <div class="">
-                            <a href="our_services.php" class="btn btn-outline-primary me-2"><i class="feather-shopping-cart"></i></a>
-                            <a href="#" class="btn btn-outline-primary full-screen-btn"><i class="feather-maximize-2"></i></a>
+                            <a href="our_services.php" class="btn btn-outline-primary me-2"><i
+                                        class="feather-shopping-cart"></i></a>
                         </div>
                     </div>
                     <hr>
@@ -35,41 +35,60 @@ include "template/header.php";
                                         </thead>
                                         <tbody>
                                         <?php
-                                        if(isset($_POST['claim-btn'])){
-                                            if (insuranceClaim()){
+                                        if (isset($_POST['claim-btn'])) {
+                                            if (insuranceClaim()) {
                                                 linkTo('customer_orders.php');
                                             }
                                         }
-                                        foreach (customerOrders() as $i){
+                                        foreach (customerOrders() as $i) {
                                             $iid = $i['service_id'];
                                             $cid = $i['customer_id'];
-                                            $iCurrent=fetchService($iid);
-                                            $cCurrent=fetchCustomer($cid);
+                                            $iCurrent = fetchService($iid);
+                                            $cCurrent = fetchCustomer($cid);
                                             ?>
                                             <tr>
-                                                <td  class="text-nowrap"><?php echo$i['id'];?></td>
-                                                <td class="text-nowrap"><?php echo $iCurrent['name'] ;?></td>
-                                                <td  class="text-nowrap fw-bold"><?php echo $iCurrent['sale_price'] ;?>$</td>
-                                                <td  class="text-nowrap">
-                                                    <img src="../admin/images/<?php echo $iCurrent['photo'];?>" width="100px" height="100px" alt="">
+                                                <td class="text-nowrap"><?php echo $i['id']; ?></td>
+                                                <td class="text-nowrap"><?php echo $iCurrent['name']; ?></td>
+                                                <td class="text-nowrap fw-bold"><?php echo $iCurrent['sale_price']; ?>
+                                                    $
                                                 </td>
-                                                <td  class="text-nowrap"><?php echo fetchCategory($iCurrent['category_id'])['title'];?></td>
-                                                <td class="text-nowrap"><?php echo $cCurrent['address'] ;?></td>
-                                                <td  class="text-nowrap"><?php echo timestampFormatter($i['ordered_at'],"d-m-Y") ;?></td>
-                                                <td  class="text-nowrap"><?php echo timestampFormatter($i['expired_date'],"d-m-Y") ;?></td>
+                                                <td class="text-nowrap">
+                                                    <img src="../admin/images/<?php echo $iCurrent['photo']; ?>"
+                                                         width="100px" height="100px" alt="">
+                                                </td>
+                                                <td class="text-nowrap"><?php echo fetchCategory($iCurrent['category_id'])['title']; ?></td>
+                                                <td class="text-nowrap"><?php echo $cCurrent['address']; ?></td>
+                                                <td class="text-nowrap"><?php echo timestampFormatter($i['ordered_at'], "d-m-Y"); ?></td>
+                                                <td class="text-nowrap"><?php echo timestampFormatter($i['expired_date'], "d-m-Y"); ?></td>
 
                                                 <form method="post" class="row" enctype="multipart/form-data">
 
-                                                <td  class="text-nowrap">
-                                                    <input type="hidden" name="order_id" value="<?php echo$i['id'];?>">
-                                                    <label for="inputReason" class="form-label">Reason</label>
-                                                    <input type="text" name="reason" class="form-control" id="inputReason" required>
-                                                </td>
-                                                <td  class="text-nowrap">
-                                                    <button type="submit"  name="claim-btn" class="btn btn-outline-primary col-12">
-                                                       Insurance Claim
-                                                    </button>
-                                                </td>
+                                                    <td class="text-nowrap">
+                                                        <input type="hidden" name="order_id"
+                                                               value="<?php echo $i['id']; ?>">
+                                                        <?php
+                                                        if ($i['reason'] == "") {
+                                                        ?>
+                                                        <input type="text" name="reason" class="form-control"
+                                                               id="inputReason" required>
+                                                        <?php } else {
+                                                        ?>
+                                                        <p><?php echo $i['reason']; ?></p>
+                                                        <?php }?>
+                                                    </td>
+                                                    <?php
+                                                    if ($i['claim_status'] == "") {
+                                                        ?>
+                                                        <td class="text-nowrap">
+                                                            <button type="submit" name="claim-btn"
+                                                                    class="btn btn-outline-primary col-12">
+                                                                Insurance Claim
+                                                            </button>
+                                                        </td>
+                                                    <?php } else {
+                                                        ?>
+                                                        <td class="text-nowrap"><?php echo $i['claim_status']; ?></td>
+                                                    <?php } ?>
                                                 </form>
                                             </tr>
                                         <?php } ?>
@@ -87,10 +106,10 @@ include "template/header.php";
 </section>
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
 
 <script>
     $(".table").dataTable({
-        "order":[[0,"desc"]]
+        "order": [[0, "desc"]]
     });
 </script>

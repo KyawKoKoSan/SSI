@@ -19,7 +19,7 @@ include_once "template/header.php";
                 <div class="card-body">
                     <h4 class="text-center text-primary text-uppercase">
                         <i class="feather-users"></i>
-                        Login To Account
+                        Password Reset
                     </h4>
                     <hr>
                     <?php

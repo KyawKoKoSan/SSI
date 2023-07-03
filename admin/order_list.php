@@ -99,10 +99,10 @@ include "template/header.php";
                                             <td  class="text-nowrap">
                                                 <input type="hidden" name="order_id" value="<?php echo$i['id'];?>">
 
-                                                <button type="submit"  name="approve_claim" class="btn btn-outline-primary">
+                                                <button type="submit"  name="approve_claim" class="btn btn-outline-success">
                                                     Approved
                                                 </button>
-                                                <button type="submit"  name="reject_claim" class="btn btn-outline-primary">
+                                                <button type="submit"  name="reject_claim" class="btn btn-outline-danger">
                                                     Rejected
                                                 </button>
                                             </td>
