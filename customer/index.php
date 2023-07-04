@@ -66,7 +66,7 @@ include "template/header.php"; ?>
                             <h1 class="text-center text-primary py-3">Get Promotion Now</h1>
                         </div>
                         <div class="slickTestIndex row wow animate__zoomIn delay-5s">
-                            <?php foreach (fetchPromotions() as $i) { ?>
+                            <?php foreach (checkPromotion() as $i) { ?>
                                 <div class="col-12 col-md-4 mx-2">
                                     <div class="card product-card">
                                         <img src="../admin/images/<?php echo $i['photo']; ?>" class="card-img-top card-product-img img-fluid" alt="...">

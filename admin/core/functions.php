@@ -416,7 +416,7 @@ function promotionAdd()
     }
 }
 
-function fetchPromotion()
+function checkPromotion()
 {
     $today = date("Y-m-d");
     $promo_id = getPromoId();

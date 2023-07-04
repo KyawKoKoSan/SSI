@@ -40,7 +40,7 @@ if (isset($_POST['addToCart'])) {
                                 <div class="card-body">
                                     <p class="card-title fw-bold mb-2"><?php echo $i['name']; ?></p>
                                     <p class="card-text d-block mb-2">
-                                        <?php echo $i['description']; ?>
+                                        <?php echo short($i['description'],50) ; ?>
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <p class="fw-bold mb-0 user-select-none"><?php echo $i['original_price']; ?>$</p>

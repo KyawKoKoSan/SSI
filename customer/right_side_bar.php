@@ -22,7 +22,7 @@
             <h3 class="fw-bold mb-3">Best Offers</h3>
         </div>
         <div class="slickTest row d-none d-lg-block">
-            <?php foreach (fetchPromotions() as $i){?>
+            <?php foreach (checkPromotion() as $i){?>
             <div class="col-12 mx-2">
                 <div class="card slick-card">
                     <img src="../admin/images/<?php echo $i['photo'];?>" class="card-img-top card-product-img img-fluid"
@@ -30,7 +30,7 @@
                     <div class="card-body">
                         <h5><?php echo $i['name'] ;?></h5>
                         <p style="text-align: justify">
-                            <?php echo$i['description'] ;?>
+                            <?php echo short($i['description'],100)  ;?>
                         </p>
                         <h6><span
                                 class="text-decoration-line-through me-2  original-price-text"><?php echo $i['original_price'] ;?>$</span><span
