@@ -8,7 +8,7 @@ include "template/header.php";
         <div class="row mt-5" id="home">
             <div class="col-12 pt-5 d-block d-lg-flex">
                 <div class="col-12 col-lg-3 mb-4 wow animate__slideInLeft">
-                    <img src="../admin/images/<?php echo $_SESSION['customer']['photo'];?>" class="img-fluid" alt="">
+                    <img src="../customer/images/<?php echo $_SESSION['customer']['photo'];?>" class="img-fluid" alt="">
                 </div>
                 <div class="col-1"></div>
                 <div class="col-12 col-lg-8 wow animate__bounceInRight" id="about">
