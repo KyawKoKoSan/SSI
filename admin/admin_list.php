@@ -26,7 +26,8 @@ include "template/header.php";
                         <a href="admin_register.php" class="btn btn-outline-secondary me-2"><i class="feather-user-plus"></i></a>
                         <a href="#" class="btn btn-outline-secondary full-screen-btn"><i class="feather-maximize-2"></i></a>
                     </div>
-                </div><hr>
+                </div>
+                <hr>
 
                 <div class="row">
                     <div class="col-12 mt-3 mb-4">
@@ -34,37 +35,38 @@ include "template/header.php";
                             <div class="" style="overflow-x: scroll">
                                 <table class="table table-hover" id="products-list">
                                     <thead class="text-uppercase">
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone Number</th>
-                                    <th>Role</th>
-                                    <th>Photo</th>
-                                    <th>Options</th>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>Role</th>
+                                        <th>Photo</th>
+                                        <th>Options</th>
                                     </thead>
                                     <tbody>
-                                    <?php $no=1;
-                                    foreach (fetchAdmins() as $i){
+                                        <?php $no = 1;
+                                        foreach (fetchAdmins() as $i) {
                                         ?>
-                                        <tr>
-                                            <td><?php echo $no;$no++ ;?></td>
-                                            <td class="text-nowrap"><?php echo $i['name'] ;?></td>
-                                            <td><?php echo $i['email'] ;?></td>
-                                            <td><?php echo $i['phone'] ;?></td>
-                                            <td><?php echo $role[$i['role']] ;?></td>
-                                            <td>
-                                                <img src="images/<?php echo $i['photo'];?>" width="100px" alt="">
-                                            </td>
-                                            <td  class="text-nowrap">
-                                                <a onclick="return confirm('Are you sure to delete?')" href="admin_delete.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-danger">
-                                                    <i class="feather-trash-2"></i>
-                                                </a>
-                                                <a href="admin_update.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
-                                                    <i class="feather-edit-2"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
+                                            <tr>
+                                                <td><?php echo $no;
+                                                    $no++; ?></td>
+                                                <td class="text-nowrap"><?php echo $i['name']; ?></td>
+                                                <td><?php echo $i['email']; ?></td>
+                                                <td><?php echo $i['phone']; ?></td>
+                                                <td><?php echo $role[$i['role']]; ?></td>
+                                                <td>
+                                                    <img src="images/<?php echo $i['photo']; ?>" width="100px" alt="">
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="admin_delete.php?id=<?php echo $i['id']; ?>" class="btn btn-sm btn-outline-danger">
+                                                        <i class="feather-trash-2"></i>
+                                                    </a>
+                                                    <a href="admin_update.php?id=<?php echo $i['id']; ?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
+                                                        <i class="feather-edit-2"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
 
@@ -81,11 +83,13 @@ include "template/header.php";
 
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
 
 
 <script>
     $(".table").dataTable({
-        "order":[[0,"desc"]]
+        "order": [
+            [0, "desc"]
+        ]
     });
 </script>

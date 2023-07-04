@@ -1,14 +1,14 @@
 <?php
 require_once "core/admin_auth.php";
 include_once "template/header.php";
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $current = fetchAdmin($id);
-}else{
+} else {
     linkTo('admin_list.php');
 }
 
-if (!$current){
+if (!$current) {
     linkTo('admin_list.php');
 }
 ?>
@@ -45,8 +45,8 @@ if (!$current){
                 $id = $_GET['id'];
                 $current = fetchAdmin($id);
 
-                if(isset($_POST['updateAdmin'])){
-                    if (adminUpdate()){
+                if (isset($_POST['updateAdmin'])) {
+                    if (adminUpdate()) {
                         linkTo('admin_list.php');
                     }
                 }
@@ -69,20 +69,21 @@ if (!$current){
                         <label for="phone" class="form-label">
                             <i class=" me-2 fas fa-key text-primary"></i>Phone
                         </label>
-                        <input type="number" value="<?php echo $current['phone']; ?>" name="phone" placeholder="Enter new phone number"  class="form-control" id="inputPhone">
+                        <input type="number" value="<?php echo $current['phone']; ?>" name="phone" placeholder="Enter new phone number" class="form-control" id="inputPhone">
                     </div>
                     <div class="col-md-6 mt-2">
                         <label for="inputPass" class="form-label">
                             <i class=" me-2 fas fa-key text-primary"></i>Password
                         </label>
-                        <input type="password" name="password" min="8" placeholder="Enter new password"  class="form-control" id="inputPass">
+                        <input type="password" name="password" min="8" placeholder="Enter new password" class="form-control" id="inputPass">
                     </div>
                     <div class="form-group">
                         <label for="category_id" class="my-3">Choose Admin Level</label>
                         <select class="form-select" name="role" id="category_id" aria-label="Default select example" required>
-                            <?php foreach ($role as $key=>$value){ ?>
-                                <option value="<?php echo $key; ?>" <?php echo $key== $current['role']?"selected":""?> ><?php echo $value;?></option>
-                            <?php }?>
+                            <?php foreach ($role as $key => $value) { ?>
+                                <option value="<?php echo $key; ?>" <?php echo $key == $current['role'] ? "selected" : "" ?>>
+                                    <?php echo $value; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="my-3">
@@ -94,7 +95,7 @@ if (!$current){
                     </div>
                     <div class="row justify-content-center col-12 mt-3">
                         <div class="col-8 col-md-6 col-lg-5 ">
-                            <button type="submit"  name="updateAdmin" class="btn btn-outline-primary col-12">
+                            <button type="submit" name="updateAdmin" class="btn btn-outline-primary col-12">
                                 <i class="feather-edit-2 me-2"></i>Update
                             </button>
                         </div>
@@ -106,4 +107,4 @@ if (!$current){
 </div>
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>

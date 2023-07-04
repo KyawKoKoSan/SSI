@@ -1,6 +1,6 @@
 <?php
 require_once "core/admin_auth.php";
-include_once "template/header.php";?>
+include_once "template/header.php"; ?>
 
 <div class="row">
     <div class="col-12">
@@ -30,14 +30,14 @@ include_once "template/header.php";?>
 
                 <hr>
                 <?php
-                if (isset($_POST['reg-btn'])){
+                if (isset($_POST['reg-btn'])) {
                     echo adminRegister();
                 }
-                if (isset($_GET['result'])){
-                    echo alert("Successfully Created New Account!!","success");
+                if (isset($_GET['result'])) {
+                    echo alert("Successfully Created New Account!!", "success");
                 }
-                if (isset($_GET['already_exist'])){
-                    echo alert("Account Exist","warning");
+                if (isset($_GET['already_exist'])) {
+                    echo alert("Account Exist", "warning");
                 }
                 ?>
                 <form method="post" class="row" enctype="multipart/form-data">
@@ -86,7 +86,7 @@ include_once "template/header.php";?>
                     </div>
                     <div class="row justify-content-center col-12 mt-3">
                         <div class="col-8 col-md-6 col-lg-5 ">
-                            <button type="submit"  name="reg-btn" class="btn btn-outline-primary col-12">
+                            <button type="submit" name="reg-btn" class="btn btn-outline-primary col-12">
                                 <i class="feather-user-plus me-2"></i>Sign Up
                             </button>
                         </div>
@@ -98,4 +98,4 @@ include_once "template/header.php";?>
 </div>
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>

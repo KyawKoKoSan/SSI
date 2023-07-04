@@ -1,6 +1,6 @@
 $primary: #0d21a1;
 $light: #e7f3ff;
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
   -webkit-appearance: none;
 }
 *::-webkit-scrollbar:vertical {
@@ -39,7 +39,7 @@ $light: #e7f3ff;
   transition: 0.5s;
 }
 
-.menu-item-link:hover{
+.menu-item-link:hover {
   color: $primary;
 }
 
@@ -61,6 +61,6 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   white-space: nowrap;
   justify-content: center;
 }
-table tr td{
+table tr td {
   vertical-align: middle !important;
 }

@@ -15,13 +15,12 @@
 </body>
 <script>
     // start coding for minimize maximize button
-    $(".full-screen-btn").click(function (){
+    $(".full-screen-btn").click(function() {
         $current = $(".full-screen-btn").closest(".card");
         $current.toggleClass("full-screen-card");
-        if($current.hasClass('full-screen-card')){
+        if ($current.hasClass('full-screen-card')) {
             $(this).html(`<i class="feather-minimize-2"></i>`);
-        }
-        else{
+        } else {
             $(this).html(` <i class="feather-maximize-2"></i>`);
         }
     });
@@ -29,11 +28,12 @@
 
 
     let currentPage = location.href;
-    $(".menu-item-link").each(function () {
+    $(".menu-item-link").each(function() {
         let link = $(this).attr("href");
-        if(currentPage == link){
+        if (currentPage == link) {
             $(this).addClass('active');
         }
     });
 </script>
+
 </html>

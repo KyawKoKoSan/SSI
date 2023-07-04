@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_SESSION['customer'])){
+if (isset($_SESSION['customer'])) {
     header("location:customer_profile.php");
 }
 
@@ -22,7 +22,7 @@ include_once "template/header.php";
                     </h4>
                     <hr>
                     <?php
-                    if (isset($_POST['reset-btn'])){
+                    if (isset($_POST['reset-btn'])) {
                         echo customerReset();
                     }
                     ?>
@@ -31,7 +31,7 @@ include_once "template/header.php";
                             <label for="inputEmail4" class="form-label">
                                 <i class="feather-mail me-2 text-danger"></i>Email
                             </label>
-                            <input type="email" value="<?php echo $_SESSION['password_recovery']['email']?>" name="email" class="form-control" id="inputEmail4" placeholder="example@gmail.com" required>
+                            <input type="email" value="<?php echo $_SESSION['password_recovery']['email'] ?>" name="email" class="form-control" id="inputEmail4" placeholder="example@gmail.com" required>
                         </div>
                         <div class="m-2">
                             <label for="inputPass" class="form-label">
@@ -48,7 +48,7 @@ include_once "template/header.php";
                         </div>
                         <div class="row col-12 mt-3" id="about">
                             <div class="col-12 d-flex justify-content-center align-items-center">
-                                <button type="submit"  name="reset-btn" class="btn btn-outline-primary me-3">
+                                <button type="submit" name="reset-btn" class="btn btn-outline-primary me-3">
                                     <i class="feather-log-in me-2"></i>Reset Now
                                 </button>
                             </div>
@@ -64,5 +64,4 @@ include_once "template/header.php";
 </div>
 <!--end coding for login form-->
 
-<?php include "template/footer.php";?>
-
+<?php include "template/footer.php"; ?>

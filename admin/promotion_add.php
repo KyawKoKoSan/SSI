@@ -27,7 +27,7 @@ include "template/header.php";
 
                 </div>
                 <?php
-                if(isset($_POST['addPromo'])){
+                if (isset($_POST['addPromo'])) {
                     promotionAdd();
                 }
                 ?>
@@ -93,4 +93,4 @@ include "template/header.php";
         </div>
     </div>
 </div>
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>

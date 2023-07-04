@@ -3,7 +3,7 @@ $primary: #0d21a1;
 @import "../../../assets/vendor/morph/variables";
 @import "../../../assets/vendor/bootstrap/scss/bootstrap";
 @import "../../../assets/vendor/morph/bootswatch";
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
   -webkit-appearance: none;
 }
 *::-webkit-scrollbar:vertical {
@@ -63,11 +63,10 @@ $primary: #0d21a1;
   }
 }
 
-.sticky-cards{
+.sticky-cards {
   position: sticky;
   top: 80px;
 }
-
 
 .product-card {
   border-radius: 20px;
@@ -83,15 +82,15 @@ $primary: #0d21a1;
   border-radius: 20px 20px 0px 0px;
 }
 
-.slick-card{
+.slick-card {
   border-radius: 20px;
 }
-.slick-dots{
+.slick-dots {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
 }
-.slick-dots li{
+.slick-dots li {
   width: 10px !important;
   height: 10px !important;
   background-color: transparent;
@@ -99,7 +98,7 @@ $primary: #0d21a1;
   border-radius: 50%;
 }
 
-.slick-dots li.slick-active{
+.slick-dots li.slick-active {
   width: 15px !important;
   height: 15px !important;
   background-color: $primary !important;
@@ -113,7 +112,7 @@ $primary: #0d21a1;
   color: red;
 }
 
-.footer-icons:hover{
+.footer-icons:hover {
   transform: scale(1.1);
 }
 
@@ -122,14 +121,14 @@ $primary: #0d21a1;
   transition: 1s;
 }
 
-table tr td{
+table tr td {
   vertical-align: middle !important;
 }
 
-.scroll-to-top{
+.scroll-to-top {
   width: 50px;
   height: 50px;
-  border-radius:10px;
+  border-radius: 10px;
   border: none;
   background: #0b0114;
   color: #fffff5;
@@ -137,15 +136,15 @@ table tr td{
   right: 70px;
   transition: 0.5s;
 }
-.scroll-to-top:hover{
+.scroll-to-top:hover {
   color: #ffffff;
   transition: 0.5s;
 }
 
-.mode-change{
+.mode-change {
   width: 50px;
   height: 50px;
-  border-radius:10px;
+  border-radius: 10px;
   border: none;
   background: #0b0114;
   color: #d9e3f1;
@@ -153,10 +152,9 @@ table tr td{
   right: 10px;
 }
 
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
   background: #d9e3f1 !important;
 }
-
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   margin: 13px 2px;

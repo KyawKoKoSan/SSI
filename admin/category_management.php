@@ -18,7 +18,8 @@
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <h4 class="mb-0"><i class="feather-layers text-primary me-2"></i>Category Manager</h4>
                     <div class="">
-                        <a href="#" class="btn btn-outline-secondary full-screen-btn"><i class="feather-maximize-2"></i></a>
+                        <a href="#" class="btn btn-outline-secondary full-screen-btn"><i
+                                class="feather-maximize-2"></i></a>
                     </div>
                 </div>
 
@@ -37,7 +38,8 @@
                                 <label for="item-category" class="my-3">Enter Category</label>
                                 <div class="col-12 d-block d-lg-flex justify-content-lg-between">
                                     <div class="col-12 col-lg-6 me-3 mb-2">
-                                        <input type="text" name="title" id="item-category" class="form-control" required>
+                                        <input type="text" name="title" id="item-category" class="form-control"
+                                            required>
                                     </div>
                                     <div class="col-12 col-lg-6">
                                         <button class="btn btn-outline-primary" name="addCategory">Add Category</button>
@@ -57,7 +59,3 @@
 
 
 <?php include "template/footer.php";?>
-
-
-
-

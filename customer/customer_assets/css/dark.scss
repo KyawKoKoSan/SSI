@@ -1,36 +1,42 @@
 $primary: #0d21a1;
 $light: #fff;
 
-body.dark-mode{
-  .loader-container{
+body.dark-mode {
+  .loader-container {
     background: black;
   }
   color: white !important;
   transition: 0.5s;
   //$primary : #5b62f4;
   background: #3d3d42;
-  h1,h2,h3,h4,h5,h6,a{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
     color: $light;
   }
-  .pagination{
+  .pagination {
     box-shadow: none;
     background-color: #333232;
-    .page-link{
+    .page-link {
       background-color: transparent;
       color: $light;
     }
   }
-  .navbar{
+  .navbar {
     background: #303030;
   }
-  .navbar.cus-shadow{
+  .navbar.cus-shadow {
     box-shadow: 0 0 10px black !important;
   }
-  .nav-link{
+  .nav-link {
     color: $light !important;
   }
 
-  .logo-text{
+  .logo-text {
     color: $light !important;
   }
 
@@ -44,49 +50,52 @@ body.dark-mode{
     color: $light;
     box-shadow: none;
   }
-  .mode-change{
+  .mode-change {
     background-color: #303030;
     color: $light;
     box-shadow: 0 0 10px #101010;
   }
-  .card{
+  .card {
     background-color: #656363 !important;
     border: none;
     box-shadow: none;
   }
-  .original-price-text{
+  .original-price-text {
     color: #808080;
   }
-  .final-price-text{
+  .final-price-text {
     color: $light;
   }
-  .fa-facebook{
+  .fa-facebook {
     color: $light !important;
     background: #0076ff !important;
     border-radius: 50% !important;
   }
-  .form-control,.form-select,.list-group,.breadcrumb  {
+  .form-control,
+  .form-select,
+  .list-group,
+  .breadcrumb {
     background-color: #000 !important;
     box-shadow: none;
     color: $light;
   }
-  .list-group-item.active,.breadcrumb-item.active{
+  .list-group-item.active,
+  .breadcrumb-item.active {
     color: white !important;
   }
   .nav-link:hover {
     transition: 0.5s;
     color: #000 !important;
   }
-  .text-primary{
+  .text-primary {
     color: $light !important;
   }
-  table{
-    tr{
-      th,td{
+  table {
+    tr {
+      th,
+      td {
         background: #3d3d42;
       }
     }
   }
-
 }
-

@@ -26,7 +26,8 @@ include "template/header.php";
                     <div class="">
                         <a href="#" class="btn btn-outline-secondary full-screen-btn"><i class="feather-maximize-2"></i></a>
                     </div>
-                </div><hr>
+                </div>
+                <hr>
 
                 <div class="row">
                     <div class="col-12 mt-3 mb-4">
@@ -36,87 +37,91 @@ include "template/header.php";
 
                                 <table class="table table-hover table-responsive " id="products-list">
                                     <thead class="text-uppercase">
-                                    <th class="text-nowrap">No</th>
-                                    <th class="text-nowrap">Service Name</th>
-                                    <th class="text-nowrap">Price</th>
-                                    <th class="text-nowrap">Photo</th>
-                                    <th class="text-nowrap">Orderd At</th>
-                                    <th class="text-nowrap">Expired At</th>
-                                    <th class="text-nowrap">Orderd By</th>
-                                    <th class="text-nowrap">Category</th>
-                                    <th class="text-nowrap">Delivery Address</th>
-                                    <th class="text-nowrap">Claim Reason</th>
-                                    <th class="text-nowrap">Claim Status</th>
-                                    <th>Option</th>
+                                        <th class="text-nowrap">No</th>
+                                        <th class="text-nowrap">Service Name</th>
+                                        <th class="text-nowrap">Price</th>
+                                        <th class="text-nowrap">Photo</th>
+                                        <th class="text-nowrap">Orderd At</th>
+                                        <th class="text-nowrap">Expired At</th>
+                                        <th class="text-nowrap">Orderd By</th>
+                                        <th class="text-nowrap">Category</th>
+                                        <th class="text-nowrap">Delivery Address</th>
+                                        <th class="text-nowrap">Claim Reason</th>
+                                        <th class="text-nowrap">Claim Status</th>
+                                        <th>Option</th>
                                     </thead>
                                     <tbody>
-                                    <?php
-                                    if(isset($_POST['approve_claim'])){
-                                        if (insuranceApproveResponse()){
-                                            linkTo('order_list.php');
+                                        <?php
+                                        if (isset($_POST['approve_claim'])) {
+                                            if (insuranceApproveResponse()) {
+                                                linkTo('order_list.php');
+                                            }
                                         }
-                                    }
-                                    if(isset($_POST['reject_claim'])){
-                                        if (insuranceRejectResponse()){
-                                            linkTo('order_list.php');
+                                        if (isset($_POST['reject_claim'])) {
+                                            if (insuranceRejectResponse()) {
+                                                linkTo('order_list.php');
+                                            }
                                         }
-                                    }
 
-                                    $no=1;
-                                    foreach (fetchOrders() as $i){
-                                        $iid = $i['service_id'];
-                                        $cid = $i['customer_id'];
-                                        $iCurrent=fetchService($iid);
-                                        $cCurrent=fetchCustomer($cid);
+                                        $no = 1;
+                                        foreach (fetchOrders() as $i) {
+                                            $iid = $i['service_id'];
+                                            $cid = $i['customer_id'];
+                                            $iCurrent = fetchService($iid);
+                                            $cCurrent = fetchCustomer($cid);
                                         ?>
-                                        <tr>
-                                            <td  class="text-nowrap"><?php echo $no;$no++;?></td>
-                                            <td class="text-nowrap"><?php echo $iCurrent['name'] ;?></td>
-                                            <td  class="text-nowrap fw-bold"><?php echo $iCurrent['sale_price'] ;?>$</td>
-                                            <td  class="text-nowrap">
-                                                <img src="../admin/images/<?php echo $iCurrent['photo'];?>" width="100px" height="100px" alt="">
-                                            </td>
-                                            <td  class="text-nowrap"><?php echo timestampFormatter($i['ordered_at'],"d-m-Y") ;?></td>
-                                            <td  class="text-nowrap"><?php echo timestampFormatter($i['expired_date'],"d-m-Y") ;?></td>
-                                            <td  class="text-nowrap"><?php
-                                                if (isset($cCurrent['name'])){
-                                                    echo $cCurrent['name'] ;}
-                                                else{
-                                                    echo "Deleted User";
-                                                }
-                                                ?></td>
-                                            <td  class="text-nowrap"><?php echo fetchCategory($iCurrent['category_id'])['title'];?></td>
-                                            <td class="text-nowrap"><?php
-                                                if (isset($cCurrent['address'])){
-                                                    echo $cCurrent['address'] ;}
-                                                else{
-                                                    echo "Deleted User";
-                                                }
-                                                ?></td>
-                                            <td  class="text-nowrap"><?php echo $i['reason'];?></td>
-                                            <td  class="text-nowrap"><?php echo $i['claim_status'];?></td>
-                                            <?php
-                                            if ($i['claim_status'] == "Requested") {
-                                            ?>
-                                            <form method="post" class="row" enctype="multipart/form-data">
-                                            <td  class="text-nowrap">
-                                                <input type="hidden" name="order_id" value="<?php echo$i['id'];?>">
+                                            <tr>
+                                                <td class="text-nowrap"><?php echo $no;
+                                                                        $no++; ?></td>
+                                                <td class="text-nowrap"><?php echo $iCurrent['name']; ?></td>
+                                                <td class="text-nowrap fw-bold"><?php echo $iCurrent['sale_price']; ?>$</td>
+                                                <td class="text-nowrap">
+                                                    <img src="../admin/images/<?php echo $iCurrent['photo']; ?>" width="100px" height="100px" alt="">
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <?php echo timestampFormatter($i['ordered_at'], "d-m-Y"); ?></td>
+                                                <td class="text-nowrap">
+                                                    <?php echo timestampFormatter($i['expired_date'], "d-m-Y"); ?></td>
+                                                <td class="text-nowrap"><?php
+                                                                        if (isset($cCurrent['name'])) {
+                                                                            echo $cCurrent['name'];
+                                                                        } else {
+                                                                            echo "Deleted User";
+                                                                        }
+                                                                        ?></td>
+                                                <td class="text-nowrap">
+                                                    <?php echo fetchCategory($iCurrent['category_id'])['title']; ?></td>
+                                                <td class="text-nowrap"><?php
+                                                                        if (isset($cCurrent['address'])) {
+                                                                            echo $cCurrent['address'];
+                                                                        } else {
+                                                                            echo "Deleted User";
+                                                                        }
+                                                                        ?></td>
+                                                <td class="text-nowrap"><?php echo $i['reason']; ?></td>
+                                                <td class="text-nowrap"><?php echo $i['claim_status']; ?></td>
+                                                <?php
+                                                if ($i['claim_status'] == "Requested") {
+                                                ?>
+                                                    <form method="post" class="row" enctype="multipart/form-data">
+                                                        <td class="text-nowrap">
+                                                            <input type="hidden" name="order_id" value="<?php echo $i['id']; ?>">
 
-                                                <button type="submit"  name="approve_claim" class="btn btn-outline-success">
-                                                    <i class="feather-check"></i>
-                                                </button>
-                                                <button type="submit"  name="reject_claim" class="btn btn-outline-danger">
-                                                    <i class="feather-x"></i>
-                                                </button>
-                                            </td>
-                                            </form>
-                                            <?php } else{
-                                            ?>
-                                            <td  class="text-nowrap"></td>
-                                            <?php } ?>
+                                                            <button type="submit" name="approve_claim" class="btn btn-outline-success">
+                                                                <i class="feather-check"></i>
+                                                            </button>
+                                                            <button type="submit" name="reject_claim" class="btn btn-outline-danger">
+                                                                <i class="feather-x"></i>
+                                                            </button>
+                                                        </td>
+                                                    </form>
+                                                <?php } else {
+                                                ?>
+                                                    <td class="text-nowrap"></td>
+                                                <?php } ?>
 
-                                        </tr>
-                                    <?php } ?>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
 
@@ -133,10 +138,12 @@ include "template/header.php";
 
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
 
 <script>
     $(".table").dataTable({
-        "order":[[0,"desc"]]
+        "order": [
+            [0, "desc"]
+        ]
     });
 </script>

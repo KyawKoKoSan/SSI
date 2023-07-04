@@ -1,17 +1,17 @@
 <?php
 require_once "core/admin_auth.php";
 include "template/header.php";
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $current = fetchService($id);
-}else{
+} else {
     linkTo('promotion_list.php');
 }
 
-if (!$current){
+if (!$current) {
     linkTo('promotion_list.php');
 }
-if ($current['category_id']!==getPromoId()){
+if ($current['category_id'] !== getPromoId()) {
     linkTo('promotion_list.php');
 }
 ?>
@@ -21,8 +21,10 @@ if ($current['category_id']!==getPromoId()){
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb text-uppercase">
                 <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none ">Home</a></li>
-                <li class="breadcrumb-item"><a href="promotion_list.php" class="text-decoration-none ">Promotions</a></li>
-                <li class="breadcrumb-item active fw-bold user-select-none" aria-current="page">Update Promotion Service </li>
+                <li class="breadcrumb-item"><a href="promotion_list.php" class="text-decoration-none ">Promotions</a>
+                </li>
+                <li class="breadcrumb-item active fw-bold user-select-none" aria-current="page">Update Promotion Service
+                </li>
             </ol>
         </nav>
     </div>
@@ -40,8 +42,8 @@ if ($current['category_id']!==getPromoId()){
                 $id = $_GET['id'];
                 $current = fetchService($id);
 
-                if(isset($_POST['updatePromotion'])){
-                    if (promotionUpdate()){
+                if (isset($_POST['updatePromotion'])) {
+                    if (promotionUpdate()) {
                         linkTo('promotion_list.php');
                     }
                 }
@@ -66,9 +68,10 @@ if ($current['category_id']!==getPromoId()){
                             <div class="form-group">
                                 <label for="duration" class="my-3">Select Duration</label>
                                 <select class="form-select" name="duration" id="duration" aria-label="Default select example">
-                                    <?php foreach (fetchDuration() as $d){ ?>
-                                        <option value="<?php echo $d['duration']; ?>" <?php echo $d['duration']== $current['duration']?"selected":""?> ><?php echo $d['duration'];?></option>
-                                    <?php }?>
+                                    <?php foreach (fetchDuration() as $d) { ?>
+                                        <option value="<?php echo $d['duration']; ?>" <?php echo $d['duration'] == $current['duration'] ? "selected" : "" ?>>
+                                            <?php echo $d['duration']; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="my-3">
@@ -81,7 +84,7 @@ if ($current['category_id']!==getPromoId()){
                         <div class="col-12 col-md-6">
                             <div>
                                 <label for="longDes" class="form-label my-3">Description</label>
-                                <textarea name="description"  class="form-control" style="resize: none; text-align: justify" id="longDes" rows="10" required><?php echo $current['description']; ?></textarea>
+                                <textarea name="description" class="form-control" style="resize: none; text-align: justify" id="longDes" rows="10" required><?php echo $current['description']; ?></textarea>
                             </div>
                             <div>
                                 <label for="policy" class="form-label my-3">Policy</label>
@@ -92,7 +95,7 @@ if ($current['category_id']!==getPromoId()){
                         <div class="col-12 d-md-flex">
                             <div class="col-12 col-md-6 me-2 mb-2">
                                 <label for="start-date" class="my-3">Start Date</label>
-                                <input type="date" name="start_date"  value="<?php echo $current['start_date']; ?>" id="start-date" class="form-control">
+                                <input type="date" name="start_date" value="<?php echo $current['start_date']; ?>" id="start-date" class="form-control">
                             </div>
                             <div class="col-12 col-md-6">
                                 <label for="end-date" class="my-3">Select End Date</label>
@@ -117,4 +120,4 @@ if ($current['category_id']!==getPromoId()){
 
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>

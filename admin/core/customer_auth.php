@@ -7,6 +7,6 @@ try {
     echo 'Error starting session: ' . $e->getMessage();
 }
 
-if(!$_SESSION['customer']){
+if (!$_SESSION['customer']) {
     header("location:customer_login.php");
 }

@@ -32,51 +32,54 @@ include_once "template/header.php";
                             <div class="" style="overflow-x: scroll">
                                 <table class="table table-hover table-responsive " id="services_list">
                                     <thead class="text-uppercase">
-                                    <th class="text-nowrap">No</th>
-                                    <th class="text-nowrap">Name</th>
-                                    <th class="text-nowrap">Description</th>
-                                    <th class="text-nowrap">Price</th>
-                                    <th class="text-nowrap">Photo</th>
-                                    <th class="text-nowrap">Duration</th>
-                                    <th class="text-nowrap">Policy</th>
-                                    <th class="text-nowrap">Created By</th>
-                                    <th class="text-nowrap">Category</th>
-                                    <th class="text-nowrap">Created At</th>
-                                    <th class="text-nowrap">Options</th>
+                                        <th class="text-nowrap">No</th>
+                                        <th class="text-nowrap">Name</th>
+                                        <th class="text-nowrap">Description</th>
+                                        <th class="text-nowrap">Price</th>
+                                        <th class="text-nowrap">Photo</th>
+                                        <th class="text-nowrap">Duration</th>
+                                        <th class="text-nowrap">Policy</th>
+                                        <th class="text-nowrap">Created By</th>
+                                        <th class="text-nowrap">Category</th>
+                                        <th class="text-nowrap">Created At</th>
+                                        <th class="text-nowrap">Options</th>
                                     </thead>
                                     <tbody>
-                                    <?php $no=1;
-                                    foreach (fetchServices() as $i){
+                                        <?php $no = 1;
+                                        foreach (fetchServices() as $i) {
                                         ?>
-                                        <tr>
-                                            <td  class="text-nowrap"><?php echo $no;$no++;?></td>
-                                            <td class="text-nowrap"><?php echo $i['name'] ;?></td>
-                                            <td  class="text-nowrap"><?php echo short($i['description']) ;?></td>
-                                            <td  class="text-nowrap fw-bold"><?php echo $i['sale_price'] ;?>$</td>
-                                            <td  class="text-nowrap">
-                                                <img src="images/<?php echo $i['photo'];?>" width="100px" height="100px" alt="">
-                                            </td>
-                                            <td class="text-nowrap"><?php echo $i['duration'] ;?></td>
-                                            <td class="text-nowrap"><?php echo short($i['policy'] );?></td>
-                                            <td  class="text-nowrap"><?php echo fetchAdmin($i['admin_id'])['name'] ;?></td>
-                                            <td  class="text-nowrap"><?php echo fetchCategory($i['category_id'])['title'];?></td>
-                                            <td class="text-nowrap"><?php echo $i['created_at'] ;?></td>
-                                            <td  class="text-nowrap">
+                                            <tr>
+                                                <td class="text-nowrap"><?php echo $no;
+                                                                        $no++; ?></td>
+                                                <td class="text-nowrap"><?php echo $i['name']; ?></td>
+                                                <td class="text-nowrap"><?php echo short($i['description']); ?></td>
+                                                <td class="text-nowrap fw-bold"><?php echo $i['sale_price']; ?>$</td>
+                                                <td class="text-nowrap">
+                                                    <img src="images/<?php echo $i['photo']; ?>" width="100px" height="100px" alt="">
+                                                </td>
+                                                <td class="text-nowrap"><?php echo $i['duration']; ?></td>
+                                                <td class="text-nowrap"><?php echo short($i['policy']); ?></td>
+                                                <td class="text-nowrap"><?php echo fetchAdmin($i['admin_id'])['name']; ?>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <?php echo fetchCategory($i['category_id'])['title']; ?></td>
+                                                <td class="text-nowrap"><?php echo $i['created_at']; ?></td>
+                                                <td class="text-nowrap">
 
-                                                <a onclick="return confirm('Are you sure to delete?')" href="service_delete.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-danger">
-                                                    <i class="feather-trash-2"></i>
-                                                </a>
-                                                <a href="
-                                                <?php if (fetchCategory($i['category_id'])['title'] == 'Promotion'){
-                                                    echo "promotion_update.php?id=".$i['id'];
-                                                } else{
-                                                    echo "service_update.php?id=".$i['id'];
-                                                }?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
-                                                    <i class="feather-edit-2"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="service_delete.php?id=<?php echo $i['id']; ?>" class="btn btn-sm btn-outline-danger">
+                                                        <i class="feather-trash-2"></i>
+                                                    </a>
+                                                    <a href="
+                                                <?php if (fetchCategory($i['category_id'])['title'] == 'Promotion') {
+                                                    echo "promotion_update.php?id=" . $i['id'];
+                                                } else {
+                                                    echo "service_update.php?id=" . $i['id'];
+                                                } ?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
+                                                        <i class="feather-edit-2"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
 
@@ -93,9 +96,11 @@ include_once "template/header.php";
 
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
 <script>
     $(".table").dataTable({
-        "order":[[0,"desc"]]
+        "order": [
+            [0, "desc"]
+        ]
     });
 </script>

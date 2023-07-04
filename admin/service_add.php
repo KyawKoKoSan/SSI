@@ -27,11 +27,11 @@ include "template/header.php";
 
                 </div>
                 <?php
-                if(isset($_POST['addItem'])){
+                if (isset($_POST['addItem'])) {
                     serviceAdd();
                 }
-                if (isset($_GET['result'])){
-                    echo alert("Successfully Added New Service!!","success");
+                if (isset($_GET['result'])) {
+                    echo alert("Successfully Added New Service!!", "success");
                 }
                 ?>
                 <form action="" method="post" enctype="multipart/form-data">
@@ -48,9 +48,9 @@ include "template/header.php";
                             <div class="form-group">
                                 <label for="category_id" class="my-3">Select Category</label>
                                 <select class="form-select" name="category_id" id="category_id" aria-label="Default select example">
-                                    <?php foreach (fetchCategories() as $c){ ?>
-                                        <option value="<?php echo $c['id'];?>"><?php echo $c['title'];?></option>
-                                    <?php }?>
+                                    <?php foreach (fetchCategories() as $c) { ?>
+                                        <option value="<?php echo $c['id']; ?>"><?php echo $c['title']; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="my-3">
@@ -94,4 +94,4 @@ include "template/header.php";
 
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>

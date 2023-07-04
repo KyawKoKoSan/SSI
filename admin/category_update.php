@@ -17,7 +17,8 @@ if (!$current){
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb text-uppercase">
                 <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none ">Home</a></li>
-                <li class="breadcrumb-item"><a href="category_management.php" class="text-decoration-none ">Category Manager</a></li>
+                <li class="breadcrumb-item"><a href="category_management.php" class="text-decoration-none ">Category
+                        Manager</a></li>
                 <li class="breadcrumb-item active fw-bold user-select-none" aria-current="page">Update Category </li>
             </ol>
         </nav>
@@ -50,10 +51,12 @@ if (!$current){
                                 <label for="item-category" class="my-3">Enter Category</label>
                                 <div class="col-12 d-block d-lg-flex justify-content-lg-between">
                                     <div class="col-12 col-lg-6 me-3 mb-2">
-                                        <input type="text" name="title" id="item-category" class="form-control" value="<?php echo $current['title'] ;?>">
+                                        <input type="text" name="title" id="item-category" class="form-control"
+                                            value="<?php echo $current['title'] ;?>">
                                     </div>
                                     <div class="col-12 col-lg-6">
-                                        <button class="btn btn-outline-primary" name="updateCategory">Update Category</button>
+                                        <button class="btn btn-outline-primary" name="updateCategory">Update
+                                            Category</button>
                                     </div>
                                 </div>
                             </div>
@@ -69,5 +72,3 @@ if (!$current){
 
 
 <?php include "template/footer.php";?>
-
-

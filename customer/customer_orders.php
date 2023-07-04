@@ -11,7 +11,7 @@ include "template/header.php";
                         <h4 class="mb-0 text-uppercase"><i class="feather-list text-primary me-2"></i>Order List</h4>
                         <div class="">
                             <a href="our_services.php" class="btn btn-outline-primary me-2"><i
-                                        class="feather-shopping-cart"></i></a>
+                                    class="feather-shopping-cart"></i></a>
                         </div>
                     </div>
                     <hr>
@@ -22,19 +22,19 @@ include "template/header.php";
                                 <div class="" style="overflow-x: scroll; max-height: 80vh;">
                                     <table class="table table-hover table-responsive " id="products-list">
                                         <thead class="text-uppercase">
-                                        <th class="text-nowrap">Order ID</th>
-                                        <th class="text-nowrap">Item Name</th>
-                                        <th class="text-nowrap">Price</th>
-                                        <th class="text-nowrap">Photo</th>
-                                        <th class="text-nowrap">Category</th>
-                                        <th class="text-nowrap">Delivery Address</th>
-                                        <th class="text-nowrap">Orderd At</th>
-                                        <th class="text-nowrap">Expired At</th>
-                                        <th class="text-nowrap">Claim Reason</th>
-                                        <th class="text-nowrap">Option</th>
+                                            <th class="text-nowrap">Order ID</th>
+                                            <th class="text-nowrap">Item Name</th>
+                                            <th class="text-nowrap">Price</th>
+                                            <th class="text-nowrap">Photo</th>
+                                            <th class="text-nowrap">Category</th>
+                                            <th class="text-nowrap">Delivery Address</th>
+                                            <th class="text-nowrap">Orderd At</th>
+                                            <th class="text-nowrap">Expired At</th>
+                                            <th class="text-nowrap">Claim Reason</th>
+                                            <th class="text-nowrap">Option</th>
                                         </thead>
                                         <tbody>
-                                        <?php
+                                            <?php
                                         if (isset($_POST['claim-btn'])) {
                                             if (insuranceClaim()) {
                                                 linkTo('customer_orders.php');
@@ -54,23 +54,26 @@ include "template/header.php";
                                                 </td>
                                                 <td class="text-nowrap">
                                                     <img src="../admin/images/<?php echo $iCurrent['photo']; ?>"
-                                                         width="100px" height="100px" alt="">
+                                                        width="100px" height="100px" alt="">
                                                 </td>
-                                                <td class="text-nowrap"><?php echo fetchCategory($iCurrent['category_id'])['title']; ?></td>
+                                                <td class="text-nowrap">
+                                                    <?php echo fetchCategory($iCurrent['category_id'])['title']; ?></td>
                                                 <td class="text-nowrap"><?php echo $cCurrent['address']; ?></td>
-                                                <td class="text-nowrap"><?php echo timestampFormatter($i['ordered_at'], "d-m-Y"); ?></td>
-                                                <td class="text-nowrap"><?php echo timestampFormatter($i['expired_date'], "d-m-Y"); ?></td>
+                                                <td class="text-nowrap">
+                                                    <?php echo timestampFormatter($i['ordered_at'], "d-m-Y"); ?></td>
+                                                <td class="text-nowrap">
+                                                    <?php echo timestampFormatter($i['expired_date'], "d-m-Y"); ?></td>
 
                                                 <form method="post" class="row" enctype="multipart/form-data">
 
                                                     <td class="text-nowrap">
                                                         <input type="hidden" name="order_id"
-                                                               value="<?php echo $i['id']; ?>">
+                                                            value="<?php echo $i['id']; ?>">
                                                         <?php
                                                         if ($i['reason'] == "") {
                                                         ?>
                                                         <input type="text" name="reason" class="form-control"
-                                                               id="inputReason" required>
+                                                            id="inputReason" required>
                                                         <?php } else {
                                                         ?>
                                                         <p><?php echo $i['reason']; ?></p>
@@ -79,19 +82,19 @@ include "template/header.php";
                                                     <?php
                                                     if ($i['claim_status'] == "") {
                                                         ?>
-                                                        <td class="text-nowrap">
-                                                            <button type="submit" name="claim-btn"
-                                                                    class="btn btn-outline-primary col-12">
-                                                                Insurance Claim
-                                                            </button>
-                                                        </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="submit" name="claim-btn"
+                                                            class="btn btn-outline-primary col-12">
+                                                            Insurance Claim
+                                                        </button>
+                                                    </td>
                                                     <?php } else {
                                                         ?>
-                                                        <td class="text-nowrap"><?php echo $i['claim_status']; ?></td>
+                                                    <td class="text-nowrap"><?php echo $i['claim_status']; ?></td>
                                                     <?php } ?>
                                                 </form>
                                             </tr>
-                                        <?php } ?>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
 
@@ -109,7 +112,9 @@ include "template/header.php";
 <?php include "template/footer.php"; ?>
 
 <script>
-    $(".table").dataTable({
-        "order": [[0, "desc"]]
-    });
+$(".table").dataTable({
+    "order": [
+        [0, "desc"]
+    ]
+});
 </script>

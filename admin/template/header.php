@@ -21,15 +21,15 @@ require_once "core/functions.php";
     <link rel="stylesheet" href="admin_assets/css/admin_style.css">
     <!--  End  Linking CSS Files, bootstrap, animate.style,feather icon and font awesome-->
     <style>
-        .full-screen-card{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 30000;
-            height: 100vh;
-            overflow: scroll;
-        }
+    .full-screen-card {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 30000;
+        height: 100vh;
+        overflow: scroll;
+    }
     </style>
 </head>
 
@@ -44,16 +44,20 @@ require_once "core/functions.php";
 
 
             <!--        start main container-->
-            <div class="col-12 col-lg-9 col-xl-10 vh-100 p-0 pb-lg-3 ps-lg-3 pe-lg-3" style="box-shadow: 0 0 0.5rem rgba(0,0,0,.095) inset;overflow-y: scroll;">
+            <div class="col-12 col-lg-9 col-xl-10 vh-100 p-0 pb-lg-3 ps-lg-3 pe-lg-3"
+                style="box-shadow: 0 0 0.5rem rgba(0,0,0,.095) inset;overflow-y: scroll;">
                 <div class="row mb-4 position-sticky" style="top: 0.2rem; z-index: 2000;">
                     <div class="col-12">
-                        <div class="p-2 d-flex justify-content-between align-items-center justify-content-lg-end bg-primary" style="margin-top: -3px">
+                        <div class="p-2 d-flex justify-content-between align-items-center justify-content-lg-end bg-primary"
+                            style="margin-top: -3px">
                             <button class="btn-outline-primary show-sidebar d-block d-lg-none">
                                 <i class="feather-menu text-white" style="font-size: 2rem;"></i>
                             </button>
                             <div class="dropdown">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img class="me-3" src="images/<?php echo $_SESSION['admin_acc']['photo']?>" style="width: 30px; height: 30px; border-radius: 50%" alt="profile picture">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="me-3" src="images/<?php echo $_SESSION['admin_acc']['photo']?>"
+                                        style="width: 30px; height: 30px; border-radius: 50%" alt="profile picture">
                                     <span class="text-dark"><?php echo $_SESSION['admin_acc']['name'];?></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

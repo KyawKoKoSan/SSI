@@ -47,37 +47,39 @@ include "template/header.php";
                                         <th class="text-nowrap">Ended At</th>
                                     </thead>
                                     <tbody>
-                                    <?php
-                                    $no=1;
-                                    foreach (fetchPromotions() as $i){
+                                        <?php
+                                        $no = 1;
+                                        foreach (fetchPromotions() as $i) {
                                         ?>
-                                        <tr>
-                                            <td  class="text-nowrap"><?php echo $no;$no++ ;?></td>
-                                            <td class="text-nowrap"><?php echo $i['name'] ;?></td>
-                                            <td  class="text-nowrap"><?php echo short($i['description']) ;?></td>
-                                            <td  class="text-nowrap fw-bold"><?php echo $i['original_price'] ;?>$</td>
-                                            <td  class="text-nowrap fw-bold"><?php echo $i['sale_price'] ;?>$</td>
-                                            <td  class="text-nowrap">
-                                                <img src="images/<?php echo $i['photo'];?>" width="100px" height="100px" alt="">
-                                            </td>
-                                            <td  class="text-nowrap"><?php echo $i['duration'] ;?></td>
-                                            <td  class="text-nowrap"><?php echo short($i['policy']) ;?></td>
+                                            <tr>
+                                                <td class="text-nowrap"><?php echo $no;
+                                                                        $no++; ?></td>
+                                                <td class="text-nowrap"><?php echo $i['name']; ?></td>
+                                                <td class="text-nowrap"><?php echo short($i['description']); ?></td>
+                                                <td class="text-nowrap fw-bold"><?php echo $i['original_price']; ?>$</td>
+                                                <td class="text-nowrap fw-bold"><?php echo $i['sale_price']; ?>$</td>
+                                                <td class="text-nowrap">
+                                                    <img src="images/<?php echo $i['photo']; ?>" width="100px" height="100px" alt="">
+                                                </td>
+                                                <td class="text-nowrap"><?php echo $i['duration']; ?></td>
+                                                <td class="text-nowrap"><?php echo short($i['policy']); ?></td>
 
-                                            <td  class="text-nowrap"><?php echo fetchAdmin($i['admin_id'])['name'] ;?></td>
-                                            <td class="text-nowrap"><?php echo $i['created_at'] ;?></td>
-                                            <td  class="text-nowrap">
-                                                <a onclick="return confirm('Are you sure to delete?')" href="promotion_delete.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-danger">
-                                                    <i class="feather-trash-2"></i>
-                                                </a>
-                                                <a href="promotion_update.php?id=<?php echo $i['id'] ;?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
-                                                    <i class="feather-edit-2"></i>
-                                                </a>
-                                            </td>
-                                            <td class="text-nowrap"><?php echo $i['start_date'] ;?></td>
-                                            <td class="text-nowrap"><?php echo $i['end_date'] ;?></td>
+                                                <td class="text-nowrap"><?php echo fetchAdmin($i['admin_id'])['name']; ?>
+                                                </td>
+                                                <td class="text-nowrap"><?php echo $i['created_at']; ?></td>
+                                                <td class="text-nowrap">
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="promotion_delete.php?id=<?php echo $i['id']; ?>" class="btn btn-sm btn-outline-danger">
+                                                        <i class="feather-trash-2"></i>
+                                                    </a>
+                                                    <a href="promotion_update.php?id=<?php echo $i['id']; ?>" class="btn btn-sm btn-outline-warning mb-2 mb-xl-0">
+                                                        <i class="feather-edit-2"></i>
+                                                    </a>
+                                                </td>
+                                                <td class="text-nowrap"><?php echo $i['start_date']; ?></td>
+                                                <td class="text-nowrap"><?php echo $i['end_date']; ?></td>
 
-                                        </tr>
-                                    <?php } ?>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
 
@@ -92,9 +94,11 @@ include "template/header.php";
 <!--    end coding to show products list-->
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
 <script>
     $(".table").dataTable({
-        "order":[[0,"desc"]]
+        "order": [
+            [0, "desc"]
+        ]
     });
 </script>

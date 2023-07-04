@@ -1,14 +1,14 @@
 <?php
 require_once "core/admin_auth.php";
 include_once "template/header.php";
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $current = fetchService($id);
-}else{
+} else {
     linkTo('service_list.php');
 }
 
-if (!$current){
+if (!$current) {
     linkTo('service_list.php');
 }
 ?>
@@ -36,8 +36,8 @@ if (!$current){
                 <?php
 
 
-                if(isset($_POST['updateItem'])){
-                    if (serviceUpdate()){
+                if (isset($_POST['updateItem'])) {
+                    if (serviceUpdate()) {
                         linkTo('service_list.php');
                     }
                 }
@@ -58,17 +58,19 @@ if (!$current){
                             <div class="form-group">
                                 <label for="category_id" class="my-3">Select Category</label>
                                 <select class="form-select" name="category_id" id="category_id" aria-label="Default select example">
-                                    <?php foreach (fetchCategories() as $c){ ?>
-                                        <option value="<?php echo $c['id']; ?>" <?php echo $c['id']== $current['category_id']?"selected":""?> ><?php echo $c['title'];?></option>
-                                    <?php }?>
+                                    <?php foreach (fetchCategories() as $c) { ?>
+                                        <option value="<?php echo $c['id']; ?>" <?php echo $c['id'] == $current['category_id'] ? "selected" : "" ?>>
+                                            <?php echo $c['title']; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="duration" class="my-3">Select Duration</label>
                                 <select class="form-select" name="duration" id="duration" aria-label="Default select example">
-                                    <?php foreach (fetchDuration() as $d){ ?>
-                                        <option value="<?php echo $d['duration']; ?>" <?php echo $d['duration']== $current['duration']?"selected":""?> ><?php echo $d['duration'];?></option>
-                                    <?php }?>
+                                    <?php foreach (fetchDuration() as $d) { ?>
+                                        <option value="<?php echo $d['duration']; ?>" <?php echo $d['duration'] == $current['duration'] ? "selected" : "" ?>>
+                                            <?php echo $d['duration']; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="form-group my-2">
@@ -81,7 +83,7 @@ if (!$current){
                         <div class="col-12 col-md-6">
                             <div>
                                 <label for="longDes" class="form-label my-3">Description</label>
-                                <textarea name="description"  class="form-control" style="resize: none; text-align: justify" id="longDes" rows="10" required><?php echo $current['description']; ?></textarea>
+                                <textarea name="description" class="form-control" style="resize: none; text-align: justify" id="longDes" rows="10" required><?php echo $current['description']; ?></textarea>
                             </div>
                             <div>
                                 <label for="policy" class="form-label my-3">Policy</label>
@@ -106,4 +108,4 @@ if (!$current){
 
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>

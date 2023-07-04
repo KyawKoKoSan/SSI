@@ -1,6 +1,6 @@
 <?php require_once "core/admin_auth.php";
 
-include "template/header.php";?>
+include "template/header.php"; ?>
 <div class="row mt-3">
     <div class="col-12 col-md-6 col-xl-3">
         <div class="card mb-4 status-card" onclick="go('category_management.php')">
@@ -120,30 +120,30 @@ include "template/header.php";?>
 
 
 
-<?php include "template/footer.php";?>
+<?php include "template/footer.php"; ?>
 <script src="../assets/vendor/chartjs/chart.min.js"></script>
 
 
 <script>
     <?php
 
-    $dateArr=[];
-    $visitorRate=[];
-    $today=date("Y-m-d");
-    for($i=0;$i<10;$i++){
-        $date=date_create($today);
-        date_sub($date,date_interval_create_from_date_string("$i days"));
-        $current =timestampFormatter($date,"Y-m-d");
-        array_push($dateArr,$current);
-        $res = countTotal("viewers","CAST(created_at AS DATE) = '$current'");
-        array_push($visitorRate,$res);
+    $dateArr = [];
+    $visitorRate = [];
+    $today = date("Y-m-d");
+    for ($i = 0; $i < 10; $i++) {
+        $date = date_create($today);
+        date_sub($date, date_interval_create_from_date_string("$i days"));
+        $current = timestampFormatter($date, "Y-m-d");
+        array_push($dateArr, $current);
+        $res = countTotal("viewers", "CAST(created_at AS DATE) = '$current'");
+        array_push($visitorRate, $res);
     }
     $dateArr = array_reverse($dateArr);
-    $visitorRate=array_reverse($visitorRate);
+    $visitorRate = array_reverse($visitorRate);
 
     ?>
-    let dateArr = <?php echo json_encode($dateArr) ; ?>;
-    let viewerCountArr = <?php echo json_encode($visitorRate) ; ?>;
+    let dateArr = <?php echo json_encode($dateArr); ?>;
+    let viewerCountArr = <?php echo json_encode($visitorRate); ?>;
 
 
     const ov = document.getElementById('ov').getContext('2d');
@@ -173,11 +173,11 @@ include "template/header.php";?>
             }
         }
     });
-    <?php $catName=[];
-    $countPostByCategory =[];
-    foreach (fetchCategories() as $c){
-        array_push($catName,$c['title']);
-        array_push($countPostByCategory,countTotal('services',"category_id={$c['id']}"));
+    <?php $catName = [];
+    $countPostByCategory = [];
+    foreach (fetchCategories() as $c) {
+        array_push($catName, $c['title']);
+        array_push($countPostByCategory, countTotal('services', "category_id={$c['id']}"));
     }
     ?>
 
