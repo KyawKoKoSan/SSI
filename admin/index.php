@@ -102,7 +102,7 @@ include "template/header.php";?>
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center p-3">
-                        <h4 class="mb-0">Category / Post</h4>
+                        <h4 class="mb-0">Category / Service</h4>
                         <div class="">
                             <i class="feather-pie-chart h4 mb-0 text-primary"></i>
                         </div>
@@ -155,10 +155,10 @@ include "template/header.php";?>
                 label: 'Viewers Count',
                 data: viewerCountArr,
                 backgroundColor: [
-                    'rgba(130,108,177,0.2)'
+                    '#4c5cbd'
                 ],
                 borderColor: [
-                    '#826cb1'
+                    '#0d21a1'
                 ],
                 borderWidth: 1,
                 fill: true,
